@@ -1,0 +1,46 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "enc_vanilla"
+version = "${version}"
+displayName = "Enchanting Vanilla"
+authors = "ENC_Euphony"
+description = '''
+A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style
+'''
+#logoFile = ""
+
+[[dependencies.enc_vanilla]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.enc_vanilla]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.enc_vanilla]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.enc_vanilla]]
+modId = "yet_another_config_lib_v3"
+mandatory = true
+type = "required"
+versionRange = "[3.6,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "enc_vanilla.mixins.json"

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "enc_vanilla",
+  "version": "${version}",
+  "name": "Enchanting Vanilla",
+  "description": "A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style",
+  "authors": [
+    "ENC_Euphony"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "MIT",
+  "icon": "assets/enc_vanilla/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.euphony.enc_vanilla.fabric.EncVanillaFabric"
+    ],
+    "client": [
+      "com.euphony.enc_vanilla.fabric.client.EncVanillaFabricClient"
+    ]
+  },
+  "mixins": [
+    "enc_vanilla.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*",
+    "yet_another_config_lib_v3": ">=3.6"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
