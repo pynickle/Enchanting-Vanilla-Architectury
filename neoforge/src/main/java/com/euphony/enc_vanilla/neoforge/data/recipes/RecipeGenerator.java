@@ -4,6 +4,9 @@ import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.BiomeCrystalMap;
 import com.euphony.enc_vanilla.utils.Utils;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -17,10 +20,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 
 public class RecipeGenerator extends RecipeProvider {
     public RecipeGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

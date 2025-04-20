@@ -21,10 +21,11 @@ public final class EncVanilla {
 
         BlockEntityMap.addBlockEntity(BlockEntityType.CAMPFIRE);
 
-        EVBlocks.BLOCKS. register();
+        EVDataComponentTypes.DATA_COMPONENTS.register();
+
+        EVBlocks.BLOCKS.register();
         EVItems.ITEMS.register();
         EVCreativeTabs.TABS.register();
-        EVDataComponentTypes.DATA_COMPONENTS.register();
 
         AnvilFallOnLandCallback.EVENT.register(new CompressedSlimeBlockEvent());
     }

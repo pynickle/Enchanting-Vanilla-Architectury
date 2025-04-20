@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.neoforge;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.client.EVClient;
 import com.euphony.enc_vanilla.config.client.EVConfigScreen;
 import dev.architectury.platform.Platform;
 import net.neoforged.api.distmarker.Dist;
@@ -15,5 +16,6 @@ public class ENCVanillaNeoforgeClient {
         if (Platform.isModLoaded("yet_another_config_lib_v3")) {
             ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (client, screen) -> new EVConfigScreen(screen));
         }
+        EVClient.initialize();
     }
 }

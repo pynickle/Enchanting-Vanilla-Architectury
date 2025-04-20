@@ -7,6 +7,11 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 
 public class EVClient {
+    public static void initialize() {
+        registerBlockColor();
+        registerItemColor();
+    }
+
     public static void registerBlockColor() {
         ColorHandlerRegistry.registerBlockColors(
                 (state, level, pos, tintIndex) -> 2129968,
@@ -23,7 +28,6 @@ public class EVClient {
     }
 
     public static void registerItemColor() {
-        BlockColors colors = BlockColors.createDefault();
         ColorHandlerRegistry.registerItemColors(
                 (p_92687_, p_92688_) -> FoliageColor.getDefaultColor(),
                 EVBlocks.CUT_VINE.get()

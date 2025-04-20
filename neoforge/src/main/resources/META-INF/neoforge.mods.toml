@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[2,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/pynickle/Enchanting-Vanilla-Architectury/issues"
 license = "MIT"
 
 [[mods]]

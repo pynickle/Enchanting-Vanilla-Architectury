@@ -23,8 +23,8 @@ public abstract class JukeboxSongPlayerMixin {
 
     @Inject(method = "tick", at = @At("HEAD"))
     public void tickInject(LevelAccessor level, BlockState state, CallbackInfo ci) {
-        if(!QolConfig.HANDLER.instance().enableJukeboxLoop)
-            return;
+        if(!QolConfig.HANDLER.instance().enableJukeboxLoop) return;
+
         if (this.song != null) {
             if (this.song.value().hasFinished(this.ticksSinceSongStarted)) {
                 play(level, song);
