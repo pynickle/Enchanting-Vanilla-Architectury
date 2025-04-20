@@ -25,8 +25,42 @@ subprojects {
 
     repositories {
         maven {
+            // JEI
+            name = "Jared's maven"
+            url = "https://maven.blamejared.com/"
+        }
+        maven {
+            // JEI
+            name = "ModMaven"
+            url = "https://modmaven.dev"
+        }
+        maven {
+            // YACL
             name 'Xander Maven'
             url 'https://maven.isxander.dev/releases'
+        }
+        exclusiveContent {
+            // Curse Maven
+            forRepository {
+                maven {
+                    url "https://cursemaven.com"
+                }
+            }
+            filter {
+                includeGroup "curse.maven"
+            }
+        }
+        exclusiveContent {
+            // Soul fire'd
+            forRepository {
+                maven {
+                    name = "Crystal Nest"
+                    url = "https://maven.crystalnest.it"
+                }
+            }
+            filter {
+                includeGroup "it.crystalnest"
+            }
         }
     }
 

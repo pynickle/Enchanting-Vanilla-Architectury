@@ -7,6 +7,27 @@ architectury {
     neoForge()
 }
 
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+
+    runs {
+        data {
+            data()
+            programArgs "--all", "--mod", "enc_vanilla"
+            programArgs "--output", project(':common').file('src/generated/resources').getAbsolutePath()
+            programArgs "--existing", project(':common').file('src/main/resources').getAbsolutePath()
+        }
+    }
+}
+
+sourcesJar {
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+sourceSets.main.resources { srcDir project(':common').file('src/generated/resources').getAbsolutePath() }
+
 configurations {
     common {
         canBeResolved = true
@@ -36,10 +57,17 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
 
-    // api("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+
     modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
-    // compileOnly("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
-    // runtimeOnly("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
+
+    modImplementation("curse.maven:selene-499980:${selene_id}")
+    modImplementation("curse.maven:fast-paintings-883287:${fast_paintings_id}")
+    modImplementation("curse.maven:carryon-274259:${carryon_id}")
+
+    modImplementation("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
+    modImplementation("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')

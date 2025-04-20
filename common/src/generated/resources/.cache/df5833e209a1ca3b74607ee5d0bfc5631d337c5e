@@ -1,0 +1,12 @@
+// 1.21.1	2025-04-20T22:59:34.462891	Tags for minecraft:block mod id enc_vanilla
+49a4f2356413d97fdf814d5b7c31fb2a2bf54b0c data/minecraft/tags/block/bamboo_plantable_on.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/climbable.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/enchantment_power_transmitter.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/fall_damage_resetting.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/mangrove_logs_can_grow_through.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/mangrove_roots_can_grow_through.json
+54cf559dbeb828faceba8be58889917960891f36 data/minecraft/tags/block/mineable/axe.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/replaceable.json
+bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/replaceable_by_trees.json
+54cf559dbeb828faceba8be58889917960891f36 data/minecraft/tags/block/sword_efficient.json
+49a4f2356413d97fdf814d5b7c31fb2a2bf54b0c data/minecraft/tags/block/sword_instantly_mines.json

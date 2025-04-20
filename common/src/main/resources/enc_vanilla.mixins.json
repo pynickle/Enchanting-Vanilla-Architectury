@@ -4,8 +4,29 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
+    "ChatComponentMixin",
+    "GameRendererMixin",
+    "PlayerTabOverlayMixin",
+    "invoker.PlayerTabOverlayInvoker"
   ],
   "mixins": [
+    "BaseFireBlockMixin",
+    "BlockEntityMixin",
+    "ConcretePowderBlockMixin",
+    "FallingBlockEntityMixin",
+    "FarmBlockMixin",
+    "ItemFrameMixin",
+    "JukeboxSongPlayerMixin",
+    "LiquidBlockMixin",
+    "MonsterMixin",
+    "PhantomMixin",
+    "PowderSnowBlockMixin",
+    "ServerPlayerMixin",
+    "ShutupNameTag",
+    "SmallFireballMixin",
+    "ThrownPotionMixin",
+    "VillagerMixin",
+    "WaterlilyBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
