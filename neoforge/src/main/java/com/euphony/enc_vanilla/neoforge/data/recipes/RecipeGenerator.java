@@ -7,6 +7,7 @@ import com.euphony.enc_vanilla.utils.Utils;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;

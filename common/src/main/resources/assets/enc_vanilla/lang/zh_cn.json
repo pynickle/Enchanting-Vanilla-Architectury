@@ -181,5 +181,7 @@
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "启用海绵烘干",
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "现在你可以使用篝火烘干海绵了。",
   "yacl3.config.enc_vanilla:config.enableBetterLodestone": "启用更好的磁石",
-  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "现在你可以使用 1.21.5 版的磁石配方，并在废弃传送门的箱子里找到它。"
+  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "现在你可以使用 1.21.5 版的磁石配方，并在废弃传送门的箱子里找到它。",
+  "yacl3.config.enc_vanilla:config.enablePaintingVariants": "启用四元素画作",
+  "yacl3.config.enc_vanilla:config.enablePaintingVariants.desc": "现在你可以放置水、风、火、土元素画。"
 }

@@ -1,7 +1,9 @@
 package com.euphony.enc_vanilla;
 
+import com.euphony.enc_vanilla.client.EVClientEvents;
 import com.euphony.enc_vanilla.common.init.*;
 import com.euphony.enc_vanilla.config.EVConfig;
+import com.euphony.enc_vanilla.events.EVEvents;
 import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandCallback;
 import com.euphony.enc_vanilla.events.events.CompressedSlimeBlockEvent;
 import com.euphony.enc_vanilla.utils.BlockEntityMap;
@@ -26,6 +28,9 @@ public final class EncVanilla {
         EVBlocks.BLOCKS.register();
         EVItems.ITEMS.register();
         EVCreativeTabs.TABS.register();
+
+        EVEvents.init();
+        EVClientEvents.init();
 
         AnvilFallOnLandCallback.EVENT.register(new CompressedSlimeBlockEvent());
     }

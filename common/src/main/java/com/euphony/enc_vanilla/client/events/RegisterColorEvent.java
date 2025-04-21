@@ -1,13 +1,13 @@
-package com.euphony.enc_vanilla.client;
+package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
-import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 
-public class EVClient {
-    public static void initialize() {
+public class RegisterColorEvent {
+    public static void registerColor(Minecraft minecraft) {
         registerBlockColor();
         registerItemColor();
     }

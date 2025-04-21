@@ -32,6 +32,14 @@ configurations {
     }
 }
 
+repositories {
+    maven {
+        // Mod Menu
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
@@ -40,6 +48,8 @@ dependencies {
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
     modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-fabric")
+
+    modImplementation("com.terraformersmc:modmenu:${rootProject.modmenu_version}")
 
     modImplementation("curse.maven:selene-499980:${rootProject.selene_id}")
     modImplementation("curse.maven:fast-paintings-883287:${rootProject.fast_paintings_id}")

@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.utils.HitUtils;
 import dev.architectury.event.CompoundEventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 
 public class SpongePlaceEvent {
     public static CompoundEventResult<ItemStack> rightClickItem(Player player, InteractionHand interactionHand) {
@@ -25,7 +25,7 @@ public class SpongePlaceEvent {
         if(stack.is(Items.SPONGE)) {
             Level level = player.level();
 
-            BlockHitResult blockHitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
+            BlockHitResult blockHitResult = HitUtils.getPlayerFluidHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
             BlockPos pos = blockHitResult.getBlockPos();
 
             if(level.getBlockState(pos).is(Blocks.WATER)) {
@@ -38,11 +38,5 @@ public class SpongePlaceEvent {
         }
 
         return CompoundEventResult.pass();
-    }
-
-    protected static BlockHitResult getPlayerPOVHitResult(Level level, Player player, ClipContext.Fluid fluid) {
-        Vec3 vec3 = player.getEyePosition();
-        Vec3 vec32 = vec3.add(player.calculateViewVector(player.getXRot(), player.getYRot()).scale(player.blockInteractionRange()));
-        return level.clip(new ClipContext(vec3, vec32, net.minecraft.world.level.ClipContext.Block.OUTLINE, fluid, player));
     }
 }

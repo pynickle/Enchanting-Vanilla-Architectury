@@ -21,12 +21,15 @@
     "MonsterMixin",
     "PhantomMixin",
     "PowderSnowBlockMixin",
+    "RecipeManagerMixin",
     "ServerPlayerMixin",
     "ShutupNameTag",
     "SmallFireballMixin",
+    "TagLoaderMixin",
     "ThrownPotionMixin",
     "VillagerMixin",
-    "WaterlilyBlockMixin"
+    "WaterlilyBlockMixin",
+    "invoker.BellBlockInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -5,7 +5,7 @@ import dev.architectury.event.events.client.*;
 import dev.architectury.event.events.common.TickEvent;
 
 public class EVClientEvents {
-    static {
+    public static void init() {
         ClientTooltipEvent.RENDER_PRE.register(TooltipEvent::renderPre);
         ClientTooltipEvent.RENDER_PRE.register(BeeInfoEvent::renderPre);
 
@@ -17,8 +17,8 @@ public class EVClientEvents {
 
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(BiomeTitleEvent::clientLevelLoad);
         ClientLifecycleEvent.CLIENT_SETUP.register(ItemPropertiesEvent::clientSetup);
-
-        ClientRecipeUpdateEvent.EVENT.register(RecipeUpdateEvent::recipeUpdate);
+        ClientLifecycleEvent.CLIENT_SETUP.register(RegisterColorEvent::registerColor);
+        ClientLifecycleEvent.CLIENT_SETUP.register(CompostEvent::registerCompostable);
 
         TickEvent.PLAYER_PRE.register(FasterClimbingEvent::playerPre);
     }
