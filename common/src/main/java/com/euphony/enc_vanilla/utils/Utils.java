@@ -2,13 +2,13 @@ package com.euphony.enc_vanilla.utils;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import dev.architectury.platform.Platform;
-import java.util.Locale;
-
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootTable;
+
+import java.util.Locale;
 
 public class Utils {
     public static String getModDisplayName(String modId) {

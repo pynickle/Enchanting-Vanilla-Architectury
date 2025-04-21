@@ -1,12 +1,8 @@
 package com.euphony.enc_vanilla.client.events;
 
-import static com.euphony.enc_vanilla.utils.ItemUtils.createTooltip;
-
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.client.ClientTooltipEvent;
-import java.util.List;
-import java.util.Objects;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.core.component.DataComponentMap;
@@ -15,6 +11,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.block.BeehiveBlock;
+
+import java.util.List;
+import java.util.Objects;
+
+import static com.euphony.enc_vanilla.utils.ItemUtils.createTooltip;
 
 public class BeeInfoEvent {
     public static EventResult renderPre(GuiGraphics guiGraphics, List<? extends ClientTooltipComponent> clientTooltipComponents, int i, int i1) {

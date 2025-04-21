@@ -3,7 +3,6 @@ package com.euphony.enc_vanilla.events.events;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.google.common.collect.ImmutableMap;
 import dev.architectury.event.EventResult;
-import java.util.Map;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -16,6 +15,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
+
+import java.util.Map;
 
 public class CeilingTorchEvent {
     private static final Map<Item, Block> placeEntries = ImmutableMap.of(

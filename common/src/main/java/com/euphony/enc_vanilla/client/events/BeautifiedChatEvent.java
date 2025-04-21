@@ -2,11 +2,12 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import dev.architectury.event.CompoundEventResult;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BeautifiedChatEvent {
     public static final String VANILLA_FORMAT = "(?i)^<[a-z0-9_]{3,16}>\\s.+$";

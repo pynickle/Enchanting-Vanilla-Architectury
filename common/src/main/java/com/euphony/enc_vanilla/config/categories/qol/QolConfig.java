@@ -13,13 +13,14 @@ import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.gui.YACLScreen;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.function.BiConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+
+import java.nio.file.Path;
+import java.util.List;
+import java.util.function.BiConsumer;
 
 public final class QolConfig {
     public static ConfigClassHandler<QolConfig> HANDLER = ConfigClassHandler.createBuilder(QolConfig.class)

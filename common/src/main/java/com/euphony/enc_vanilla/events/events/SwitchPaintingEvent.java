@@ -3,9 +3,6 @@ package com.euphony.enc_vanilla.events.events;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import dev.architectury.event.EventResult;
 import dev.architectury.platform.Platform;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import net.mehvahdjukaar.fastpaintings.PaintingBlockEntity;
 import net.minecraft.ResourceLocationException;
 import net.minecraft.Util;
@@ -30,6 +27,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class SwitchPaintingEvent {
     private static @NotNull BlockPos getBlockPos(Painting painting1, Direction dir) {

@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.llamalad7.mixinextras.sugar.Local;
-import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +15,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
 
 @Mixin(SmallFireball.class)
 public abstract class SmallFireballMixin extends Fireball {

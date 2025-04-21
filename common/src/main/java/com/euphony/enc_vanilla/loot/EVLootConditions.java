@@ -3,7 +3,6 @@ package com.euphony.enc_vanilla.loot;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;

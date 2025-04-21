@@ -4,12 +4,13 @@ import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.block.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import java.util.function.Supplier;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.function.Supplier;
 
 public class EVBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(EncVanilla.MOD_ID, Registries.BLOCK);

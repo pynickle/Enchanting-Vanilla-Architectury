@@ -5,11 +5,12 @@ import com.euphony.enc_vanilla.common.item.FrogBucketItem;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import java.util.function.Supplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+
+import java.util.function.Supplier;
 
 public class EVItems {
     public static final DeferredRegister<Item> ITEMS =

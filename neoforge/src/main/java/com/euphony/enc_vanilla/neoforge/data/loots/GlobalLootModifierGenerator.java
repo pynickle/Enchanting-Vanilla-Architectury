@@ -1,19 +1,17 @@
 package com.euphony.enc_vanilla.neoforge.data.loots;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.common.init.EVItems;
-import java.util.concurrent.CompletableFuture;
-
 import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.AddTableLootModifier;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
+
+import java.util.concurrent.CompletableFuture;
 
 public class GlobalLootModifierGenerator extends GlobalLootModifierProvider {
     public GlobalLootModifierGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

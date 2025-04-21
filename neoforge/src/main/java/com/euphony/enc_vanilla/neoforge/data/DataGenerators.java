@@ -8,8 +8,6 @@ import com.euphony.enc_vanilla.neoforge.data.recipes.RecipeGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.BlockTagGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.ItemTagGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.PaintingVariantTagGenerator;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -23,6 +21,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = EncVanilla.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGenerators {

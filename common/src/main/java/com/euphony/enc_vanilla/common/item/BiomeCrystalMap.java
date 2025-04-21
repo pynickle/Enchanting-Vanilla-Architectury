@@ -1,13 +1,14 @@
 package com.euphony.enc_vanilla.common.item;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class BiomeCrystalMap {
     private static final Map<String, Map<List<Item>, ResourceKey<Biome>>> biomeCrystalMap = new HashMap<>();

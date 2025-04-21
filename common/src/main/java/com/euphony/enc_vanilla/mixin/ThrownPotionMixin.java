@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.api.ICustomItemFrame;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import java.util.List;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -15,6 +14,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
 
 @Mixin(ThrownPotion.class)
 public class ThrownPotionMixin {

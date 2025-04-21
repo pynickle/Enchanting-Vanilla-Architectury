@@ -4,9 +4,6 @@ import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import com.euphony.enc_vanilla.utils.Utils;
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.architectury.event.EventResult;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringJoiner;
 import net.minecraft.Util;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -23,6 +20,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.biome.Biome;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringJoiner;
 
 public class BiomeTitleEvent {
     public static Biome previousBiome;

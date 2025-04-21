@@ -3,8 +3,6 @@ package com.euphony.enc_vanilla.events.events;
 import com.euphony.enc_vanilla.api.IConcretePowderBlock;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import dev.architectury.event.EventResult;
-import java.util.ArrayList;
-import java.util.List;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -13,6 +11,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ConcretePowderBlock;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConcreteConversionEvent {
     public static EventResult dropItem(Player player, ItemEntity itemEntity) {

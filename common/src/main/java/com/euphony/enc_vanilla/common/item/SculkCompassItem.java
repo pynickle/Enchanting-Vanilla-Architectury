@@ -7,7 +7,6 @@ import com.euphony.enc_vanilla.config.categories.ToolsConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.google.common.base.Stopwatch;
 import com.mojang.datafixers.util.Pair;
-import java.util.function.Predicate;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -29,6 +28,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Predicate;
 
 public class SculkCompassItem extends Item {
     public static final int USE_DURATION = 40;

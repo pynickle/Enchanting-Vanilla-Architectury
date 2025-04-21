@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import java.util.Objects;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,6 +8,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Objects;
 
 @Mixin(Entity.class)
 public class ShutupNameTag {

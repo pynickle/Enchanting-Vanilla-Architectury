@@ -3,12 +3,13 @@ package com.euphony.enc_vanilla.utils.config;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.utils.Utils;
 import dev.isxander.yacl3.api.*;
-import java.util.Collection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.packs.repository.PackRepository;
+
+import java.util.Collection;
 
 public class ConfigUtils {
     public static final int IMG_WIDTH = 1920;
