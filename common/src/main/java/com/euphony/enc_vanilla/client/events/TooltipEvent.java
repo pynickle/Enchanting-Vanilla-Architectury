@@ -19,6 +19,8 @@ public class TooltipEvent {
         ItemStack stack = ClientTooltipEvent.additionalContexts().getItem();
         List<ClientTooltipComponent> mutable = (List<ClientTooltipComponent>) clientTooltipComponents;
 
+        if(stack == null) return EventResult.pass();
+
         if (stack.is(EVItems.BIOME_CRYSTAL_ITEM)) {
             ResourceKey<Biome> biome = stack.get(EVDataComponentTypes.BIOME.get());
             if(biome == null) {

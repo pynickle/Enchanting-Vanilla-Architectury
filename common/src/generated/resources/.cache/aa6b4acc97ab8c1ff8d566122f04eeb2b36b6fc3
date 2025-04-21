@@ -1,0 +1,7 @@
+// 1.21.1	2025-04-21T19:45:30.2267564	Global Loot Modifiers : enc_vanilla
+98a7c838dfd1f3b6427a2ec0e0052c937e4bf525 data/enc_vanilla/loot_modifiers/biome_crystal.json
+a4c31bff49af42e8011dee14000ede9230d98572 data/enc_vanilla/loot_modifiers/frozen_biome_crystal.json
+618a961fbe0a1f9ea6033153fe67ee7413a0662a data/enc_vanilla/loot_modifiers/heated_biome_crystal.json
+6ac20ee3ee5759a895502053c1fa5bba60d800b1 data/enc_vanilla/loot_modifiers/lodestone.json
+a5d4864414ea34d4d2ea23f72db5aaf627259e71 data/enc_vanilla/loot_modifiers/sculk_compass.json
+a684f910354ace77f2c5a2f914c3aac0a4cdc4fd data/neoforge/loot_modifiers/global_loot_modifiers.json

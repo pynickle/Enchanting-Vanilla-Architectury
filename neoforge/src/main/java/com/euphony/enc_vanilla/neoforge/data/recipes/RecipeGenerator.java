@@ -37,7 +37,7 @@ public class RecipeGenerator extends RecipeProvider {
     protected void addSpongeCampfireRecipes(RecipeOutput recipeOutput) {
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(Items.WET_SPONGE), RecipeCategory.MISC, Items.SPONGE, 0.15F, 600)
                 .unlockedBy("has_item", has(Items.WET_SPONGE))
-                .save(recipeOutput, "wet_sponge_to_sponge");
+                .save(recipeOutput, createKey("wet_sponge_to_sponge"));
     }
 
     protected void addBetterLodestoneRecipes(RecipeOutput recipeOutput) {

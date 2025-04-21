@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.neoforge.data;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.neoforge.data.loots.GlobalLootModifierGenerator;
 import com.euphony.enc_vanilla.neoforge.data.models.BlockModelGenerator;
 import com.euphony.enc_vanilla.neoforge.data.models.ItemModelGenerator;
 import com.euphony.enc_vanilla.neoforge.data.recipes.RecipeGenerator;
@@ -45,6 +46,7 @@ public class DataGenerators {
         generator.addProvider(true, blockTagGenerator);
         generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 
+        generator.addProvider(true, new GlobalLootModifierGenerator(output, lookupProvider));
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
         generator.addProvider(true, new RecipeGenerator(output, lookupProvider));
 

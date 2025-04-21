@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.euphony.enc_vanilla.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RecipeManagerMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wet_sponge_to_sponge"
+        "recipe": "enc_vanilla:wet_sponge_to_sponge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wet_sponge_to_sponge"
+      "enc_vanilla:wet_sponge_to_sponge"
     ]
   }
 }
