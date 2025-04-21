@@ -19,6 +19,7 @@ public class EVClientEvents {
         ClientLifecycleEvent.CLIENT_SETUP.register(ItemPropertiesEvent::clientSetup);
         ClientLifecycleEvent.CLIENT_SETUP.register(RegisterColorEvent::registerColor);
         ClientLifecycleEvent.CLIENT_SETUP.register(CompostEvent::registerCompostable);
+        ClientLifecycleEvent.CLIENT_SETUP.register(RenderTypeEvent::registerRenderType);
 
         TickEvent.PLAYER_PRE.register(FasterClimbingEvent::playerPre);
     }

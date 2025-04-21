@@ -22,7 +22,7 @@ public final class TorchHitEvent {
 
         Entity entity = damageSource.getEntity();
 
-        if (entity == null || !entity.level().isClientSide) return EventResult.pass();
+        if (entity == null || entity.level().isClientSide) return EventResult.pass();
         Entity directEntity = damageSource.getDirectEntity();
 
         if (entity instanceof LivingEntity attacker && entity.equals(directEntity) && !entity.isSpectator() && canAttack(attacker, livingEntity)) {
