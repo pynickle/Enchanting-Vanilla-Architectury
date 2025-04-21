@@ -126,7 +126,6 @@ public final class QolConfig {
     @SerialEntry public boolean enableAxolotlBucketFix = true;
     @SerialEntry public boolean enablePlaceChestOnBoat = true;
     @SerialEntry public boolean enableNameTagDespawn = true;
-    @SerialEntry public boolean enablePaintingVariants = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -402,13 +401,6 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enablePaintingVariantsOpt = ConfigUtils.<Boolean>getGenericOption("enablePaintingVariants")
-                    .binding(defaults.enablePaintingVariants,
-                            () -> config.enablePaintingVariants,
-                            newVal -> config.enablePaintingVariants = newVal)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -503,8 +495,7 @@ public final class QolConfig {
                                             enableSafeLavaBucketOpt,
                                             enableAxolotlBucketFixOpt,
                                             enablePlaceChestOnBoatOpt,
-                                            enableNameTagDespawnOpt,
-                                            enablePaintingVariantsOpt
+                                            enableNameTagDespawnOpt
                                     ))
                                     .build())
                             .build())

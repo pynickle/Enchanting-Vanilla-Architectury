@@ -25,7 +25,6 @@
     "ServerPlayerMixin",
     "ShutupNameTag",
     "SmallFireballMixin",
-    "TagLoaderMixin",
     "ThrownPotionMixin",
     "VillagerMixin",
     "WaterlilyBlockMixin",

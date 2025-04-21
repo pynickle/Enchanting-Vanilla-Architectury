@@ -5,12 +5,12 @@ import com.euphony.enc_vanilla.common.item.SculkCompassItem;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.euphony.enc_vanilla.utils.Utils;
+import dev.architectury.registry.item.ItemPropertiesRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ItemPropertiesEvent {
     public static void clientSetup(Minecraft minecraft) {
-        ItemProperties.register(Items.AXOLOTL_BUCKET, ResourceLocation.withDefaultNamespace("variant"), (stack, level, entity, seed) -> {
+        ItemPropertiesRegistry.register(Items.AXOLOTL_BUCKET, ResourceLocation.withDefaultNamespace("variant"), (stack, level, entity, seed) -> {
             if(!QolConfig.HANDLER.instance().enableAxolotlBucketFix) return 0;
 
             int axolotlType = 0;
@@ -40,7 +40,7 @@ public class ItemPropertiesEvent {
             }
             return axolotlType;
         });
-        ItemProperties.register(EVItems.SCULK_COMPASS_ITEM.get(), Utils.prefix("angle"), new ClampedItemPropertyFunction() {
+        ItemPropertiesRegistry.register(EVItems.SCULK_COMPASS_ITEM.get(), Utils.prefix("angle"), new ClampedItemPropertyFunction() {
             private final CompassWobble wobble = new CompassWobble();
             private final CompassWobble wobbleRandom = new CompassWobble();
 

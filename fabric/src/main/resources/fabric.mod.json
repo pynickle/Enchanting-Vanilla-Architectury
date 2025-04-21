@@ -19,9 +19,13 @@
     ],
     "client": [
       "com.euphony.enc_vanilla.fabric.client.EncVanillaFabricClient"
+    ],
+    "modmenu": [
+      "com.euphony.enc_vanilla.fabric.integration.ModMenuIntegration"
     ]
   },
   "mixins": [
+    "enc_vanilla.mixins.fabric.json",
     "enc_vanilla.mixins.json"
   ],
   "depends": {

@@ -6,8 +6,8 @@ import dev.architectury.event.events.common.TickEvent;
 
 public class EVClientEvents {
     public static void init() {
-        ClientTooltipEvent.RENDER_PRE.register(TooltipEvent::renderPre);
-        ClientTooltipEvent.RENDER_PRE.register(BeeInfoEvent::renderPre);
+        ClientTooltipEvent.ITEM.register(TooltipEvent::item);
+        ClientTooltipEvent.ITEM.register(BeeInfoEvent::item);
 
         ClientTickEvent.CLIENT_LEVEL_PRE.register(BiomeTitleEvent::clientPre);
 

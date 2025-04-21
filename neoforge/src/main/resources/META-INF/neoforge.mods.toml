@@ -18,6 +18,7 @@ modId = "neoforge"
 type = "required"
 versionRange = "[21,)"
 ordering = "NONE"
+logoFile="icon.png"
 side = "BOTH"
 
 [[dependencies.enc_vanilla]]
@@ -44,3 +45,6 @@ side = "CLIENT"
 
 [[mixins]]
 config = "enc_vanilla.mixins.json"
+
+[[mixins]]
+config = "enc_vanilla.mixins.neoforge.json"
