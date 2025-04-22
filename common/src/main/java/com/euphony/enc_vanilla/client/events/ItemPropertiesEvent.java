@@ -12,11 +12,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -27,18 +28,19 @@ import org.jetbrains.annotations.Nullable;
 
 public class ItemPropertiesEvent {
     public static void clientSetup(Minecraft minecraft) {
-        ItemPropertiesRegistry.register(Items.AXOLOTL_BUCKET, ResourceLocation.withDefaultNamespace("variant"), (stack, level, entity, seed) -> {
+        ItemPropertiesRegistry.register(Items.AXOLOTL_BUCKET, Utils.prefix("variant"), (stack, level, entity, seed) -> {
             if(!QolConfig.HANDLER.instance().enableAxolotlBucketFix) return 0;
 
             int axolotlType = 0;
             CustomData customData;
-            if (stack.getComponents().has(DataComponents.BUCKET_ENTITY_DATA)) {
-                customData = stack.getComponents().get(DataComponents.BUCKET_ENTITY_DATA);
+            DataComponentMap components = stack.getComponents();
+            if (components.has(DataComponents.BUCKET_ENTITY_DATA)) {
+                customData = components.get(DataComponents.BUCKET_ENTITY_DATA);
                 if (customData != null) {
                     axolotlType = customData.copyTag().getInt("Variant");
                 }
             }
-            return axolotlType;
+            return axolotlType * 0.01f + 0.0001f;
         });
         ItemPropertiesRegistry.register(EVItems.SCULK_COMPASS_ITEM.get(), Utils.prefix("angle"), new ClampedItemPropertyFunction() {
             private final CompassWobble wobble = new CompassWobble();
