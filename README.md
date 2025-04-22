@@ -12,7 +12,7 @@ It focuses on all-around optimization of the game experience, including not only
 
 ## Dependency
 
-The vast majority of the features are switchable, and you can easily configure them visually within the game by installing the optional dependency **"YetAnotherConfigLib"** mod
+The vast majority of the features are switchable, and you can easily configure them visually within the game by **"YetAnotherConfigLib"** mod
 
 Configuration files are also available.
 
@@ -24,6 +24,6 @@ This mod is actively being updated and more features will be added in the future
 
 ## Version Support
 
-* **1.21.1 Neoforge/Fabric: 0.3.0 (Active Updates)**
+* **1.21.1 Neoforge/Fabric: 0.3.2 (Active Updates)**
 * **1.21.4 Neoforge/Fabric: unplanned**
 * **1.21.5 Neoforge/Fabric: Consideration of future migration**
