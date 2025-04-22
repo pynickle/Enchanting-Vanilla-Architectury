@@ -181,5 +181,20 @@
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "启用海绵烘干",
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "现在你可以使用篝火烘干海绵了。",
   "yacl3.config.enc_vanilla:config.enableBetterLodestone": "启用更好的磁石",
-  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "现在你可以使用 1.21.5 版的磁石配方，并在废弃传送门的箱子里找到它。"
+  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "现在你可以使用 1.21.5 版的磁石配方，并在废弃传送门的箱子里找到它。",
+  "message.enc_vanilla.safe_harvest.mod_name": "[Enchanting Vanilla]",
+  "message.enc_vanilla.safe_harvest.not_mature": " 作物还没到收割的时候！",
+  "key.enc_vanilla.safe_harvest": "切换安全收获",
+  "category.enc_vanilla.keymapping": "Enchanting Vanilla",
+  "message.enc_vanilla.key.safe_harvest.on": "安全收获开启",
+  "message.enc_vanilla.key.safe_harvest.off": "安全收获关闭",
+  "yacl3.config.enc_vanilla:config.enableSafeHarvest": "启用安全收获",
+  "yacl3.config.enc_vanilla:config.enableSafeHarvest.desc": "你将无法破坏未成熟的作物。",
+  "yacl3.config.enc_vanilla:config.category.qol.group.right_click_harvest": "右键收获",
+  "yacl3.config.enc_vanilla:config.enableRightClickHarvest": "启用右键收获",
+  "yacl3.config.enc_vanilla:config.enableRightClickHarvest.desc": "现在可以通过右键点击收割作物。",
+  "yacl3.config.enc_vanilla:config.requiredHoe": "需要锄头",
+  "yacl3.config.enc_vanilla:config.requiredHoe.desc": "是否需要手持锄头",
+  "yacl3.config.enc_vanilla:config.hungerCost": "饱食度扣除",
+  "yacl3.config.enc_vanilla:config.hungerCost.desc": "每次右键点击消耗的饱食度，最终扣除的值为该值乘以 0.005。"
 }

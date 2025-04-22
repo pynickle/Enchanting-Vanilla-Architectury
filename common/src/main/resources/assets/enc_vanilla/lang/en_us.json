@@ -21,6 +21,15 @@
   "container.beehive.bees": "Bees: %s / %s",
   "container.beehive.honey": "Honey: %s / %s",
 
+  "message.enc_vanilla.safe_harvest.mod_name": "[Enchanting Vanilla]",
+  "message.enc_vanilla.safe_harvest.not_mature": " The crop is not ready to be harvested!",
+
+  "key.enc_vanilla.safe_harvest": "Toggle Safe Harvest",
+  "category.enc_vanilla.keymapping": "Enchanting Vanilla",
+
+  "message.enc_vanilla.key.safe_harvest.on": "Safe Harvest On",
+  "message.enc_vanilla.key.safe_harvest.off": "Safe Harvest Off",
+
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
   "yacl3.config.enc_vanilla:config.category.tools": "Tools",
@@ -101,6 +110,14 @@
   "yacl3.config.enc_vanilla:config.effectLevel": "Effect Level",
   "yacl3.config.enc_vanilla:config.effectLevel.desc": "Level of regeneration effect each time you get it",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.right_click_harvest": "Right Click Harvest",
+  "yacl3.config.enc_vanilla:config.enableRightClickHarvest": "Enable Right Click Harvest",
+  "yacl3.config.enc_vanilla:config.enableRightClickHarvest.desc": "Crops can now be harvested by right clicking.",
+  "yacl3.config.enc_vanilla:config.requiredHoe": "Required Hoe",
+  "yacl3.config.enc_vanilla:config.requiredHoe.desc": "Whether or not you need to hold a hoe",
+  "yacl3.config.enc_vanilla:config.hungerCost": "Hunger Cost",
+  "yacl3.config.enc_vanilla:config.hungerCost.desc": "Food exhaustion for each right-click harvest, the final cost is the value multiplied by 0.005.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
@@ -126,6 +143,8 @@
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat.desc": "Now you can just right-click to place a chest on the boat.",
   "yacl3.config.enc_vanilla:config.enableNameTagDespawn": "Enable NameTag Despawn",
   "yacl3.config.enc_vanilla:config.enableNameTagDespawn.desc": "Named monsters now don't despawn in peaceful mode.",
+  "yacl3.config.enc_vanilla:config.enableSafeHarvest": "Enable Safe Harvest",
+  "yacl3.config.enc_vanilla:config.enableSafeHarvest.desc": "You will not be able to destroy immature crops.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

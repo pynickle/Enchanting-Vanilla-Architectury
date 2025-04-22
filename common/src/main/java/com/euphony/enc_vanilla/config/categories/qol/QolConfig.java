@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -50,6 +51,7 @@ public final class QolConfig {
     private static final String HIGHLIGHT_MOBS_GROUP = "highlight_mobs";
     private static final String SPONGE_PLACING_GROUP = "sponge_placing";
     private static final String HEALING_CAMPFIRE_GROUP = "healing_campfire";
+    private static final String RIGHT_CLICK_HARVEST_GROUP = "right_click_harvest";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -114,6 +116,10 @@ public final class QolConfig {
     @SerialEntry public double effectDuration = 5;
     @SerialEntry public int effectLevel = 1;
 
+    @SerialEntry public boolean enableRightClickHarvest = true;
+    @SerialEntry public boolean requiredHoe = false;
+    @SerialEntry public double hungerCost = 1.0;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
@@ -126,6 +132,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableAxolotlBucketFix = true;
     @SerialEntry public boolean enablePlaceChestOnBoat = true;
     @SerialEntry public boolean enableNameTagDespawn = true;
+    @SerialEntry public boolean enableSafeHarvest = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -316,6 +323,29 @@ public final class QolConfig {
                             .range(0, 60))
                     .build();
 
+            // Right Click Harvest
+            Option<Boolean> enableRightClickHarvestOpt = ConfigUtils.<Boolean>getGenericOption("enableRightClickHarvest")
+                    .binding(defaults.enableRightClickHarvest,
+                            () -> config.enableRightClickHarvest,
+                            newVal -> config.enableRightClickHarvest = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> requiredHoeOpt = ConfigUtils.<Boolean>getGenericOption("requiredHoe")
+                    .binding(defaults.requiredHoe,
+                            () -> config.requiredHoe,
+                            newVal -> config.requiredHoe = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Double> hungerCostOpt = ConfigUtils.<Double>getGenericOption("hungerCost")
+                    .binding(defaults.hungerCost,
+                            () -> config.hungerCost,
+                            newVal -> config.hungerCost = newVal)
+                    .controller(opt -> DoubleFieldControllerBuilder.create(opt)
+                            .range(0.0, 5.0))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -401,6 +431,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableSafeHarvestOpt = ConfigUtils.<Boolean>getGenericOption("enableSafeHarvest")
+                    .binding(defaults.enableSafeHarvest,
+                            () -> config.enableSafeHarvest,
+                            newVal -> config.enableSafeHarvest = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -481,6 +518,14 @@ public final class QolConfig {
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, RIGHT_CLICK_HARVEST_GROUP))
+                                    .options(List.of(
+                                            enableRightClickHarvestOpt,
+                                            requiredHoeOpt,
+                                            hungerCostOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
@@ -495,7 +540,8 @@ public final class QolConfig {
                                             enableSafeLavaBucketOpt,
                                             enableAxolotlBucketFixOpt,
                                             enablePlaceChestOnBoatOpt,
-                                            enableNameTagDespawnOpt
+                                            enableNameTagDespawnOpt,
+                                            enableSafeHarvestOpt
                                     ))
                                     .build())
                             .build())

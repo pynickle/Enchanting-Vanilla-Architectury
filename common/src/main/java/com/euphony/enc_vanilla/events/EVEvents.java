@@ -12,6 +12,9 @@ public class EVEvents {
         InteractionEvent.RIGHT_CLICK_BLOCK.register(StopGrowingEvent::rightClickBlock);
         InteractionEvent.RIGHT_CLICK_BLOCK.register(SwitchPaintingEvent::rightClickBlock);
         InteractionEvent.RIGHT_CLICK_BLOCK.register(BellPhantomEvent::rightClickBlock);
+        InteractionEvent.RIGHT_CLICK_BLOCK.register(RightClickHarvestEvent::rightClickBlock);
+
+        InteractionEvent.LEFT_CLICK_BLOCK.register(SafeHarvestEvent::leftClickBlock);
 
         InteractionEvent.INTERACT_ENTITY.register(FrogBucketEvent::interactEntity);
         InteractionEvent.INTERACT_ENTITY.register(PlaceChestOnBoatEvent::interactEntity);

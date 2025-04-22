@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.client;
 
 import com.euphony.enc_vanilla.client.events.*;
+import com.euphony.enc_vanilla.client.events.KeyMappingEvent;
 import dev.architectury.event.events.client.*;
 import dev.architectury.event.events.common.TickEvent;
 
@@ -10,6 +11,7 @@ public class EVClientEvents {
         ClientTooltipEvent.ITEM.register(BeeInfoEvent::item);
 
         ClientTickEvent.CLIENT_LEVEL_PRE.register(BiomeTitleEvent::clientPre);
+        ClientTickEvent.CLIENT_POST.register(KeyMappingEvent::clientPost);
 
         ClientChatEvent.RECEIVED.register(BeautifiedChatEvent::chatReceived);
 
