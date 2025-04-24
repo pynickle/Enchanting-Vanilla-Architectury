@@ -4,7 +4,6 @@ import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
-import tschipp.carryon.common.config.CarryConfig;
 
 public class FasterClimbingEvent {
 

@@ -10,9 +10,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(value = EncVanilla.MOD_ID, dist = Dist.CLIENT)
-public class ENCVanillaNeoforgeClient {
-    public ENCVanillaNeoforgeClient(IEventBus bus) {
+public class EncVanillaNeoforgeClient {
+    public EncVanillaNeoforgeClient(IEventBus bus) {
         ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (client, screen) -> new EVConfigScreen(screen));
+
         EncVanillaClient.init();
     }
 }

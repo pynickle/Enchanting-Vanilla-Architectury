@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.keymapping.EVKeyConfig;
 import com.euphony.enc_vanilla.keymapping.EVKeyMappings;
-import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;

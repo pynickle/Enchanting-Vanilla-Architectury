@@ -1,8 +1,10 @@
 package com.euphony.enc_vanilla.client;
 
 import com.euphony.enc_vanilla.client.events.*;
-import com.euphony.enc_vanilla.client.events.KeyMappingEvent;
-import dev.architectury.event.events.client.*;
+import dev.architectury.event.events.client.ClientChatEvent;
+import dev.architectury.event.events.client.ClientLifecycleEvent;
+import dev.architectury.event.events.client.ClientTickEvent;
+import dev.architectury.event.events.client.ClientTooltipEvent;
 import dev.architectury.event.events.common.TickEvent;
 
 public class EVClientEvents {
@@ -10,12 +12,10 @@ public class EVClientEvents {
         ClientTooltipEvent.ITEM.register(TooltipEvent::item);
         ClientTooltipEvent.ITEM.register(BeeInfoEvent::item);
 
-        ClientTickEvent.CLIENT_LEVEL_PRE.register(BiomeTitleEvent::clientPre);
+        ClientTickEvent.CLIENT_PRE.register(BiomeTitleEvent::clientPre);
         ClientTickEvent.CLIENT_POST.register(KeyMappingEvent::clientPost);
 
         ClientChatEvent.RECEIVED.register(BeautifiedChatEvent::chatReceived);
-
-        ClientGuiEvent.RENDER_PRE.register(BiomeTitleEvent::renderPre);
 
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(BiomeTitleEvent::clientLevelLoad);
         ClientLifecycleEvent.CLIENT_SETUP.register(ItemPropertiesEvent::clientSetup);

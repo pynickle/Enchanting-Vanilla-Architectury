@@ -17,7 +17,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 
 import java.nio.file.Path;
 import java.util.List;
