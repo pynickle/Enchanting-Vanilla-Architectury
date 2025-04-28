@@ -2,7 +2,7 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
-import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.euphony.enc_vanilla.utils.Utils;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 public class ItemPropertiesEvent {
     public static void clientSetup(Minecraft minecraft) {
         ItemPropertiesRegistry.register(Items.AXOLOTL_BUCKET, Utils.prefix("variant"), (stack, level, entity, seed) -> {
-            if(!QolConfig.HANDLER.instance().enableAxolotlBucketFix) return 0;
+            if(!ClientConfig.HANDLER.instance().enableAxolotlBucketFix) return 0;
 
             int axolotlType = 0;
             CustomData customData;

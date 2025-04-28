@@ -45,6 +45,9 @@ public class RightClickHarvestEvent {
                     level.setBlockAndUpdate(blockPos, getReplantState(state));
 
                     player.causeFoodExhaustion((float) QolConfig.HANDLER.instance().hungerCost * 0.005f);
+                    if(QolConfig.HANDLER.instance().enableHarvestXp) {
+                        player.giveExperiencePoints(QolConfig.HANDLER.instance().xpAmount);
+                    }
                 } else {
                     player.playSound(state.getBlock() instanceof NetherWartBlock ? SoundEvents.NETHER_WART_PLANTED : SoundEvents.CROP_PLANTED, 1.0f, 1.0f);
                 }

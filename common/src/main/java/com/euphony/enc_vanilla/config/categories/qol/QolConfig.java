@@ -51,6 +51,7 @@ public final class QolConfig {
     private static final String SPONGE_PLACING_GROUP = "sponge_placing";
     private static final String HEALING_CAMPFIRE_GROUP = "healing_campfire";
     private static final String RIGHT_CLICK_HARVEST_GROUP = "right_click_harvest";
+    private static final String HARVEST_XP_GROUP = "harvest_xp";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -119,6 +120,9 @@ public final class QolConfig {
     @SerialEntry public boolean requiredHoe = false;
     @SerialEntry public double hungerCost = 1.0;
 
+    @SerialEntry public boolean enableHarvestXp = true;
+    @SerialEntry public int xpAmount = 1;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
@@ -128,7 +132,6 @@ public final class QolConfig {
     @SerialEntry public boolean enableCakeDrop = true;
     @SerialEntry public boolean enableCeilingTorch = true;
     @SerialEntry public boolean enableSafeLavaBucket = false;
-    @SerialEntry public boolean enableAxolotlBucketFix = true;
     @SerialEntry public boolean enablePlaceChestOnBoat = true;
     @SerialEntry public boolean enableNameTagDespawn = true;
     @SerialEntry public boolean enableSafeHarvest = true;
@@ -345,6 +348,22 @@ public final class QolConfig {
                             .range(0.0, 5.0))
                     .build();
 
+            // Harvest Xp
+            Option<Boolean> enableHarvestXpOpt = ConfigUtils.<Boolean>getGenericOption("enableHarvestXp")
+                    .binding(defaults.enableHarvestXp,
+                            () -> config.enableHarvestXp,
+                            newVal -> config.enableHarvestXp = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> xpAmountOpt = ConfigUtils.<Integer>getGenericOption("xpAmount")
+                    .binding(defaults.xpAmount,
+                            () -> config.xpAmount,
+                            newVal -> config.xpAmount = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(1, 5).step(1))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -406,13 +425,6 @@ public final class QolConfig {
                     .binding(defaults.enableSafeLavaBucket,
                             () -> config.enableSafeLavaBucket,
                             newVal -> config.enableSafeLavaBucket = newVal)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
-            Option<Boolean> enableAxolotlBucketFixOpt = ConfigUtils.<Boolean>getGenericOption("enableAxolotlBucketFix", "axolotl_bucket")
-                    .binding(defaults.enableAxolotlBucketFix,
-                            () -> config.enableAxolotlBucketFix,
-                            newVal -> config.enableAxolotlBucketFix = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -525,6 +537,13 @@ public final class QolConfig {
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, HARVEST_XP_GROUP))
+                                    .options(List.of(
+                                            enableHarvestXpOpt,
+                                            xpAmountOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
@@ -537,7 +556,6 @@ public final class QolConfig {
                                             enableCeilingTorchOpt,
                                             enableWaterConversionOpt,
                                             enableSafeLavaBucketOpt,
-                                            enableAxolotlBucketFixOpt,
                                             enablePlaceChestOnBoatOpt,
                                             enableNameTagDespawnOpt,
                                             enableSafeHarvestOpt

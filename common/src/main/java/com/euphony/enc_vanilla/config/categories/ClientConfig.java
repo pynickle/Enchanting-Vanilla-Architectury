@@ -73,6 +73,7 @@ public class ClientConfig {
     @SerialEntry public boolean enableUndergroundUpdate = false;
 
     @SerialEntry public boolean enableBeeInfo = true;
+    @SerialEntry public boolean enableAxolotlBucketFix = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -258,6 +259,12 @@ public class ClientConfig {
                             newVal -> config.enableBeeInfo = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
+            Option<Boolean> enableAxolotlBucketFixOpt = ConfigUtils.<Boolean>getGenericOption("enableAxolotlBucketFix", "axolotl_bucket")
+                    .binding(defaults.enableAxolotlBucketFix,
+                            () -> config.enableAxolotlBucketFix,
+                            newVal -> config.enableAxolotlBucketFix = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
@@ -314,7 +321,8 @@ public class ClientConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
-                                            enableBeeInfoOpt
+                                            enableBeeInfoOpt,
+                                            enableAxolotlBucketFixOpt
                                     ))
                                     .build())
                             .build())

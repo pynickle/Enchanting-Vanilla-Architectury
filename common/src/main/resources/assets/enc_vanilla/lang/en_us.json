@@ -118,6 +118,12 @@
   "yacl3.config.enc_vanilla:config.hungerCost": "Hunger Cost",
   "yacl3.config.enc_vanilla:config.hungerCost.desc": "Food exhaustion for each right-click harvest, the final cost is the value multiplied by 0.005.",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.harvest_xp": "Harvest Xp",
+  "yacl3.config.enc_vanilla:config.enableHarvestXp": "Enable Harvest Xp",
+  "yacl3.config.enc_vanilla:config.enableHarvestXp.desc": "Harvesting crops will now gain experience.",
+  "yacl3.config.enc_vanilla:config.xpAmount": "Xp Amount",
+  "yacl3.config.enc_vanilla:config.xpAmount.desc": "Experience points gained",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
@@ -137,8 +143,6 @@
   "yacl3.config.enc_vanilla:config.enableCeilingTorch.desc": "Now you can place torches on the ceiling.",
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket": "Enable Safe Lava Bucket",
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket.desc": "Now you need to sneak in order to reclaim the lava with a bucket to prevent accidentally destroying the lava lake.",
-  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix": "Enable Axolotl Bucket Fix",
-  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat": "Enable Place Chest On Boat",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat.desc": "Now you can just right-click to place a chest on the boat.",
   "yacl3.config.enc_vanilla:config.enableNameTagDespawn": "Enable NameTag Despawn",
@@ -217,6 +221,8 @@
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
   "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",
+  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix": "Enable Axolotl Bucket Fix",
+  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",

@@ -31,6 +31,9 @@ public class SafeHarvestEvent {
                 player.displayClientMessage(getNotMatureMessage(), true);
                 return EventResult.interruptTrue();
             }
+            if(QolConfig.HANDLER.instance().enableHarvestXp) {
+                player.giveExperiencePoints(QolConfig.HANDLER.instance().xpAmount);
+            }
         }
         return EventResult.pass();
     }
