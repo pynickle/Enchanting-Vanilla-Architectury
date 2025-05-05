@@ -369,7 +369,7 @@ public final class QolConfig {
                     .build();
 
             // Stackable Potion
-            Option<Boolean> enableStackablePotionOpt = ConfigUtils.<Boolean>getGenericOption("enableStackablePotion", "stackable_potion")
+            Option<Boolean> enableStackablePotionOpt = ConfigUtils.<Boolean>getGenericOption("enableStackablePotion")
                     .binding(defaults.enableStackablePotion,
                             () -> config.enableStackablePotion,
                             newVal -> config.enableStackablePotion = newVal)
