@@ -124,6 +124,12 @@
   "yacl3.config.enc_vanilla:config.xpAmount": "Xp Amount",
   "yacl3.config.enc_vanilla:config.xpAmount.desc": "Experience points gained",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.stackable_potion": "Stackable Potion",
+  "yacl3.config.enc_vanilla:config.enableStackablePotion": "Enable Stackable Potion",
+  "yacl3.config.enc_vanilla:config.enableStackablePotion.desc": "Potions can be stacked up to 16.",
+  "yacl3.config.enc_vanilla:config.throwablePotionCooldown": "Throwable Potion Cooldown",
+  "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "Cooldown time for Splash and Lingering potions",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
@@ -181,6 +187,8 @@
   "yacl3.config.enc_vanilla:config.chatMaxMessages.desc": "Maximum number of messages retained in chat history",
   "yacl3.config.enc_vanilla:config.enableTimeStamp": "Enable Time Stamp",
   "yacl3.config.enc_vanilla:config.enableTimeStamp.desc": "The time is now displayed before the chat message.",
+  "yacl3.config.better_client:config.timeStampColor": "Time Stamp Color",
+  "yacl3.config.better_client:config.timeStampColor.desc": "The color of the time displayed",
 
   "yacl3.config.enc_vanilla:config.category.client.group.biome_title": "Biome Title",
   "yacl3.config.enc_vanilla:config.enableBiomeTitle": "Enable Biome Title",

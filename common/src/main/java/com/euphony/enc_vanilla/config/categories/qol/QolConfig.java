@@ -52,6 +52,7 @@ public final class QolConfig {
     private static final String HEALING_CAMPFIRE_GROUP = "healing_campfire";
     private static final String RIGHT_CLICK_HARVEST_GROUP = "right_click_harvest";
     private static final String HARVEST_XP_GROUP = "harvest_xp";
+    private static final String STACKABLE_POTION_GROUP = "stackable_potion";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -122,6 +123,9 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableHarvestXp = true;
     @SerialEntry public int xpAmount = 1;
+
+    @SerialEntry public boolean enableStackablePotion = true;
+    @SerialEntry public int throwablePotionCooldown = 20;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -364,6 +368,22 @@ public final class QolConfig {
                             .range(1, 5).step(1))
                     .build();
 
+            // Stackable Potion
+            Option<Boolean> enableStackablePotionOpt = ConfigUtils.<Boolean>getGenericOption("enableStackablePotion", "stackable_potion")
+                    .binding(defaults.enableStackablePotion,
+                            () -> config.enableStackablePotion,
+                            newVal -> config.enableStackablePotion = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> throwablePotionCooldownOpt = ConfigUtils.<Integer>getGenericOption("throwablePotionCooldown", DescComponent.TICK_EXPLANATION)
+                    .binding(defaults.throwablePotionCooldown,
+                            () -> config.throwablePotionCooldown,
+                            newVal -> config.throwablePotionCooldown = newVal)
+                    .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                            .range(0, 100))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -541,6 +561,13 @@ public final class QolConfig {
                                     .options(List.of(
                                             enableHarvestXpOpt,
                                             xpAmountOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, STACKABLE_POTION_GROUP))
+                                    .options(List.of(
+                                            enableStackablePotionOpt,
+                                            throwablePotionCooldownOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

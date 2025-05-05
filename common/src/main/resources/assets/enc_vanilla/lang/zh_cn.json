@@ -201,5 +201,12 @@
   "yacl3.config.enc_vanilla:config.xpAmount.desc": "获得的经验值",
   "yacl3.config.enc_vanilla:config.yOffset": "Y 坐标偏移",
   "yacl3.config.enc_vanilla:config.yOffset.desc": "以屏幕中心减去标题高度作为坐标轴的原点，坐标轴的偏移量 Y",
-  "yacl3.config.enc_vanilla:description.tick_explanation": "1 秒等于 20 个 tick。"
+  "yacl3.config.enc_vanilla:description.tick_explanation": "1 秒等于 20 个 tick。",
+  "yacl3.config.better_client:config.timeStampColor": "时间戳颜色",
+  "yacl3.config.better_client:config.timeStampColor.desc": "显示的时间颜色",
+  "yacl3.config.enc_vanilla:config.category.qol.group.stackable_potion": "可堆叠的药水",
+  "yacl3.config.enc_vanilla:config.enableStackablePotion": "启用可堆叠的药水",
+  "yacl3.config.enc_vanilla:config.enableStackablePotion.desc": "药水可以堆叠至 16 个。",
+  "yacl3.config.enc_vanilla:config.throwablePotionCooldown": "可投掷药水冷却时间",
+  "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "喷溅型和滞留型药水的冷却时间"
 }

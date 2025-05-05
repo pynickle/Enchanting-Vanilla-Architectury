@@ -35,8 +35,5 @@
     "architectury": ">=13.0.6",
     "fabric-api": "*",
     "yet_another_config_lib_v3": ">=3.6"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

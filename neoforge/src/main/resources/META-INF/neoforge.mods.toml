@@ -36,7 +36,6 @@ side = "BOTH"
 
 [[dependencies.enc_vanilla]]
 modId = "yet_another_config_lib_v3"
-mandatory = true
 type = "required"
 versionRange = "[3.6,)"
 ordering = "NONE"

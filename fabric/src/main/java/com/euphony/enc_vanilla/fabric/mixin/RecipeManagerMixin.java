@@ -5,6 +5,7 @@ import com.euphony.enc_vanilla.config.categories.RecipesConfig;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.architectury.platform.Platform;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -24,7 +25,7 @@ import java.util.Map;
 public abstract class RecipeManagerMixin {
     @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At(value = "NEW", target = "net/minecraft/world/item/crafting/RecipeHolder"))
     private void apply(CallbackInfo ci, @Local(ordinal = 0) ImmutableMultimap.Builder<RecipeType<?>, RecipeHolder<?>> builder1, @Local(ordinal = 0) ImmutableMap.Builder<ResourceLocation, RecipeHolder<?>> builder2, @Local(ordinal = 0) ResourceLocation resourceLocation, @Local(ordinal = 0) Recipe<?> recipe) {
-        if(RecipesConfig.HANDLER.instance().enableSlabsToBlocks) {
+        if (RecipesConfig.HANDLER.instance().enableSlabsToBlocks) {
             enc_vanilla$process(builder1, builder2, resourceLocation, recipe);
         }
     }
