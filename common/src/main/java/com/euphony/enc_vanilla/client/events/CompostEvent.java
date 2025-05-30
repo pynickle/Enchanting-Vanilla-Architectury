@@ -1,11 +1,14 @@
 package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.config.categories.RecipesConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.ComposterBlock;
 
+@Environment(EnvType.CLIENT)
 public class CompostEvent {
     public static void registerCompostable(Minecraft minecraft) {
         if(!RecipesConfig.HANDLER.instance().enableMoreCompostable) return;

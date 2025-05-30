@@ -31,6 +31,7 @@ public abstract class WaterlilyBlockMixin extends Block {
     @Override
     protected @NotNull ItemInteractionResult useItemOn(ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
         Item item = stack.getItem();
+        if(level.isClientSide) return ItemInteractionResult.CONSUME;
 
         if(!enc_vanilla$canPlaceBlock(player, pos, stack) || !QolConfig.HANDLER.instance().enableBlocksOnLilyPad) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -48,12 +49,8 @@ public abstract class WaterlilyBlockMixin extends Block {
 
     @Unique
     private static boolean enc_vanilla$canPlaceBlock(Player player, BlockPos pos, ItemStack stack) {
-        GameType gameMode;
-        if (player instanceof ServerPlayer serverPlayer) {
-            gameMode = serverPlayer.gameMode.getGameModeForPlayer();
-        } else {
-            gameMode = Minecraft.getInstance().gameMode.getPlayerMode();
-        }
+        GameType gameMode = ((ServerPlayer)player).gameMode.getGameModeForPlayer();
+
 
         boolean result = !player.blockActionRestricted(player.level(), pos, gameMode);
         if (!result) {

@@ -2,10 +2,13 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.keymapping.EVKeyConfig;
 import com.euphony.enc_vanilla.keymapping.EVKeyMappings;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 
+@Environment(EnvType.CLIENT)
 public class KeyMappingEvent {
     private static boolean wasToggleKeyDown = false;
 

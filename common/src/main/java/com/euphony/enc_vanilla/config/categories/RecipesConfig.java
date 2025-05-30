@@ -12,6 +12,8 @@ import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
 import java.nio.file.Path;
@@ -42,6 +44,7 @@ public class RecipesConfig {
     @SerialEntry public boolean enableSpongeCampfire = true;
     @SerialEntry public boolean enableBetterLodestone = true;
 
+    @Environment(EnvType.CLIENT)
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
             // Other

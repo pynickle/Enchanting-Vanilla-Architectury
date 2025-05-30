@@ -33,7 +33,6 @@ public final class EncVanilla {
         EVCreativeTabs.TABS.register();
 
         EVEvents.init();
-        EVClientEvents.init();
 
         AnvilFallOnLandCallback.EVENT.register(new CompressedSlimeBlockEvent());
     }

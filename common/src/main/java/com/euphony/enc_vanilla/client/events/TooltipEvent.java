@@ -3,6 +3,8 @@ package com.euphony.enc_vanilla.client.events;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
@@ -14,6 +16,7 @@ import java.util.List;
 
 import static com.euphony.enc_vanilla.utils.ItemUtils.createTooltip;
 
+@Environment(EnvType.CLIENT)
 public class TooltipEvent {
     public static void item(ItemStack stack, List<Component> components, Item.TooltipContext tooltipContext, TooltipFlag tooltipFlag) {
         if (stack.is(EVItems.BIOME_CRYSTAL_ITEM.get())) {

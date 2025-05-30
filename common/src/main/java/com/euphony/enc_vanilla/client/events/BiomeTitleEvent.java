@@ -3,6 +3,8 @@ package com.euphony.enc_vanilla.client.events;
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import com.euphony.enc_vanilla.utils.Utils;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.Util;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -23,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 
+@Environment(EnvType.CLIENT)
 public class BiomeTitleEvent {
     public static Biome previousBiome;
     public static ResourceKey<Biome> displayBiome;

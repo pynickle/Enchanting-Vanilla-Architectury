@@ -1,6 +1,8 @@
 package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -16,6 +18,7 @@ import java.util.Objects;
 
 import static com.euphony.enc_vanilla.utils.ItemUtils.createTooltip;
 
+@Environment(EnvType.CLIENT)
 public class BeeInfoEvent {
     public static void item(ItemStack stack, List<Component> components, Item.TooltipContext tooltipContext, TooltipFlag tooltipFlag) {
         if (stack != null && (stack.is(Items.BEE_NEST) || stack.is(Items.BEEHIVE))) {

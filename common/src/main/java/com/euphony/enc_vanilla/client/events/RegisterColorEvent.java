@@ -2,10 +2,13 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 
+@Environment(EnvType.CLIENT)
 public class RegisterColorEvent {
     public static void registerColor(Minecraft minecraft) {
         registerBlockColor();

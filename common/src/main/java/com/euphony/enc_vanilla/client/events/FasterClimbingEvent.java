@@ -1,10 +1,13 @@
 package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 
+@Environment(EnvType.CLIENT)
 public class FasterClimbingEvent {
 
     public static void playerPre(Player player) {

@@ -4,9 +4,12 @@ import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.config.categories.RecipesConfig;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
+import com.google.gson.JsonElement;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -17,11 +20,19 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @Mixin(RecipeManager.class)
 public abstract class RecipeManagerMixin {
+    private static ArrayList<ResourceLocation> id = new ArrayList<>();
+
+    @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At(value = "HEAD"))
+    private void apply(Map<ResourceLocation, JsonElement> map, ResourceManager arg, ProfilerFiller arg2, CallbackInfo ci) {
+        id.clear();
+    }
+
     @Inject(method = "lambda$apply$0", at = @At(value = "NEW", target = "net/minecraft/world/item/crafting/RecipeHolder"))
     private static void lambda(CallbackInfo ci, @Local(argsOnly = true) ImmutableMultimap.Builder<RecipeType<?>, RecipeHolder<?>> builder, @Local(argsOnly = true) ImmutableMap.Builder<ResourceLocation, RecipeHolder<?>> builder1, @Local(argsOnly = true) ResourceLocation resourcelocation, @Local(ordinal = 0) Recipe<?> recipe) {
         if(RecipesConfig.HANDLER.instance().enableSlabsToBlocks) {
@@ -53,6 +64,10 @@ public abstract class RecipeManagerMixin {
                                 + "/" + slabRl.getNamespace()
                                 + "_" + slabRl.getPath()
                 );
+                if(id.contains(recipeRl)) {
+                    return;
+                }
+                id.add(recipeRl);
 
                 RecipeHolder<ShapedRecipe> recipeHolder = new RecipeHolder<>(recipeRl, new ShapedRecipe(
                         "",
