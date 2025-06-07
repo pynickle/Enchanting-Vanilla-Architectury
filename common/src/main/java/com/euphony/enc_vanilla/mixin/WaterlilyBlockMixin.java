@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;

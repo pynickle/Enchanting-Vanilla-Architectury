@@ -155,6 +155,8 @@
   "yacl3.config.enc_vanilla:config.enableNameTagDespawn.desc": "Named monsters now don't despawn in peaceful mode.",
   "yacl3.config.enc_vanilla:config.enableSafeHarvest": "Enable Safe Harvest",
   "yacl3.config.enc_vanilla:config.enableSafeHarvest.desc": "You will not be able to destroy immature crops.",
+  "yacl3.config.enc_vanilla:config.enableDoubleDoor": "Enable Double Door",
+  "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "You can open double doors with a single click.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

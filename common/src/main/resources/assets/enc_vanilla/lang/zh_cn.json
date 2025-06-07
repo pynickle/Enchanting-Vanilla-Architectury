@@ -208,5 +208,7 @@
   "yacl3.config.enc_vanilla:config.enableStackablePotion": "启用可堆叠的药水",
   "yacl3.config.enc_vanilla:config.enableStackablePotion.desc": "药水可以堆叠至 16 个。",
   "yacl3.config.enc_vanilla:config.throwablePotionCooldown": "可投掷药水冷却时间",
-  "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "喷溅型和滞留型药水的冷却时间"
+  "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "喷溅型和滞留型药水的冷却时间",
+  "yacl3.config.enc_vanilla:config.enableDoubleDoor": "启用开关双门",
+  "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "你可以通过一次点击开关双门。"
 }

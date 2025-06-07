@@ -141,6 +141,7 @@ public final class QolConfig {
     @SerialEntry public boolean enablePlaceChestOnBoat = true;
     @SerialEntry public boolean enableNameTagDespawn = true;
     @SerialEntry public boolean enableSafeHarvest = true;
+    @SerialEntry public boolean enableDoubleDoor = true;
 
     @Environment(EnvType.CLIENT)
     public static YetAnotherConfigLib makeScreen() {
@@ -472,6 +473,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableDoubleDoorOpt = ConfigUtils.<Boolean>getGenericOption("enableDoubleDoor")
+                    .binding(defaults.enableDoubleDoor,
+                            () -> config.enableDoubleDoor,
+                            newVal -> config.enableDoubleDoor = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -588,7 +596,8 @@ public final class QolConfig {
                                             enableSafeLavaBucketOpt,
                                             enablePlaceChestOnBoatOpt,
                                             enableNameTagDespawnOpt,
-                                            enableSafeHarvestOpt
+                                            enableSafeHarvestOpt,
+                                            enableDoubleDoorOpt
                                     ))
                                     .build())
                             .build())

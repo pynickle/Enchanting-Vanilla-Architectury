@@ -22,7 +22,7 @@
 
 ## 版本支持
 
-* **1.21.1 Neoforge/Fabric: 0.3.2 (活跃更新)**
+* **1.21.1 Neoforge/Fabric: 0.6.0 (活跃更新)**
 * **1.21.4 Neoforge/Fabric: 未计划**
 * **1.21.5 Neoforge/Fabric：考虑未来迁移**
 

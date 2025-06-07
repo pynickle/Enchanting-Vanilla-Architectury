@@ -1,6 +1,5 @@
 package com.euphony.enc_vanilla;
 
-import com.euphony.enc_vanilla.client.EVClientEvents;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVCreativeTabs;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
