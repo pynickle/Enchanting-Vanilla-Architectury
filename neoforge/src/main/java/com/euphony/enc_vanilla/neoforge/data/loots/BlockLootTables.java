@@ -41,5 +41,6 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropOther(EVBlocks.CEILING_SOUL_TORCH.get(), Items.SOUL_TORCH);
 
         dropSelf(EVBlocks.COMPRESSED_SLIME_BLOCK.get());
+        dropSelf(EVBlocks.APPRAISAL_TABLE.get());
     }
 }

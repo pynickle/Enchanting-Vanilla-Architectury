@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class PowderSnowBlockMixin {
     @Inject(method = "entityInside", at = @At("HEAD"), cancellable = true)
     protected void entityInsideInject(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci) {
-        if(entity instanceof ItemEntity item && item.getItem().is(EVItems.BIOME_CRYSTAL_ITEM)) {
+        if(entity instanceof ItemEntity item && item.getItem().is(EVItems.BIOME_CRYSTAL_ITEM.get())) {
             AABB aabb = item.getBoundingBox();
             aabb = aabb.setMaxY(aabb.maxY + 0.4D);
             aabb = aabb.inflate(0.1D, 0.0D, 0.1D);

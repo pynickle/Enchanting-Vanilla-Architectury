@@ -30,7 +30,7 @@ public abstract class SmallFireballMixin extends Fireball {
         Level level = this.level();
         List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, checkBox);
         for(ItemEntity item : items) {
-            if (item.getItem().is(EVItems.BIOME_CRYSTAL_ITEM)) {
+            if (item.getItem().is(EVItems.BIOME_CRYSTAL_ITEM.get())) {
                 item.discard();
                 Containers.dropItemStack(level, blockPos.getX(), blockPos.getY() + 0.5, blockPos.getZ(), EVItems.HEATED_BIOME_CRYSTAL_ITEM.get().getDefaultInstance());
                 ci.cancel();

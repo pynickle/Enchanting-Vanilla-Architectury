@@ -37,6 +37,8 @@ public class EVBlocks {
     public static final RegistrySupplier<CeilingTorchBlock> CEILING_SOUL_TORCH = registerWithItem("soul_torch",
             () -> new CeilingTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH), ParticleTypes.SOUL_FIRE_FLAME, Blocks.SOUL_TORCH));
 
+    public static final RegistrySupplier<AppraisalTableBlock> APPRAISAL_TABLE = registerWithItem("appraisal_table",
+            () -> new AppraisalTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
 
     public static <T extends Block> RegistrySupplier<T> register(String name, Supplier<? extends T> supplier) {
         return BLOCKS.register(name, supplier);

@@ -25,7 +25,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
         final TagKey<Block> SWORD_INSTANTLY_MINES = createVanillaTag("sword_instantly_mines");
 
         tag(BlockTags.SWORD_EFFICIENT).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get());
-        tag(BlockTags.MINEABLE_WITH_AXE).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get());
+        tag(BlockTags.MINEABLE_WITH_AXE).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get(),
+                EVBlocks.APPRAISAL_TABLE.get());
         tag(SWORD_INSTANTLY_MINES).add(EVBlocks.CUT_BAMBOO_SAPLING.get());
 
         tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(EVBlocks.CUT_VINE.get());

@@ -1,4 +1,6 @@
 {
+  "container.appraisal": "Appraisal",
+
   "item.enc_vanilla.frog_bucket": "Frog Bucket",
   "item.enc_vanilla.damaged_sculk_compass": "Damaged Sculk Compass",
   "item.enc_vanilla.sculk_compass": "Sculk Compass",
@@ -17,6 +19,7 @@
   "block.enc_vanilla.cut_sugar_cane": "Sugar Cane",
   "block.enc_vanilla.cut_bamboo_sapling": "Bamboo Sapling",
   "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block",
+  "block.enc_vanilla.appraisal_table": "Appraisal Table",
 
   "container.beehive.bees": "Bees: %s / %s",
   "container.beehive.honey": "Honey: %s / %s",
@@ -233,6 +236,8 @@
   "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix": "Enable Axolotl Bucket Fix",
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
+  "yacl3.config.enc_vanilla:config.enableChatHistoryRetention": "Enable Chat History Retention",
+  "yacl3.config.enc_vanilla:config.enableChatHistoryRetention.desc": "Leaving the world now will not clear your chat history.",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",

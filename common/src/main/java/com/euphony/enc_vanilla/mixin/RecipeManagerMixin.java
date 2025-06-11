@@ -33,6 +33,7 @@ public abstract class RecipeManagerMixin extends SimpleJsonResourceReloadListene
         }
         if(!ToolsConfig.HANDLER.instance().enableSculkCompass) {
             map.remove(Utils.prefix("sculk_compass"));
+            map.remove(Utils.prefix("appraisal_table"));
         }
     }
 }

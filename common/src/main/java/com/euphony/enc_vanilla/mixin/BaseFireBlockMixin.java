@@ -26,7 +26,7 @@ public abstract class BaseFireBlockMixin extends Block {
     protected void entityInsideInject(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci) {
         if(state.is(Blocks.FIRE)) {
             if (entity instanceof ItemEntity item) {
-                if (item.getItem().is(EVItems.FROZEN_BIOME_CRYSTAL_ITEM)) {
+                if (item.getItem().is(EVItems.FROZEN_BIOME_CRYSTAL_ITEM.get())) {
                     item.discard();
                     Containers.dropItemStack(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), EVItems.BIOME_CRYSTAL_ITEM.get().getDefaultInstance());
                     ci.cancel();

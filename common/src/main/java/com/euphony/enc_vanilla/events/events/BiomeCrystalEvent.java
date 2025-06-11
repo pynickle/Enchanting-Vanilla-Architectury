@@ -20,7 +20,7 @@ public class BiomeCrystalEvent {
         BlockState blockState = level.getBlockState(blockPos);
         ItemStack itemStack = player.getItemInHand(interactionHand);
 
-        if(itemStack.is(EVItems.HEATED_BIOME_CRYSTAL_ITEM) && blockState.is(Blocks.WATER_CAULDRON)) {
+        if(itemStack.is(EVItems.HEATED_BIOME_CRYSTAL_ITEM.get()) && blockState.is(Blocks.WATER_CAULDRON)) {
             LayeredCauldronBlock.lowerFillLevel(blockState, level, blockPos);
             itemStack.consume(1, player);
             if (player.getInventory().getFreeSlot() == -1) {

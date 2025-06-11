@@ -1,9 +1,6 @@
 package com.euphony.enc_vanilla;
 
-import com.euphony.enc_vanilla.common.init.EVBlocks;
-import com.euphony.enc_vanilla.common.init.EVCreativeTabs;
-import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
-import com.euphony.enc_vanilla.common.init.EVItems;
+import com.euphony.enc_vanilla.common.init.*;
 import com.euphony.enc_vanilla.config.EVConfig;
 import com.euphony.enc_vanilla.events.EVEvents;
 import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandCallback;
@@ -29,7 +26,11 @@ public final class EncVanilla {
 
         EVBlocks.BLOCKS.register();
         EVItems.ITEMS.register();
+
+        EVBlockEntities.BLOCK_ENTITIES.register();
         EVCreativeTabs.TABS.register();
+
+        EVMenus.MENUS.register();
 
         EVEvents.init();
 

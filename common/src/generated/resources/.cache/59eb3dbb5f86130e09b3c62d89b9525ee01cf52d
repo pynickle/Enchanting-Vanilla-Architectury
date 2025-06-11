@@ -1,4 +1,5 @@
-// 1.21.1	2025-04-20T22:59:34.4559102	Loot Tables
+// 1.21.1	2025-06-11T21:22:41.1753183	Loot Tables
+37e029b74de9f021c480a09f67408b52cd0edac5 data/enc_vanilla/loot_table/blocks/appraisal_table.json
 78cd56bf9f37cdbf21b0657b70e40e6457fca2a5 data/enc_vanilla/loot_table/blocks/compressed_slime_block.json
 3075aa0acb3c10286e335e0031687200bad933ce data/enc_vanilla/loot_table/blocks/cut_bamboo_sapling.json
 445efac0574f8f972e993b02d5531adce9098a5a data/enc_vanilla/loot_table/blocks/cut_sugar_cane.json

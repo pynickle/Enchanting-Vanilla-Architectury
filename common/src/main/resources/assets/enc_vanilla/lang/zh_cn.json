@@ -210,5 +210,9 @@
   "yacl3.config.enc_vanilla:config.throwablePotionCooldown": "可投掷药水冷却时间",
   "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "喷溅型和滞留型药水的冷却时间",
   "yacl3.config.enc_vanilla:config.enableDoubleDoor": "启用开关双门",
-  "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "你可以通过一次点击开关双门。"
+  "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "你可以通过一次点击开关双门。",
+  "yacl3.config.enc_vanilla:config.enableChatHistoryRetention": "启用聊天记录保留",
+  "yacl3.config.enc_vanilla:config.enableChatHistoryRetention.desc": "现在离开世界并不会清除聊天记录。",
+  "container.appraisal": "鉴定",
+  "block.enc_vanilla.appraisal_table": "鉴定桌"
 }

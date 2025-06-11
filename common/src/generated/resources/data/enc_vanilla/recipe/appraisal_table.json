@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "minecraft:logs"
+    },
+    "I": {
+      "item": "minecraft:echo_shard"
+    },
+    "S": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "I I",
+    "SAS",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enc_vanilla:appraisal_table"
+  }
+}
