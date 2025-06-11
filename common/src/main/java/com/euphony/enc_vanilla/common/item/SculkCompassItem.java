@@ -73,7 +73,6 @@ public class SculkCompassItem extends Item {
             } else {
                 ResourceKey<Biome> biomeResourceKey = player.getOffhandItem().get(EVDataComponentTypes.BIOME.get());
                 locateBiome((ServerLevel) level, player.getEyePosition(), biome -> biome.is(biomeResourceKey), stack);
-                player.getOffhandItem().set(EVDataComponentTypes.BIOME.get(), null);
             }
         }
         return stack;

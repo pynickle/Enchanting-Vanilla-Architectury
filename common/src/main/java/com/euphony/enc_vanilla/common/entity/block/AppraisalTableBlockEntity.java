@@ -39,7 +39,7 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
     int progress = 0;
     boolean isActive = false;
     WeightedRandomSampler<Holder<Biome>> weightedRandomSampler;
-    ItemStack originalStack;
+    ItemStack originalStack = ItemStack.EMPTY;
 
     protected NonNullList<ItemStack> items;
 
@@ -141,7 +141,8 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                 } else {
                     ItemStack input = originalInput.copy();
 
-                    if(arg4.originalStack != input) {
+                    if(!arg4.originalStack.is(input.getItem())) {
+                        level.players().getFirst().sendSystemMessage(Component.literal("1"));
                         float min, max;
                         if (input.is(EVItems.BIOME_CRYSTAL_ITEM.get())) {
                             min = 0.0f;
