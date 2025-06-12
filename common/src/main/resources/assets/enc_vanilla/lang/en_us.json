@@ -35,6 +35,8 @@
   "message.enc_vanilla.key.safe_harvest.on": "Safe Harvest On",
   "message.enc_vanilla.key.safe_harvest.off": "Safe Harvest Off",
 
+  "death.attack.enc_vanilla.stonecutter": "%1$s cut itself to death with a stonecutter",
+
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
   "yacl3.config.enc_vanilla:config.category.tools": "Tools",
@@ -164,6 +166,8 @@
   "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "You can open double doors with a single click.",
   "yacl3.config.enc_vanilla:config.enableBrokenLead": "Enable Broken Lead",
   "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "Now, players will be alerted when the lead breaks.",
+  "yacl3.config.enc_vanilla:config.enableStonecutterDamage": "Enable Stonecutter Damage",
+  "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "Players standing on the stonecutter will continue to take damage.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

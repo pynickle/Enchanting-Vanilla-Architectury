@@ -143,6 +143,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableSafeHarvest = true;
     @SerialEntry public boolean enableDoubleDoor = true;
     @SerialEntry public boolean enableBrokenLead = true;
+    @SerialEntry public boolean enableStonecutterDamage = true;
 
     @Environment(EnvType.CLIENT)
     public static YetAnotherConfigLib makeScreen() {
@@ -486,6 +487,12 @@ public final class QolConfig {
                             newVal -> config.enableBrokenLead = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
+            Option<Boolean> enableStonecutterDamageOpt = ConfigUtils.<Boolean>getGenericOption("enableStonecutterDamage")
+                    .binding(defaults.enableStonecutterDamage,
+                            () -> config.enableStonecutterDamage,
+                            newVal -> config.enableStonecutterDamage = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
@@ -605,7 +612,8 @@ public final class QolConfig {
                                             enableNameTagDespawnOpt,
                                             enableSafeHarvestOpt,
                                             enableDoubleDoorOpt,
-                                            enableBrokenLeadOpt
+                                            enableBrokenLeadOpt,
+                                            enableStonecutterDamageOpt
                                     ))
                                     .build())
                             .build())

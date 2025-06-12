@@ -217,5 +217,8 @@
   "block.enc_vanilla.appraisal_table": "鉴定桌",
   "message.enc_vanilla.broken_lead.message": "你的拴绳断了！",
   "yacl3.config.enc_vanilla:config.enableBrokenLead": "启用拴绳断裂",
-  "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "现在栓绳断裂会提醒玩家。"
+  "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "现在栓绳断裂会提醒玩家。",
+  "death.attack.enc_vanilla.stonecutter": "%1$s被切石机切碎了",
+  "yacl3.config.enc_vanilla:config.enableStonecutterDamage": "启用切石机伤害",
+  "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "玩家站在切石机上会持续受到伤害。"
 }

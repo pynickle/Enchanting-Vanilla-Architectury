@@ -6,6 +6,7 @@ import com.euphony.enc_vanilla.neoforge.data.models.BlockModelGenerator;
 import com.euphony.enc_vanilla.neoforge.data.models.ItemModelGenerator;
 import com.euphony.enc_vanilla.neoforge.data.recipes.RecipeGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.BlockTagGenerator;
+import com.euphony.enc_vanilla.neoforge.data.tag.DamageTypeGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.ItemTagGenerator;
 import com.euphony.enc_vanilla.neoforge.data.tag.PaintingVariantTagGenerator;
 import net.minecraft.DetectedVersion;
@@ -46,6 +47,7 @@ public class DataGenerators {
         BlockTagGenerator blockTagGenerator = new BlockTagGenerator(output, lookupProvider, existingFileHelper);
         generator.addProvider(true, blockTagGenerator);
         generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(true, new DamageTypeGenerator(output, lookupProvider));
 
         generator.addProvider(true, new GlobalLootModifierGenerator(output, lookupProvider));
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
