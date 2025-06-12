@@ -17,6 +17,7 @@
     "FarmBlockMixin",
     "ItemFrameMixin",
     "JukeboxSongPlayerMixin",
+    "LeashableMixin",
     "LiquidBlockMixin",
     "MonsterMixin",
     "PhantomMixin",

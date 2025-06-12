@@ -214,5 +214,8 @@
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention": "启用聊天记录保留",
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention.desc": "现在离开世界并不会清除聊天记录。",
   "container.appraisal": "鉴定",
-  "block.enc_vanilla.appraisal_table": "鉴定桌"
+  "block.enc_vanilla.appraisal_table": "鉴定桌",
+  "message.enc_vanilla.broken_lead.message": "你的拴绳断了！",
+  "yacl3.config.enc_vanilla:config.enableBrokenLead": "启用拴绳断裂",
+  "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "现在栓绳断裂会提醒玩家。"
 }

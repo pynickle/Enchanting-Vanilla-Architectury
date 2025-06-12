@@ -27,6 +27,8 @@
   "message.enc_vanilla.safe_harvest.mod_name": "[Enchanting Vanilla]",
   "message.enc_vanilla.safe_harvest.not_mature": " The crop is not ready to be harvested!",
 
+  "message.enc_vanilla.broken_lead.message": "Your lead broke! (%s)",
+
   "key.enc_vanilla.safe_harvest": "Toggle Safe Harvest",
   "category.enc_vanilla.keymapping": "Enchanting Vanilla",
 
@@ -160,6 +162,8 @@
   "yacl3.config.enc_vanilla:config.enableSafeHarvest.desc": "You will not be able to destroy immature crops.",
   "yacl3.config.enc_vanilla:config.enableDoubleDoor": "Enable Double Door",
   "yacl3.config.enc_vanilla:config.enableDoubleDoor.desc": "You can open double doors with a single click.",
+  "yacl3.config.enc_vanilla:config.enableBrokenLead": "Enable Broken Lead",
+  "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "Now, players will be alerted when the lead breaks.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
