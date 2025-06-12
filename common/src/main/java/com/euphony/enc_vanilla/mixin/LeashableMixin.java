@@ -1,11 +1,8 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Leashable;
 import net.minecraft.world.entity.player.Player;
@@ -13,8 +10,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.logging.Logger;
 
 @Mixin(Leashable.class)
 public interface LeashableMixin {
