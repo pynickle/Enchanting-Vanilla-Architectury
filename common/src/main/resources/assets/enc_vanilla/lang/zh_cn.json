@@ -220,5 +220,16 @@
   "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "现在栓绳断裂会提醒玩家。",
   "death.attack.enc_vanilla.stonecutter": "%1$s被切石机切碎了",
   "yacl3.config.enc_vanilla:config.enableStonecutterDamage": "启用切石机伤害",
-  "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "玩家站在切石机上会持续受到伤害。"
+  "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "玩家站在切石机上会持续受到伤害。",
+  "yacl3.config.enc_vanilla:config.category.qol.group.glowing_torchflower": "发光的火把花",
+  "yacl3.config.enc_vanilla:config.enableGlowingTorchFlower": "启用发光的火把花",
+  "yacl3.config.enc_vanilla:config.enableGlowingTorchFlower.desc": "火把花现在会发光。",
+  "yacl3.config.enc_vanilla:config.torchFlowerLightLevel": "火把花光照等级",
+  "yacl3.config.enc_vanilla:config.torchFlowerLightLevel.desc": "火把花完全成熟的光照等级",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage1LightLevel": "火把花阶段1光照等级",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage1LightLevel.desc": "火把花第一阶段的光照等级",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel": "火把花阶段2光照等级",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel.desc": "火把花第二阶段的光照等级",
+  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel": "火把花盆栽光照等级",
+  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel.desc": "火把花盆栽的光照等级"
 }

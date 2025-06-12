@@ -12,6 +12,7 @@
   "mixins": [
     "BaseFireBlockMixin",
     "BlockEntityMixin",
+    "BlocksMixin",
     "ConcretePowderBlockMixin",
     "FallingBlockEntityMixin",
     "FarmBlockMixin",

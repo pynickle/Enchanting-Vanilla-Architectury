@@ -3,7 +3,6 @@ package com.euphony.enc_vanilla.neoforge;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.EncVanillaClient;
 import com.euphony.enc_vanilla.config.client.EVConfigScreen;
-import com.euphony.enc_vanilla.utils.Utils;
 import dev.architectury.platform.Platform;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;

@@ -55,6 +55,7 @@ public final class QolConfig {
     private static final String RIGHT_CLICK_HARVEST_GROUP = "right_click_harvest";
     private static final String HARVEST_XP_GROUP = "harvest_xp";
     private static final String STACKABLE_POTION_GROUP = "stackable_potion";
+    private static final String GLOWING_TORCHFLOWER_GROUP = "glowing_torchflower";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -128,6 +129,12 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableStackablePotion = true;
     @SerialEntry public int throwablePotionCooldown = 20;
+
+    @SerialEntry public boolean enableGlowingTorchFlower = true;
+    @SerialEntry public int torchFlowerLightLevel = 12;
+    @SerialEntry public int pottedTorchFlowerLightLevel = 14;
+    @SerialEntry public int torchFlowerStage1LightLevel = 3;
+    @SerialEntry public int torchFlowerStage2LightLevel = 7;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -390,6 +397,43 @@ public final class QolConfig {
                             .range(0, 100))
                     .build();
 
+            // Glowing Torchflower
+            Option<Boolean> enableGlowingTorchFlowerOpt = ConfigUtils.<Boolean>getGenericOption("enableGlowingTorchFlower")
+                    .binding(defaults.enableGlowingTorchFlower,
+                            () -> config.enableGlowingTorchFlower,
+                            newVal -> config.enableGlowingTorchFlower = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> torchFlowerLightLevelOpt = ConfigUtils.<Integer>getGenericOption("torchFlowerLightLevel")
+                    .binding(defaults.torchFlowerLightLevel,
+                            () -> config.torchFlowerLightLevel,
+                            newVal -> config.torchFlowerLightLevel = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(0, 15).step(1))
+                    .build();
+            Option<Integer> pottedTorchFlowerLightLevelOpt = ConfigUtils.<Integer>getGenericOption("pottedTorchFlowerLightLevel")
+                    .binding(defaults.pottedTorchFlowerLightLevel,
+                            () -> config.pottedTorchFlowerLightLevel,
+                            newVal -> config.pottedTorchFlowerLightLevel = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(0, 15).step(1))
+                    .build();
+            Option<Integer> torchFlowerStage1LightLevelOpt = ConfigUtils.<Integer>getGenericOption("torchFlowerStage1LightLevel")
+                    .binding(defaults.torchFlowerStage1LightLevel,
+                            () -> config.torchFlowerStage1LightLevel,
+                            newVal -> config.torchFlowerStage1LightLevel = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(0, 15).step(1))
+                    .build();
+            Option<Integer> torchFlowerStage2LightLevelOpt = ConfigUtils.<Integer>getGenericOption("torchFlowerStage2LightLevel")
+                    .binding(defaults.torchFlowerStage2LightLevel,
+                            () -> config.torchFlowerStage2LightLevel,
+                            newVal -> config.torchFlowerStage2LightLevel = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(0, 15).step(1))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -593,6 +637,16 @@ public final class QolConfig {
                                     .options(List.of(
                                             enableStackablePotionOpt,
                                             throwablePotionCooldownOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, GLOWING_TORCHFLOWER_GROUP))
+                                    .options(List.of(
+                                            enableGlowingTorchFlowerOpt,
+                                            torchFlowerLightLevelOpt,
+                                            pottedTorchFlowerLightLevelOpt,
+                                            torchFlowerStage1LightLevelOpt,
+                                            torchFlowerStage2LightLevelOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

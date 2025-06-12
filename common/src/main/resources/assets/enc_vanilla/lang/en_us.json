@@ -137,6 +137,18 @@
   "yacl3.config.enc_vanilla:config.throwablePotionCooldown": "Throwable Potion Cooldown",
   "yacl3.config.enc_vanilla:config.throwablePotionCooldown.desc": "Cooldown time for Splash and Lingering potions",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.glowing_torchflower": "Glowing TorchFlower",
+  "yacl3.config.enc_vanilla:config.enableGlowingTorchFlower": "Enable Glowing TorchFlower",
+  "yacl3.config.enc_vanilla:config.enableGlowingTorchFlower.desc": "The torchflower now glows.",
+  "yacl3.config.enc_vanilla:config.torchFlowerLightLevel": "TorchFlower Light Level",
+  "yacl3.config.enc_vanilla:config.torchFlowerLightLevel.desc": "TorchFlower light level when fully grown",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage1LightLevel": "TorchFlower Stage1 Light Level",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage1LightLevel.desc": "light level of the first stage of the torchflower",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel": "TorchFlower Stage2 Light Level",
+  "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel.desc": "light level of the second stage of the torchflower",
+  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel": "Potted TorchFlower Light Level",
+  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel.desc": "Potted torchflower light level",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
