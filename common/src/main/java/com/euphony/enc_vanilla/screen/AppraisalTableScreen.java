@@ -16,7 +16,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Random;
-import java.util.logging.Logger;
 
 @Environment(EnvType.CLIENT)
 public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTableMenu> {
