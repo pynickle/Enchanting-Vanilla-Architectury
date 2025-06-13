@@ -43,6 +43,7 @@
 
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
+  "yacl3.config.enc_vanilla:config.category.other": "Other",
   "yacl3.config.enc_vanilla:config.category.tools": "Tools",
   "yacl3.config.enc_vanilla:config.category.client": "Client",
   "yacl3.config.enc_vanilla:config.category.recipes": "Recipes",
@@ -153,7 +154,17 @@
   "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel": "Potted TorchFlower Light Level",
   "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel.desc": "Potted torchflower light level",
 
-  "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
+  "yacl3.config.enc_vanilla:config.category.qol.group.bush_protection": "Bush Protection",
+  "yacl3.config.enc_vanilla:config.enableBushProtection": "Enable Bush Protection",
+  "yacl3.config.enc_vanilla:config.enableBushProtection.desc": "Now you can walk through the sweet berry bushes wearing leggings without getting hurt.",
+  "yacl3.config.enc_vanilla:config.needLeggings": "Need Leggings",
+  "yacl3.config.enc_vanilla:config.needLeggings.desc": "You need to wear leggings to be immune to damage.",
+  "yacl3.config.enc_vanilla:config.permanentVillagersProtection": "Permanent Villagers Protection",
+  "yacl3.config.enc_vanilla:config.permanentVillagersProtection.desc": "Villagers will never be harmed by sweet berry bushes.",
+  "yacl3.config.enc_vanilla:config.enableSlowerSpeed": "Enable Slower Speed",
+  "yacl3.config.enc_vanilla:config.enableSlowerSpeed.desc": "You are immune to damage, but you will still move slower.",
+
+  "yacl3.config.enc_vanilla:config.category.other.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",
@@ -184,6 +195,8 @@
   "yacl3.config.enc_vanilla:config.enableBrokenLead.desc": "Now, players will be alerted when the lead breaks.",
   "yacl3.config.enc_vanilla:config.enableStonecutterDamage": "Enable Stonecutter Damage",
   "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "Players standing on the stonecutter will continue to take damage.",
+  "yacl3.config.enc_vanilla:config.enableStickyPiston": "Enable Sticky Piston",
+  "yacl3.config.enc_vanilla:config.enableStickyPiston.desc": "Right-click the piston with the slime ball to obtain sticky piston.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

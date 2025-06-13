@@ -42,6 +42,8 @@ public final class QolConfig {
     }
 
     private static final String QOL_CATEGORY = "qol";
+    private static final String OTHER_CATEGORY = "other";
+
     private static final String VILLAGER_ATTRACTION_GROUP = "villager_attraction";
     private static final String ITEM_FRAME_GROUP = "item_frame";
     private static final String TORCH_HIT_GROUP = "torch_hit";
@@ -56,6 +58,7 @@ public final class QolConfig {
     private static final String HARVEST_XP_GROUP = "harvest_xp";
     private static final String STACKABLE_POTION_GROUP = "stackable_potion";
     private static final String GLOWING_TORCHFLOWER_GROUP = "glowing_torchflower";
+    private static final String BUSH_PROTECTION_GROUP = "bush_protection";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -136,6 +139,11 @@ public final class QolConfig {
     @SerialEntry public int torchFlowerStage1LightLevel = 3;
     @SerialEntry public int torchFlowerStage2LightLevel = 7;
 
+    @SerialEntry public boolean enableBushProtection = true;
+    @SerialEntry public boolean needLeggings = true;
+    @SerialEntry public boolean permanentVillagersProtection = true;
+    @SerialEntry public boolean enableSlowerSpeed = true;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
@@ -151,6 +159,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableDoubleDoor = true;
     @SerialEntry public boolean enableBrokenLead = true;
     @SerialEntry public boolean enableStonecutterDamage = true;
+    @SerialEntry public boolean enableStickyPiston = true;
 
     @Environment(EnvType.CLIENT)
     public static YetAnotherConfigLib makeScreen() {
@@ -434,6 +443,32 @@ public final class QolConfig {
                             .range(0, 15).step(1))
                     .build();
 
+            // Bush Protection
+            Option<Boolean> enableBushProtectionOpt = ConfigUtils.<Boolean>getGenericOption("enableBushProtection")
+                    .binding(defaults.enableBushProtection,
+                            () -> config.enableBushProtection,
+                            newVal -> config.enableBushProtection = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> needLeggingsOpt = ConfigUtils.<Boolean>getGenericOption("needLeggings")
+                    .binding(defaults.needLeggings,
+                            () -> config.needLeggings,
+                            newVal -> config.needLeggings = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> permanentVillagersProtectionOpt = ConfigUtils.<Boolean>getGenericOption("permanentVillagersProtection")
+                    .binding(defaults.permanentVillagersProtection,
+                            () -> config.permanentVillagersProtection,
+                            newVal -> config.permanentVillagersProtection = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> enableSlowerSpeedOpt = ConfigUtils.<Boolean>getGenericOption("enableSlowerSpeed")
+                    .binding(defaults.enableSlowerSpeed,
+                            () -> config.enableSlowerSpeed,
+                            newVal -> config.enableSlowerSpeed = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -535,6 +570,12 @@ public final class QolConfig {
                     .binding(defaults.enableStonecutterDamage,
                             () -> config.enableStonecutterDamage,
                             newVal -> config.enableStonecutterDamage = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> enableStickyPistonOpt = ConfigUtils.<Boolean>getGenericOption("enableStickyPiston")
+                    .binding(defaults.enableStickyPiston,
+                            () -> config.enableStickyPiston,
+                            newVal -> config.enableStickyPiston = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -650,7 +691,19 @@ public final class QolConfig {
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
-                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, BUSH_PROTECTION_GROUP))
+                                    .options(List.of(
+                                            enableBushProtectionOpt,
+                                            needLeggingsOpt,
+                                            permanentVillagersProtectionOpt,
+                                            enableSlowerSpeedOpt
+                                    ))
+                                    .build())
+                            .build())
+                    .category(ConfigCategory.createBuilder()
+                            .name(ConfigUtils.getCategoryName(OTHER_CATEGORY))
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(OTHER_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
                                             enablePaintingSwitchingOpt,
@@ -667,7 +720,8 @@ public final class QolConfig {
                                             enableSafeHarvestOpt,
                                             enableDoubleDoorOpt,
                                             enableBrokenLeadOpt,
-                                            enableStonecutterDamageOpt
+                                            enableStonecutterDamageOpt,
+                                            enableStickyPistonOpt
                                     ))
                                     .build())
                             .build())

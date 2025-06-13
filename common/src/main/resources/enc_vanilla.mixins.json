@@ -29,6 +29,7 @@
     "ShutupNameTag",
     "SmallFireballMixin",
     "StonecutterBlockMixin",
+    "SweetBerryBushBlockMixin",
     "ThrowablePotionItemMixin",
     "ThrownPotionMixin",
     "VillagerMixin",

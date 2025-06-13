@@ -14,6 +14,7 @@ public class EVEvents {
         InteractionEvent.RIGHT_CLICK_BLOCK.register(BellPhantomEvent::rightClickBlock);
         InteractionEvent.RIGHT_CLICK_BLOCK.register(RightClickHarvestEvent::rightClickBlock);
         InteractionEvent.RIGHT_CLICK_BLOCK.register(DoubleDoorEvent::rightClickBlock);
+        InteractionEvent.RIGHT_CLICK_BLOCK.register(StickyPistonEvent::rightClickBlock);
 
         InteractionEvent.LEFT_CLICK_BLOCK.register(SafeHarvestEvent::leftClickBlock);
 
