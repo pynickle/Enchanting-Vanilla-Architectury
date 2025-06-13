@@ -31,7 +31,7 @@ public class StickyPistonEvent {
                             .setValue(PistonBaseBlock.FACING, facing)
                             .setValue(PistonBaseBlock.EXTENDED, extended);
                     level.setBlockAndUpdate(blockPos, newState);
-                    itemStack.shrink(1);
+                    itemStack.consume(1, player);
                     player.swing(interactionHand, true);
                     return EventResult.interruptTrue();
                 }
@@ -43,7 +43,7 @@ public class StickyPistonEvent {
                     BlockState newState = blockState
                             .setValue(PistonHeadBlock.TYPE, PistonType.STICKY);
                     level.setBlockAndUpdate(blockPos, newState);
-                    itemStack.shrink(1);
+                    itemStack.consume(1, player);
                     player.swing(interactionHand, true);
                     return EventResult.interruptTrue();
                 }

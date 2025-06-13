@@ -21,9 +21,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.biome.Biome;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.StringJoiner;
 
 @Environment(EnvType.CLIENT)
 public class BiomeTitleEvent {
@@ -40,29 +40,27 @@ public class BiomeTitleEvent {
     private BiomeTitleEvent() {}
 
     public static void clientPre(Minecraft minecraft) {
+        var config = ClientConfig.HANDLER.instance();
         if (complete) {
             if (!fadingIn) {
                 if (displayTime > 0) {
                     displayTime--;
-                }
-                else if (fadeTimer > 0) {
+                } else if (fadeTimer > 0) {
                     fadeTimer--;
-                    alpha = (int) (255F / (float) ClientConfig.HANDLER.instance().fadeOutTime * fadeTimer);
-                }
-                else {
+                    alpha = (int) (255F / (float) config.fadeOutTime * fadeTimer);
+                } else {
                     if (cooldownTime > 0) {
                         cooldownTime--;
                     }
                 }
-            }
-            else {
-                if(fadeTimer < ClientConfig.HANDLER.instance().fadeInTime) {
+            } else {
+                if(fadeTimer < config.fadeInTime) {
                     fadeTimer++;
-                    alpha = (int) (255F / (float) ClientConfig.HANDLER.instance().fadeInTime * fadeTimer);
+                    alpha = (int) (255F / (float) config.fadeInTime * fadeTimer);
                 } else {
-                    fadeTimer = ClientConfig.HANDLER.instance().fadeOutTime;
+                    fadeTimer = config.fadeOutTime;
                     fadingIn = false;
-                    displayTime = (int) (ClientConfig.HANDLER.instance().displayDuration * 20);
+                    displayTime = (int) (config.displayDuration * 20);
                     alpha = 255;
                 }
             }
@@ -70,10 +68,12 @@ public class BiomeTitleEvent {
     }
 
     public static void renderBiomeInfo(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
-        if (complete && ClientConfig.HANDLER.instance().enableBiomeTitle) {
+        var config = ClientConfig.HANDLER.instance();
+
+        if (complete && config.enableBiomeTitle) {
             Minecraft mc = Minecraft.getInstance();
 
-            if (hideInF1(mc) || hideInF3(mc)) return;
+            if (hideInF1(mc, config) || hideInF3(mc, config)) return;
 
             Entity player = mc.getCameraEntity();
 
@@ -83,43 +83,35 @@ public class BiomeTitleEvent {
 
             if (mc.level != null && mc.level.isLoaded(pos)) {
                 Holder<Biome> biomeHolder = mc.level.getBiome(pos);
-
-                if (!biomeHolder.isBound())
-                    return;
+                if (!biomeHolder.isBound()) return;
 
                 Biome biome = biomeHolder.value();
-
                 boolean isPlayerUnderground = mc.level.dimensionType().hasSkyLight() && !mc.level.canSeeSky(pos);
-                boolean shouldUpdate = ClientConfig.HANDLER.instance().enableUndergroundUpdate || !isPlayerUnderground;
+                boolean shouldUpdate = config.enableUndergroundUpdate || !isPlayerUnderground;
 
                 if (previousBiome != biome) {
                     previousBiome = biome;
                     if(cooldownTime == 0 && shouldUpdate) {
                         biomeHolder.unwrapKey().ifPresent(key -> {
-                            cooldownTime = (int) (ClientConfig.HANDLER.instance().cooldownTime * 20);
+                            cooldownTime = (int) (config.cooldownTime * 20);
                             displayBiome = key;
-
                             displayTime = 0;
                             alpha = 0;
                             fadingIn = true;
                         });
                     }
                 }
-
                 if (alpha > 0) {
                     Font font = mc.font;
-                    float scale = (float) ClientConfig.HANDLER.instance().scale;
+                    float scale = (float) config.scale;
 
                     PoseStack pose = guiGraphics.pose();
                     pose.pushPose();
                     pose.translate(guiGraphics.guiWidth() / 2D, guiGraphics.guiHeight() / 2D, 0);
                     pose.scale(scale, scale, scale);
-
-                    Component biomeName = getBiomeName(displayBiome);
+                    Component biomeName = getBiomeName(displayBiome, config);
                     int textWidth = font.width(biomeName);
-
-                    int y = - font.wordWrapHeight(biomeName.getString(), 999) / 2 + ClientConfig.HANDLER.instance().yOffset;
-
+                    int y = - font.wordWrapHeight(biomeName.getString(), 999) / 2 + config.yOffset;
                     guiGraphics.drawString(font, biomeName, (-textWidth / 2), y, 0xffffff | (alpha << 24), true);
                     pose.popPose();
                 }
@@ -127,52 +119,44 @@ public class BiomeTitleEvent {
         }
     }
 
-    private static Component getBiomeName(ResourceKey<Biome> key) {
+    private static Component getBiomeName(ResourceKey<Biome> key, ClientConfig config) {
         ResourceLocation location = key.location();
         Component name = NAME_CACHE.computeIfAbsent(key, k -> {
             String translationKey = Util.makeDescriptionId("biome", location);
             MutableComponent biomeName = Component.translatable(translationKey);
-            MutableComponent displayName = biomeName;
-
             String displayedText = biomeName.getString();
 
             if (displayedText.equals(translationKey)) {
                 String biomePath = key.location().getPath();
                 String formattedBiomeName = snakeCaseToEnglish(biomePath);
-
-                displayName = Component.literal(formattedBiomeName);
+                return Component.literal(formattedBiomeName);
             }
-
-            return displayName;
+            return biomeName;
         });
 
         MutableComponent displayName = name.copy();
-        if (ClientConfig.HANDLER.instance().enableModName) {
-            String modName = getModName(location);
 
+        if (config.enableModName) {
+            String modName = getModName(location);
             if (modName != null)
-                displayName = displayName.append(Component.literal(String.format(" (%s)", modName)));
+                displayName = displayName.append(Component.literal(" (" + modName + ")"));
         }
+
         return displayName;
     }
 
-    private static boolean hideInF1(Minecraft mc) {
-        return mc.options.hideGui && ClientConfig.HANDLER.instance().hideInF1;
+    private static boolean hideInF1(Minecraft mc, ClientConfig config) {
+        return mc.options.hideGui && config.hideInF1;
     }
 
-    private static boolean hideInF3(Minecraft mc) {
-        return mc.getDebugOverlay().showDebugScreen() && ClientConfig.HANDLER.instance().hideInF3;
+    private static boolean hideInF3(Minecraft mc, ClientConfig config) {
+        return mc.getDebugOverlay().showDebugScreen() && config.hideInF3;
     }
 
     private static String snakeCaseToEnglish(String biomePath) {
-        String[] words = biomePath.split("_");
-        StringJoiner formatted = new StringJoiner(" ");
-
-        for (String word : words) {
-            formatted.add(StringUtils.capitalize(word));
-        }
-
-        return formatted.toString();
+        return Arrays.stream(biomePath.split("_"))
+                .map(StringUtils::capitalize)
+                .reduce((a, b) -> a + " " + b).orElse("");
     }
 
     private static String getModName(ResourceLocation location) {

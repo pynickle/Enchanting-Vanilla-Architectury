@@ -1,17 +1,23 @@
 package com.euphony.enc_vanilla.utils;
 
 public class ColorUtils {
+    public static final int COLOR_UNKNOWN = 6953882;
+    public static final int COLOR_GOOD = 5025616;
+    public static final int COLOR_NORMAL = 16771899;
+    public static final int COLOR_BAD = 16088064;
+    public static final int COLOR_VERY_BAD = 12000284;
+
     public static int getPingTextColor(int latency) {
         if(latency < 0) {
-            return 6953882;
+            return COLOR_UNKNOWN;
         } else if (latency < 150) {
-            return 5025616;
+            return COLOR_GOOD;
         } else if (latency < 300) {
-            return 16771899;
+            return COLOR_NORMAL;
         } else if(latency < 600) {
-            return 16088064;
+            return COLOR_BAD;
         } else {
-            return 12000284;
+            return COLOR_VERY_BAD;
         }
     }
 }

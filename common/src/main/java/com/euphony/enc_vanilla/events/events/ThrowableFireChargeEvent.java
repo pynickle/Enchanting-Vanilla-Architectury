@@ -8,7 +8,6 @@ import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.DispenserBlock;
 
 public class ThrowableFireChargeEvent {
     public static CompoundEventResult<ItemStack> rightClickItem(Player player, InteractionHand interactionHand) {
@@ -20,7 +19,7 @@ public class ThrowableFireChargeEvent {
             SmallFireball smallFireball = new SmallFireball(level, player, player.getLookAngle());
             smallFireball.setPos(player.getEyePosition());
             level.addFreshEntity(smallFireball);
-            itemStack.shrink(1);
+            itemStack.consume(1, player);
             return CompoundEventResult.interruptTrue(itemStack);
         }
         return CompoundEventResult.pass();

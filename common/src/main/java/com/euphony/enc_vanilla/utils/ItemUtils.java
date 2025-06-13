@@ -19,6 +19,6 @@ public final class ItemUtils {
     }
 
     public static MutableComponent createTooltip(String key, Object... args) {
-        return Component.translatable(key, args).withStyle(ChatFormatting.GRAY);
+        if (key == null) return Component.empty();
     }
 }

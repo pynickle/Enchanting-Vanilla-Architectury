@@ -21,15 +21,12 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.LevelStem;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static net.minecraft.util.Mth.EPSILON;
@@ -161,40 +158,25 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                         }
 
                         Registry<Biome> biomeRegistry = level.registryAccess().registryOrThrow(Registries.BIOME);
-
                         ResourceLocation levelDimension = level.dimension().location();
-                        List<Holder<Biome>> biomes = new ArrayList<>();
+                        List<Holder<Biome>> biomes;
                         if (levelDimension.getNamespace().equals("minecraft")) {
-                            TagKey<Biome> biomeTagKey;
-                            if (levelDimension.equals(BuiltinDimensionTypes.OVERWORLD.location())) {
-                                biomeTagKey = BiomeTags.IS_OVERWORLD;
-                            } else if (levelDimension.equals(BuiltinDimensionTypes.NETHER.location())) {
-                                biomeTagKey = BiomeTags.IS_NETHER;
-                            } else {
-                                biomeTagKey = BiomeTags.IS_END;
-                            }
-                            biomes = biomeRegistry.stream().map(biomeRegistry::wrapAsHolder).filter(biomeHolder ->
-                                            biomeHolder.is(biomeTagKey))
-                                    .filter(biomeHolder -> biomeTemperatureInRange(biomeHolder.value().getBaseTemperature(), min, max)).toList();
+                            TagKey<Biome> biomeTagKey =
+                                    levelDimension.equals(BuiltinDimensionTypes.OVERWORLD.location()) ? BiomeTags.IS_OVERWORLD :
+                                    levelDimension.equals(BuiltinDimensionTypes.NETHER.location()) ? BiomeTags.IS_NETHER :
+                                    BiomeTags.IS_END;
+                            biomes = biomeRegistry.stream()
+                                    .map(biomeRegistry::wrapAsHolder)
+                                    .filter(biomeHolder -> biomeHolder.is(biomeTagKey))
+                                    .filter(biomeHolder -> biomeTemperatureInRange(biomeHolder.value().getBaseTemperature(), min, max))
+                                    .toList();
                         } else {
                             ResourceKey<Level> dimensionKey = level.dimension();
-
-                            for (Holder.Reference<Biome> holder : biomeRegistry.holders().toList()) {
-                                Registry<LevelStem> dimensionRegistry = level.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
-                                ResourceKey<LevelStem> stemKey = ResourceKey.create(
-                                        Registries.LEVEL_STEM,
-                                        dimensionKey.location()
-                                );
-                                LevelStem stem = dimensionRegistry.get(stemKey);
-                                ChunkGenerator chunkGenerator = stem.generator();
-                                BiomeSource biomeSource = chunkGenerator.getBiomeSource();
-                                if (biomeSource.possibleBiomes().stream()
-                                        .anyMatch(holder1 -> holder1.is(holder.unwrapKey().orElse(null)))) {
-                                    if (biomeTemperatureInRange(holder.value().getBaseTemperature(), min, max)) {
-                                        biomes.add(holder);
-                                    }
-                                }
-                            }
+                            Registry<LevelStem> dimensionRegistry = level.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
+                            ResourceKey<LevelStem> stemKey = ResourceKey.create(Registries.LEVEL_STEM, dimensionKey.location());
+                            biomes = biomeRegistry.holders().filter(holder -> {
+                                return biomeTemperatureInRange(holder.value().getBaseTemperature(), min, max);
+                            }).map(holder -> (Holder<Biome>) holder).toList();
                         }
 
                         arg4.originalStack = input;
