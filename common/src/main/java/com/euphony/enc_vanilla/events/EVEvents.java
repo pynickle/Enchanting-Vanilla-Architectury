@@ -23,6 +23,7 @@ public class EVEvents {
         InteractionEvent.INTERACT_ENTITY.register(SwitchPaintingEvent::interactEntity);
 
         InteractionEvent.RIGHT_CLICK_ITEM.register(SpongePlaceEvent::rightClickItem);
+        InteractionEvent.RIGHT_CLICK_ITEM.register(ThrowableFireChargeEvent::rightClickItem);
 
         BlockEvent.BREAK.register(CakeDropEvent::blockBreak);
 

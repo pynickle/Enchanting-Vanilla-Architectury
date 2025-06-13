@@ -197,6 +197,8 @@
   "yacl3.config.enc_vanilla:config.enableStonecutterDamage.desc": "Players standing on the stonecutter will continue to take damage.",
   "yacl3.config.enc_vanilla:config.enableStickyPiston": "Enable Sticky Piston",
   "yacl3.config.enc_vanilla:config.enableStickyPiston.desc": "Right-click the piston with the slime ball to obtain sticky piston.",
+  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge": "Enable Throwable Fire Charge",
+  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "Fire charge can now be thrown directly with a right-click.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

@@ -246,5 +246,7 @@
   "yacl3.config.enc_vanilla:config.permanentVillagersProtection": "永久村民保护",
   "yacl3.config.enc_vanilla:config.permanentVillagersProtection.desc": "村民永远不会受到甜浆果丛的伤害。",
   "yacl3.config.enc_vanilla:config.enableSlowerSpeed": "启用减速",
-  "yacl3.config.enc_vanilla:config.enableSlowerSpeed.desc": "你仅仅免疫伤害，但仍然会移动得更慢。"
+  "yacl3.config.enc_vanilla:config.enableSlowerSpeed.desc": "你仅仅免疫伤害，但仍然会移动得更慢。",
+  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge": "启用可投掷火焰弹",
+  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "火焰弹现在可以直接右键投掷。"
 }

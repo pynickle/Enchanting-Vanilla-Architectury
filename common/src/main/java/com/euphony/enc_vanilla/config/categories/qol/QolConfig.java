@@ -160,6 +160,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableBrokenLead = true;
     @SerialEntry public boolean enableStonecutterDamage = true;
     @SerialEntry public boolean enableStickyPiston = true;
+    @SerialEntry public boolean enableThrowableFireCharge = true;
 
     @Environment(EnvType.CLIENT)
     public static YetAnotherConfigLib makeScreen() {
@@ -578,6 +579,12 @@ public final class QolConfig {
                             newVal -> config.enableStickyPiston = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
+            Option<Boolean> enableThrowableFireChargeOpt = ConfigUtils.<Boolean>getGenericOption("enableThrowableFireCharge")
+                    .binding(defaults.enableThrowableFireCharge,
+                            () -> config.enableThrowableFireCharge,
+                            newVal -> config.enableThrowableFireCharge = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
@@ -721,7 +728,8 @@ public final class QolConfig {
                                             enableDoubleDoorOpt,
                                             enableBrokenLeadOpt,
                                             enableStonecutterDamageOpt,
-                                            enableStickyPistonOpt
+                                            enableStickyPistonOpt,
+                                            enableThrowableFireChargeOpt
                                     ))
                                     .build())
                             .build())
