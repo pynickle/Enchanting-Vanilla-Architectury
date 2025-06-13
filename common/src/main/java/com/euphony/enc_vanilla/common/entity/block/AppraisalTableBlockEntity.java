@@ -38,6 +38,7 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
     protected final ContainerData dataAccess;
     int progress = 0;
     boolean isActive = false;
+    boolean isError = false;
     WeightedRandomSampler<Holder<Biome>> weightedRandomSampler;
     ItemStack originalStack = ItemStack.EMPTY;
 
@@ -54,6 +55,8 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                         return progress;
                     case 1:
                         return isActive ? 1 : 0;
+                    case 2:
+                        return isError ? 1 : 0;
                     default:
                         return 0;
                 }
@@ -63,12 +66,13 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                 switch (i) {
                     case 0 -> AppraisalTableBlockEntity.this.progress = j;
                     case 1 -> AppraisalTableBlockEntity.this.isActive = j != 0;
+                    case 2 -> AppraisalTableBlockEntity.this.isError = j != 0;
                 }
 
             }
 
             public int getCount() {
-                return 2;
+                return 3;
             }
         };
     }
@@ -115,6 +119,7 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
         super.saveAdditional(compoundTag, provider);
         compoundTag.putInt("Progress", this.progress);
         compoundTag.putBoolean("IsActive", this.isActive);
+        compoundTag.putBoolean("IsError", this.isError);
         ContainerHelper.saveAllItems(compoundTag, this.items, provider);
     }
 
@@ -125,6 +130,7 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
         ContainerHelper.loadAllItems(compoundTag, this.items, provider);
         this.progress = compoundTag.getInt("Progress");
         this.isActive = compoundTag.getBoolean("IsActive");
+        this.isError = compoundTag.getBoolean("IsError");
     }
 
     public static void serverTick(Level level, BlockPos blockPos, BlockState blockState, AppraisalTableBlockEntity arg4) {
@@ -142,7 +148,6 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                     ItemStack input = originalInput.copy();
 
                     if(!arg4.originalStack.is(input.getItem())) {
-                        level.players().getFirst().sendSystemMessage(Component.literal("1"));
                         float min, max;
                         if (input.is(EVItems.BIOME_CRYSTAL_ITEM.get())) {
                             min = 0.0f;
@@ -203,10 +208,14 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                     input.set(EVDataComponentTypes.TEMP_UNLOCKED.get(), false);
                     arg4.setItem(0, input);
 
-                    ItemStack input1 = input.copy();
-                    input1.set(EVDataComponentTypes.BIOME.get(), biome.unwrapKey().get());
+                    if(biome == null) {
+                        arg4.isError = true;
+                    } else {
+                        ItemStack input1 = input.copy();
+                        input1.set(EVDataComponentTypes.BIOME.get(), biome.unwrapKey().get());
 
-                    arg4.setItem(2, input1);
+                        arg4.setItem(2, input1);
+                    }
                     arg4.progress = 0;
                 }
             }

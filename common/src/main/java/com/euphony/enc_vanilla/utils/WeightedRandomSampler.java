@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class WeightedRandomSampler<K> {
@@ -26,7 +25,6 @@ public class WeightedRandomSampler<K> {
 
     public K sample() {
         if(probabilityMap.isEmpty()) {
-            Logger.getLogger("s").info("Probability map is empty");
             return null;
         }
         double total = this.probabilityMap.values().stream()

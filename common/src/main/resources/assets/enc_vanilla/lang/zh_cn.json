@@ -4,7 +4,7 @@
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
   "block.enc_vanilla.waterlogged_lily_pad": "睡莲",
-  "category.enc_vanilla.keymapping": "Enchanting Vanilla",
+  "category.enc_vanilla.keymapping": "原韵新生",
   "container.beehive.bees": "蜜蜂：%s/%s",
   "container.beehive.honey": "蜂蜜：%s/%s",
   "item.enc_vanilla.biome_crystal": "生物群系水晶",
@@ -21,9 +21,9 @@
   "key.enc_vanilla.safe_harvest": "切换安全收获",
   "message.enc_vanilla.key.safe_harvest.off": "安全收获关闭",
   "message.enc_vanilla.key.safe_harvest.on": "安全收获开启",
-  "message.enc_vanilla.safe_harvest.mod_name": "[Enchanting Vanilla]",
+  "message.enc_vanilla.safe_harvest.mod_name": "[原韵新生]",
   "message.enc_vanilla.safe_harvest.not_mature": " 作物还没到收割的时候！",
-  "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
+  "yacl3.config.enc_vanilla:config": "原韵新生",
   "yacl3.config.enc_vanilla:config.anvilRepairMaterial": "铁砧修复材料",
   "yacl3.config.enc_vanilla:config.anvilRepairMaterial.desc": "修理铁砧所需的材料",
   "yacl3.config.enc_vanilla:config.category.client": "客户端",
@@ -231,5 +231,8 @@
   "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel": "火把花阶段2光照等级",
   "yacl3.config.enc_vanilla:config.torchFlowerStage2LightLevel.desc": "火把花第二阶段的光照等级",
   "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel": "火把花盆栽光照等级",
-  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel.desc": "火把花盆栽的光照等级"
+  "yacl3.config.enc_vanilla:config.pottedTorchFlowerLightLevel.desc": "火把花盆栽的光照等级",
+  "message.enc_vanilla.sculk_compass.error_messages.1": "[BIOME MISSING]",
+  "message.enc_vanilla.sculk_compass.error_messages.2": "ERROR 0xBI0M404",
+  "message.enc_vanilla.sculk_compass.error_messages.3": "# DATA CORRUPT #"
 }

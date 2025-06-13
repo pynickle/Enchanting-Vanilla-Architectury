@@ -4,6 +4,7 @@ import com.euphony.enc_vanilla.screen.widget.RefreshImageButton;
 import com.euphony.enc_vanilla.utils.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.StringWidget;
@@ -15,6 +16,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Random;
+import java.util.logging.Logger;
 
 @Environment(EnvType.CLIENT)
 public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTableMenu> {
@@ -25,8 +27,12 @@ public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTable
     private static final ResourceLocation PROGRESS_SPRITE = Utils.prefix("container/progress");
     private static final ResourceLocation TEXTURE = Utils.prefix("textures/gui/container/appraisal_table.png");
 
+    private static final String ERROR_MESSAGE = "message.enc_vanilla.sculk_compass.error_messages.";
     private static final int UPDATE_INTERVAL = 3;
 
+    Random random = new Random();
+
+    private boolean isErrorMessage = false;
     private boolean isActive = false;
     public static String message = "";
     private int tickCounter = 0;
@@ -40,14 +46,14 @@ public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTable
     @Override
     protected void init() {
         super.init();
-        this.refreshImageButton = new RefreshImageButton( this.leftPos + 67, this.topPos + 50, 18, 18, REFRESH_SPRITES, (button) -> {
+        this.refreshImageButton = new RefreshImageButton( this.leftPos + 103, this.topPos + 11, 18, 18, REFRESH_SPRITES, (button) -> {
             this.minecraft.gameMode.handleInventoryButtonClick(this.menu.containerId, 0);
         });
         refreshImageButton.active = false;
         this.addRenderableWidget(
                 refreshImageButton
         );
-        glitchWidget = new StringWidget(this.leftPos + 96, this.topPos + 58, 30, 20, Component.literal(message), Minecraft.getInstance().font);
+        glitchWidget = new StringWidget(this.leftPos + 55, this.topPos + 58, 100, 20, Component.literal(message), Minecraft.getInstance().font);
         glitchWidget.alignLeft();
         glitchWidget.setColor(11184810);
         this.addRenderableWidget(glitchWidget);
@@ -77,11 +83,19 @@ public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTable
         if(this.menu.isInProgress()) {
             if (++tickCounter >= UPDATE_INTERVAL) {
                 regenerateText();
+                if(isErrorMessage) {
+                    isErrorMessage = false;
+                }
                 tickCounter = 0;
             }
         } else {
             if(!glitchWidget.getMessage().getString().isEmpty()) {
-                glitchWidget.setMessage(Component.literal(""));
+                if(!this.menu.getIsError()) {
+                    glitchWidget.setMessage(Component.literal(""));
+                } else if(!isErrorMessage) {
+                    glitchWidget.setMessage(Component.translatable(ERROR_MESSAGE + (random.nextInt(3) + 1)).withStyle(ChatFormatting.RED));
+                    isErrorMessage = true;
+                }
             }
         }
         if(this.menu.getIsActive() != isActive) {
@@ -93,7 +107,7 @@ public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTable
     private void regenerateText() {
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
-        int length = 5 + random.nextInt(10);
+        int length = 5 + random.nextInt(8);
 
         for (int i = 0; i < length; i++) {
             sb.append(GLITCH_CHARS.charAt(

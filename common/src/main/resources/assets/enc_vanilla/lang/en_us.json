@@ -37,6 +37,10 @@
 
   "death.attack.enc_vanilla.stonecutter": "%1$s cut itself to death with a stonecutter",
 
+  "message.enc_vanilla.sculk_compass.error_messages.1": "[BIOME MISSING]",
+  "message.enc_vanilla.sculk_compass.error_messages.2": "ERROR 0xBI0M404",
+  "message.enc_vanilla.sculk_compass.error_messages.3": "# DATA CORRUPT #",
+
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
   "yacl3.config.enc_vanilla:config.category.tools": "Tools",

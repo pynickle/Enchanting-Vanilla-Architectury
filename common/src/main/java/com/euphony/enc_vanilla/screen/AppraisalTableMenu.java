@@ -10,10 +10,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.SimpleContainerData;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -24,7 +21,7 @@ public class AppraisalTableMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public AppraisalTableMenu(int i, Inventory inventory) {
-        this(i, inventory, new SimpleContainer(3), new SimpleContainerData(2));
+        this(i, inventory, new SimpleContainer(3), new SimpleContainerData(3));
     }
 
     public AppraisalTableMenu(int i, Inventory inventory, Container container, ContainerData containerData) {
@@ -145,7 +142,7 @@ public class AppraisalTableMenu extends AbstractContainerMenu {
         return this.data.get(1) != 0;
     }
 
-    public void setIsActive(boolean isActive) {
-        this.data.set(1, isActive ? 1 : 0);
+    public boolean getIsError() {
+        return this.data.get(2) != 0;
     }
 }
