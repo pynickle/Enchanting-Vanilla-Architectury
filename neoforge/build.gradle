@@ -62,9 +62,9 @@ dependencies {
 
     modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
 
-    compileOnly("curse.maven:selene-499980:${selene_id}")
-    compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
-    compileOnly("curse.maven:carryon-274259:${carryon_id}")
+    // compileOnly("curse.maven:selene-499980:${selene_id}")
+    // compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
+    // compileOnly("curse.maven:carryon-274259:${carryon_id}")
 
     compileOnly("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
     compileOnly("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
