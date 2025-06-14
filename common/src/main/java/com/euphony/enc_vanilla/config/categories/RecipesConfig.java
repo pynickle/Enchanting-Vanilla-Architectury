@@ -48,7 +48,7 @@ public class RecipesConfig {
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
             // Other
-            Option<Boolean> enableMoreCompostableOpt = ConfigUtils.<Boolean>getGenericOption("enableMoreCompostable", "more_compostable")
+            Option<Boolean> enableMoreCompostableOpt = ConfigUtils.<Boolean>getGenericOption("enableMoreCompostable")
                     .binding(defaults.enableMoreCompostable,
                             () -> config.enableMoreCompostable,
                             newVal -> config.enableMoreCompostable = newVal)

@@ -166,7 +166,7 @@ public final class QolConfig {
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
             // Villager Attraction
-            Option<Boolean> enableVillagerAttractionOpt = ConfigUtils.<Boolean>getGenericOption("enableVillagerAttraction", "villager_attraction")
+            Option<Boolean> enableVillagerAttractionOpt = ConfigUtils.<Boolean>getGenericOption("enableVillagerAttraction")
                     .binding(defaults.enableVillagerAttraction,
                             () -> config.enableVillagerAttraction,
                             newVal -> config.enableVillagerAttraction = newVal)
@@ -181,7 +181,7 @@ public final class QolConfig {
                     .build();
 
             // Item Frame
-            Option<Boolean> enableInvisibleItemFrameOpt = ConfigUtils.<Boolean>getGenericOption("enableInvisibleItemFrame", "item_frame")
+            Option<Boolean> enableInvisibleItemFrameOpt = ConfigUtils.<Boolean>getGenericOption("enableInvisibleItemFrame")
                     .binding(defaults.enableInvisibleItemFrame,
                             () -> config.enableInvisibleItemFrame,
                             newVal -> config.enableInvisibleItemFrame = newVal)
@@ -189,7 +189,7 @@ public final class QolConfig {
                     .build();
 
             // Torch Hit
-            Option<Boolean> enableTorchHitOpt = ConfigUtils.<Boolean>getGenericOption("enableTorchHit", "torch_hit")
+            Option<Boolean> enableTorchHitOpt = ConfigUtils.<Boolean>getGenericOption("enableTorchHit")
                     .binding(defaults.enableTorchHit,
                             () -> config.enableTorchHit,
                             newVal -> config.enableTorchHit = newVal)
@@ -251,7 +251,7 @@ public final class QolConfig {
                     .build();
 
             // Water Conversion
-            Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
+            Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion")
                     .binding(defaults.enableWaterConversion,
                             () -> config.enableWaterConversion,
                             newVal -> config.enableWaterConversion = newVal)
@@ -298,7 +298,7 @@ public final class QolConfig {
                     .build();
 
             // Sponge Placing
-            Option<Boolean> enableSpongePlacingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacing", "sponge_placing")
+            Option<Boolean> enableSpongePlacingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacing")
                     .binding(defaults.enableSpongePlacing,
                             () -> config.enableSpongePlacing,
                             newVal -> config.enableSpongePlacing = newVal)
@@ -499,7 +499,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableShutupNameTagOpt = ConfigUtils.<Boolean>getGenericOption("enableShutupNameTag", "shutup_name_tag")
+            Option<Boolean> enableShutupNameTagOpt = ConfigUtils.<Boolean>getGenericOption("enableShutupNameTag")
                     .binding(defaults.enableShutupNameTag,
                             () -> config.enableShutupNameTag,
                             newVal -> config.enableShutupNameTag = newVal)
@@ -513,7 +513,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableCakeDropOpt = ConfigUtils.<Boolean>getGenericOption("enableCakeDrop", "cake_drop")
+            Option<Boolean> enableCakeDropOpt = ConfigUtils.<Boolean>getGenericOption("enableCakeDrop")
                     .binding(defaults.enableCakeDrop,
                             () -> config.enableCakeDrop,
                             newVal -> config.enableCakeDrop = newVal)

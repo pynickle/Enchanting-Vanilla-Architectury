@@ -65,7 +65,7 @@ public class ToolsConfig {
                     .build();
 
             // Other
-            Option<Boolean> enableSlimeChunkDetectingOpt = ConfigUtils.<Boolean>getGenericOption("enableSlimeChunkDetecting", "slime_chunk")
+            Option<Boolean> enableSlimeChunkDetectingOpt = ConfigUtils.<Boolean>getGenericOption("enableSlimeChunkDetecting")
                     .binding(defaults.enableSlimeChunkDetecting,
                             () -> config.enableSlimeChunkDetecting,
                             newVal -> config.enableSlimeChunkDetecting = newVal)
