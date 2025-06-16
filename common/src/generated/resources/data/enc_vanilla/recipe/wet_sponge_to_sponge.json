@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 600,
   "experience": 0.15,
-  "ingredient": {
-    "item": "minecraft:wet_sponge"
-  },
+  "ingredient": "minecraft:wet_sponge",
   "result": {
     "count": 1,
     "id": "minecraft:sponge"

@@ -2,19 +2,12 @@ package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import dev.architectury.event.EventResult;
-import dev.architectury.platform.Platform;
-import net.mehvahdjukaar.fastpaintings.PaintingBlockEntity;
-import net.minecraft.ResourceLocationException;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.PaintingVariantTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -22,9 +15,6 @@ import net.minecraft.world.entity.decoration.Painting;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 
@@ -58,7 +48,7 @@ public class SwitchPaintingEvent {
         if(entity.getType() == EntityType.PAINTING) {
             Painting painting = (Painting) entity;
             List<Holder<PaintingVariant>> list = new ArrayList<>();
-            level.registryAccess().registryOrThrow(Registries.PAINTING_VARIANT).getTagOrEmpty(PaintingVariantTags.PLACEABLE).forEach(list::add);
+            level.registryAccess().lookupOrThrow(Registries.PAINTING_VARIANT).getTagOrEmpty(PaintingVariantTags.PLACEABLE).forEach(list::add);
             if (!list.isEmpty()) {
                 list.removeIf(p_344343_ -> {
                     painting.setVariant(p_344343_);
@@ -79,7 +69,7 @@ public class SwitchPaintingEvent {
         }
         return EventResult.pass();
     }
-
+/*
     public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
         if (level.isClientSide || !Platform.isModLoaded("fastpaintings")) return EventResult.pass();
@@ -139,4 +129,6 @@ public class SwitchPaintingEvent {
         }
         return EventResult.pass();
     }
+
+ */
 }

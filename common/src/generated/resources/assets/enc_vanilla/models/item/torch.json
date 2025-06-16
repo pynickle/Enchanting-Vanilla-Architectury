@@ -1,3 +1,6 @@
 {
-  "parent": "enc_vanilla:block/torch"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "enc_vanilla:block/torch"
+  }
 }

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:amethyst_shard"
-    },
-    "I": {
-      "item": "minecraft:echo_shard"
-    },
-    "S": {
-      "item": "enc_vanilla:damaged_sculk_compass"
-    }
+    "A": "minecraft:amethyst_shard",
+    "I": "minecraft:echo_shard",
+    "S": "enc_vanilla:damaged_sculk_compass"
   },
   "pattern": [
     "IAI",

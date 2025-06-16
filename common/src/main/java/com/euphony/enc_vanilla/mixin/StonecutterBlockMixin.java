@@ -26,8 +26,8 @@ public abstract class StonecutterBlockMixin extends Block {
         if(!QolConfig.HANDLER.instance().enableStonecutterDamage) return;
 
         if (entity instanceof LivingEntity) {
-            Registry<DamageType> damageTypes = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);
-            entity.hurt(new DamageSource(damageTypes.getHolderOrThrow(EVDamageTypes.STONECUTTER_DAMAGE)), 1.0F);
+            Registry<DamageType> damageTypes = level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE);
+            entity.hurt(new DamageSource(damageTypes.getOrThrow(EVDamageTypes.STONECUTTER_DAMAGE)), 1.0F);
         }
     }
 }

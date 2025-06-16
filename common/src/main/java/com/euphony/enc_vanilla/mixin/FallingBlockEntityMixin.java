@@ -23,7 +23,7 @@ abstract class FallingBlockEntityMixin extends Entity {
     private BlockState blockState;
 
     @Unique
-    private float enc_vanilla$fallDistance;
+    private double enc_vanilla$fallDistance;
 
     public FallingBlockEntityMixin(EntityType<?> entityType, Level level) {
         super(entityType, level);

@@ -2,9 +2,8 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.item.ThrowablePotionItem;
@@ -24,9 +23,9 @@ public abstract class ThrowablePotionItemMixin extends PotionItem implements Pro
             method = "use",
             at = @At("RETURN")
     )
-    private void useInject(Level level, Player player, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
+    private void useInject(Level level, Player player, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> cir) {
         if (!level.isClientSide) {
-            player.getCooldowns().addCooldown(this, QolConfig.HANDLER.instance().throwablePotionCooldown);
+            player.getCooldowns().addCooldown(player.getItemInHand(interactionHand), QolConfig.HANDLER.instance().throwablePotionCooldown);
         }
     }
 }

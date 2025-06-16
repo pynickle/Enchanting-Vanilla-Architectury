@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -17,11 +18,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class StopGrowingEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
-        if(!QolConfig.HANDLER.instance().enableStopGrowing) return EventResult.pass();
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+        if(!QolConfig.HANDLER.instance().enableStopGrowing) return InteractionResult.PASS;
 
         Level level = player.level();
-        if (level.isClientSide) return EventResult.pass();
+        if (level.isClientSide) return InteractionResult.PASS;
 
         BlockState state = level.getBlockState(blockPos);
         ItemStack stack = player.getItemInHand(interactionHand);
@@ -39,14 +40,14 @@ public class StopGrowingEvent {
                     stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(interactionHand));
                     player.swing(interactionHand, true);
 
-                    return EventResult.interruptTrue();
+                    return InteractionResult.SUCCESS;
                 }
             } else if(state.is(Blocks.BAMBOO_SAPLING)) {
                 level.setBlockAndUpdate(blockPos, EVBlocks.CUT_BAMBOO_SAPLING.get().defaultBlockState());
                 stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(interactionHand));
                 player.swing(interactionHand, true);
 
-                return EventResult.interruptTrue();
+                return InteractionResult.SUCCESS;
             }
         } else if(stack.is(ItemTags.AXES) ) {
             if(state.is(Blocks.BAMBOO)) {
@@ -63,10 +64,10 @@ public class StopGrowingEvent {
                     stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(interactionHand));
                     player.swing(interactionHand, true);
 
-                    return EventResult.interruptTrue();
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,18 +18,18 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AnvilRepairEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
-        if(!QolConfig.HANDLER.instance().enableAnvilRepair) return EventResult.pass();
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+        if(!QolConfig.HANDLER.instance().enableAnvilRepair) return InteractionResult.PASS;
 
-        if(!player.isShiftKeyDown()) return EventResult.pass();
+        if(!player.isShiftKeyDown()) return InteractionResult.PASS;
 
         Level level = player.level();
-        if (level.isClientSide) return EventResult.pass();
+        if (level.isClientSide) return InteractionResult.PASS;
 
         ItemStack itemStack = player.getItemInHand(interactionHand);
         Item item = itemStack.getItem();
 
-        if (!item.equals(QolConfig.HANDLER.instance().anvilRepairMaterial)) return EventResult.pass();
+        if (!item.equals(QolConfig.HANDLER.instance().anvilRepairMaterial)) return InteractionResult.PASS;
 
         BlockState state = level.getBlockState(blockPos);
         Block block = state.getBlock();
@@ -39,7 +40,7 @@ public class AnvilRepairEvent {
         } else if (block.equals(Blocks.DAMAGED_ANVIL)) {
             newState = Blocks.CHIPPED_ANVIL.defaultBlockState();
         } else {
-            return EventResult.pass();
+            return InteractionResult.PASS;
         }
 
         Direction facing = state.getValue(AnvilBlock.FACING);
@@ -47,6 +48,6 @@ public class AnvilRepairEvent {
 
         itemStack.consume(1, player);
         level.playSound(null, blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.ANVIL_PLACE, SoundSource.BLOCKS, 0.5F, 1.0F);
-        return EventResult.interruptTrue();
+        return InteractionResult.SUCCESS;
     }
 }

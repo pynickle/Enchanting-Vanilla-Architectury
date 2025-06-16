@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -20,20 +21,20 @@ import net.minecraft.world.level.block.NetherWartBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class RightClickHarvestEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
 
-        if(level.isClientSide()) return EventResult.pass();
+        if(level.isClientSide()) return InteractionResult.PASS;
 
-        if (player.isSpectator() || player.isCrouching() || interactionHand != InteractionHand.MAIN_HAND) return EventResult.pass();
+        if (player.isSpectator() || player.isCrouching() || interactionHand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
 
         if (QolConfig.HANDLER.instance().hungerCost > 0 && !player.getAbilities().instabuild && player.getFoodData().getFoodLevel() <= 0) {
-            return EventResult.pass();
+            return InteractionResult.PASS;
         }
 
         ItemStack stack = player.getItemInHand(interactionHand);
 
-        if (QolConfig.HANDLER.instance().requiredHoe && !stack.is(ItemTags.HOES)) return EventResult.pass();
+        if (QolConfig.HANDLER.instance().requiredHoe && !stack.is(ItemTags.HOES)) return InteractionResult.PASS;
 
         BlockState state = level.getBlockState(blockPos);
         Block block = state.getBlock();
@@ -52,11 +53,11 @@ public class RightClickHarvestEvent {
                     player.playSound(state.getBlock() instanceof NetherWartBlock ? SoundEvents.NETHER_WART_PLANTED : SoundEvents.CROP_PLANTED, 1.0f, 1.0f);
                 }
 
-                return EventResult.interruptTrue();
+                return InteractionResult.SUCCESS;
             }
         }
 
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 
     public static boolean isMature(BlockState state) {
@@ -84,7 +85,7 @@ public class RightClickHarvestEvent {
     }
 
     private static void dropStacks(BlockState state, ServerLevel level, BlockPos pos, Entity entity, ItemStack itemStack) {
-        Item replant = state.getBlock().getCloneItemStack(level, pos, state).getItem();
+        Item replant = state.getBlock().asItem();
 
         Block.getDrops(state, level, pos, null, entity, itemStack).forEach(stack -> {
             if (stack.getItem() == replant) {

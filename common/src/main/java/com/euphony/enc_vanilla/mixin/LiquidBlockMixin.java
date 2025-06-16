@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
@@ -22,11 +23,13 @@ public abstract class LiquidBlockMixin extends Block implements BucketPickup {
     }
 
     @Inject(method = "pickupBlock", at = @At("HEAD"), cancellable = true)
-    public void pickupBlock(Player player, LevelAccessor level, BlockPos pos, BlockState state, CallbackInfoReturnable<ItemStack> cir) {
-        if(state.is(Blocks.LAVA)
-                && QolConfig.HANDLER.instance().enableSafeLavaBucket
-                && !player.isShiftKeyDown()) {
-            cir.setReturnValue(ItemStack.EMPTY);
+    public void pickupBlock(LivingEntity livingEntity, LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, CallbackInfoReturnable<ItemStack> cir) {
+        if(livingEntity instanceof Player player) {
+            if (blockState.is(Blocks.LAVA)
+                    && QolConfig.HANDLER.instance().enableSafeLavaBucket
+                    && !player.isShiftKeyDown()) {
+                cir.setReturnValue(ItemStack.EMPTY);
+            }
         }
     }
 }

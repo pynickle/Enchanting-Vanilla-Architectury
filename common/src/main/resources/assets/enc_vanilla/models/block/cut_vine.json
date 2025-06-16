@@ -6,7 +6,8 @@
     "vine": "enc_vanilla:block/cut_vine"
   },
   "elements": [
-    {   "from": [ 0, 0, 0.8 ],
+    {
+      "from": [ 0, 0, 0.8 ],
       "to": [ 16, 16, 0.8 ],
       "shade": false,
       "faces": {

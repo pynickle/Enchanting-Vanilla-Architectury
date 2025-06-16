@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.GameType;
@@ -28,12 +28,12 @@ public abstract class WaterlilyBlockMixin extends Block {
     }
 
     @Override
-    protected @NotNull ItemInteractionResult useItemOn(ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
         Item item = stack.getItem();
-        if(level.isClientSide) return ItemInteractionResult.CONSUME;
+        if(level.isClientSide) return InteractionResult.CONSUME;
 
         if(!enc_vanilla$canPlaceBlock(player, pos, stack) || !QolConfig.HANDLER.instance().enableBlocksOnLilyPad) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.PASS;
         }
         if (!stack.isEmpty() && !(item instanceof PlaceOnWaterBlockItem) && !(stack.getItem() instanceof BoneMealItem)) {
             BlockPos below = pos.below();
@@ -43,7 +43,7 @@ public abstract class WaterlilyBlockMixin extends Block {
                 level.scheduleTick(below, EVBlocks.WATERLOGGED_LILY_PAD.get(), 1);
             }
         }
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.PASS;
     }
 
     @Unique

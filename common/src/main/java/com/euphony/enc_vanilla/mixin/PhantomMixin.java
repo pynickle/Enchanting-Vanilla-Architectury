@@ -35,7 +35,7 @@ public abstract class PhantomMixin extends FlyingMob implements Enemy, IPhantom 
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
     public void readAdditionalSaveDataInject(CompoundTag compoundTag, CallbackInfo ci) {
-        this.enc_vanilla$setBellTime(compoundTag.getInt("BellTime"));
+        this.enc_vanilla$setBellTime(compoundTag.getInt("BellTime").get());
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))

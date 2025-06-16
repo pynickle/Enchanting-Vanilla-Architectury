@@ -11,5 +11,5 @@ import net.minecraft.world.level.Level;
 public interface AnvilFallOnLandCallback {
     Event<AnvilFallOnLandCallback> EVENT = EventFactory.createEventResult(AnvilFallOnLandCallback.class);
 
-    EventResult anvilFallOnLand(Level level, BlockPos pos, FallingBlockEntity entity, float fallDistance);
+    EventResult anvilFallOnLand(Level level, BlockPos pos, FallingBlockEntity entity, double fallDistance);
 }

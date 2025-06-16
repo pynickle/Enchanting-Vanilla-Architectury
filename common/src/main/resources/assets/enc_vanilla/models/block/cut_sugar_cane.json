@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/tinted_cross",
-  "render_type": "cutout",
-  "textures": {
-    "cross": "enc_vanilla:block/cut_sugar_cane"
-  }
-}

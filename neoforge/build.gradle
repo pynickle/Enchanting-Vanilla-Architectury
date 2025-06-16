@@ -12,7 +12,7 @@ loom {
 
     runs {
         data {
-            data()
+            clientData()
             programArgs "--all", "--mod", "enc_vanilla"
             programArgs "--output", project(':common').file('src/generated/resources').getAbsolutePath()
             programArgs "--existing", project(':common').file('src/main/resources').getAbsolutePath()
@@ -60,7 +60,9 @@ dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
-    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
+    implementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge"){
+        exclude group: "net.neoforged.fancymodloader", module: "loader"
+    }
 
     // compileOnly("curse.maven:selene-499980:${selene_id}")
     // compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
@@ -88,6 +90,7 @@ processResources {
 }
 
 shadowJar {
+    exclude "architectury.common.json"
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = 'dev-shadow'
 }

@@ -5,7 +5,6 @@ import com.euphony.enc_vanilla.common.init.EVBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -65,6 +64,7 @@ public class AppraisalTableBlock extends BaseEntityBlock {
             return InteractionResult.CONSUME;
         }
     }
+    /*
 
     @Override
     protected void onRemove(BlockState arg, Level level, BlockPos arg3, BlockState arg4, boolean bl) {
@@ -84,6 +84,8 @@ public class AppraisalTableBlock extends BaseEntityBlock {
 
         }
     }
+
+     */
 
     public void drop(Level level, BlockPos arg3, AppraisalTableBlockEntity blockEntity, int index) {
         Containers.dropItemStack(level, arg3.getX(), arg3.getY(), arg3.getZ(), blockEntity.getItem(index));

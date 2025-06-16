@@ -27,7 +27,7 @@ public class BeeInfoEvent {
             DataComponentMap dataComponents = stack.getComponents();
             BlockItemStateProperties blockItemStateProperties = dataComponents.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY);
             int honeyLevel = Objects.requireNonNullElse(blockItemStateProperties.get(BeehiveBlock.HONEY_LEVEL), 0);
-            int bee = dataComponents.getOrDefault(DataComponents.BEES, List.of()).size();
+            int bee = dataComponents.get(DataComponents.BEES).bees().size();
             components.add(createTooltip("container.beehive.bees", bee, 3));
             components.add(createTooltip("container.beehive.honey", honeyLevel, 5));
         }

@@ -2,7 +2,9 @@ package com.euphony.enc_vanilla.common.entity;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,7 +38,7 @@ public class DoubleHandedTemptGoal extends Goal {
         this.offHandItems = offHandItems;
         this.canScare = canScare;
         this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
-        this.targetingConditions = TEMP_TARGETING.copy().selector(this::shouldFollow);
+        this.targetingConditions = TEMP_TARGETING.copy().selector((livingEntity, serverLevel) -> this.shouldFollow(livingEntity));
     }
 
     public boolean canUse() {
@@ -44,7 +46,7 @@ public class DoubleHandedTemptGoal extends Goal {
             --this.calmDown;
             return false;
         } else {
-            this.player = this.mob.level().getNearestPlayer(this.targetingConditions, this.mob);
+            this.player = getServerLevel(this.mob).getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(Attributes.TEMPT_RANGE)), this.mob);
             return this.player != null;
         }
     }
@@ -102,10 +104,6 @@ public class DoubleHandedTemptGoal extends Goal {
             this.mob.getNavigation().moveTo(this.player, this.speedModifier);
         }
 
-    }
-
-    public boolean isRunning() {
-        return this.isRunning;
     }
 }
 

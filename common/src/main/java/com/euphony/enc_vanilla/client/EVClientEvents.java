@@ -18,7 +18,6 @@ public class EVClientEvents {
         ClientChatEvent.RECEIVED.register(BeautifiedChatEvent::chatReceived);
 
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(BiomeTitleEvent::clientLevelLoad);
-        ClientLifecycleEvent.CLIENT_SETUP.register(ItemPropertiesEvent::clientSetup);
         ClientLifecycleEvent.CLIENT_SETUP.register(RegisterColorEvent::registerColor);
         ClientLifecycleEvent.CLIENT_SETUP.register(CompostEvent::registerCompostable);
         ClientLifecycleEvent.CLIENT_SETUP.register(RenderTypeEvent::registerRenderType);

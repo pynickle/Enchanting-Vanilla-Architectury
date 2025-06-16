@@ -8,6 +8,7 @@ import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -19,16 +20,16 @@ import net.minecraft.world.phys.AABB;
 import java.util.List;
 
 public class BellPhantomEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
-        if(level.isClientSide || !QolConfig.HANDLER.instance().enableBellPhantom) return EventResult.pass();
+        if(level.isClientSide || !QolConfig.HANDLER.instance().enableBellPhantom) return InteractionResult.PASS;
 
         BlockState state = level.getBlockState(blockPos);
         if(state.is(Blocks.BELL)) {
             BellBlock bell = (BellBlock) state.getBlock();
             if(!((BellBlockInvoker) bell).invokeIsProperHit(state, direction,
                     HitUtils.getPlayerBlockHitResult(level, player).getLocation().y - blockPos.getY()))
-                return EventResult.pass();
+                return InteractionResult.PASS;
 
             int particleTicks = (int) (QolConfig.HANDLER.instance().particleDuration * 20);
             List<Phantom> phantoms = level.getEntitiesOfClass(Phantom.class, new AABB(blockPos).inflate(24));
@@ -37,6 +38,6 @@ public class BellPhantomEvent {
                 ((IPhantom) phantom).enc_vanilla$setBellTime(particleTicks * 2);
             });
         }
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 }

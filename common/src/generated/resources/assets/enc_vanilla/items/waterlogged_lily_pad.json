@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "enc_vanilla:item/waterlogged_lily_pad",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -9321636
+      }
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -13,9 +14,9 @@ import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BiomeCrystalEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
-        if (level.isClientSide) return EventResult.pass();
+        if (level.isClientSide) return InteractionResult.PASS;
 
         BlockState blockState = level.getBlockState(blockPos);
         ItemStack itemStack = player.getItemInHand(interactionHand);
@@ -28,9 +29,9 @@ public class BiomeCrystalEvent {
             } else {
                 player.addItem(EVItems.BIOME_CRYSTAL_ITEM.get().getDefaultInstance());
             }
-            return EventResult.interruptTrue();
+            return InteractionResult.SUCCESS;
         }
 
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 }

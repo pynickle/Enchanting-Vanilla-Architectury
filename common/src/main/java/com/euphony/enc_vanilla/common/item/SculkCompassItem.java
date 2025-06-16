@@ -17,12 +17,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -40,9 +39,9 @@ public class SculkCompassItem extends Item {
 
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
+    public @NotNull InteractionResult use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if(!ToolsConfig.HANDLER.instance().enableSculkCompass)
-            return new InteractionResultHolder<>(InteractionResult.PASS, player.getItemInHand(hand));
+            return InteractionResult.PASS;
 
         if(!level.isClientSide()) {
             if(hand == InteractionHand.MAIN_HAND && player.getMainHandItem().is(EVItems.SCULK_COMPASS_ITEM.get())) {
@@ -56,7 +55,7 @@ public class SculkCompassItem extends Item {
             }
         }
 
-        return new InteractionResultHolder<>(InteractionResult.PASS, player.getItemInHand(hand));
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -66,7 +65,7 @@ public class SculkCompassItem extends Item {
                 level.explode(player, Explosion.getDefaultDamageSource(level, player), null,
                         player.getX(), player.getY(), player.getZ(), 3.0F, false,
                         Level.ExplosionInteraction.TRIGGER, ParticleTypes.SONIC_BOOM, ParticleTypes.SONIC_BOOM,
-                        Holder.direct(SoundEvent.createVariableRangeEvent(SoundEvents.WARDEN_SONIC_BOOM.getLocation())));
+                        Holder.direct(SoundEvent.createVariableRangeEvent(SoundEvents.WARDEN_SONIC_BOOM.location())));
                 player.hurt(player.damageSources().sonicBoom(player), 10.0F);
                 player.getOffhandItem().consume(1, player);
                 stack = new ItemStack(EVItems.DAMAGED_SCULK_COMPASS_ITEM.get());
@@ -130,8 +129,9 @@ public class SculkCompassItem extends Item {
         return USE_DURATION;
     }
 
+
     @Override
-    public @NotNull UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.BOW;
+    public ItemUseAnimation getUseAnimation(ItemStack itemStack) {
+        return ItemUseAnimation.BOW;
     }
 }

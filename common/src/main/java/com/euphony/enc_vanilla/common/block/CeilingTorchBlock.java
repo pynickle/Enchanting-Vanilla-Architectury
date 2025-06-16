@@ -8,23 +8,26 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class CeilingTorchBlock extends TorchBlock {
     public static final VoxelShape CEILING_SHAPE = Block.box(6.0D, 6.0D, 6.0D, 10.0D, 16.0D, 10.0D);
     private final Block originalBlock;
 
     public CeilingTorchBlock(BlockBehaviour.Properties properties, SimpleParticleType particle, Block originalBlock) {
-        super(particle, properties.dropsLike(originalBlock));
+        super(particle, properties);
 
         this.originalBlock = originalBlock;
     }
@@ -35,8 +38,13 @@ public class CeilingTorchBlock extends TorchBlock {
     }
 
     @Override
-    public @NotNull BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
-        return facing == Direction.UP && !canSurvive(state, level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+    protected BlockState updateShape(BlockState blockState, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction direction, BlockPos facingPos, BlockState blockState2, RandomSource randomSource) {
+        return direction == Direction.UP && !canSurvive(blockState, levelReader, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(blockState, levelReader, scheduledTickAccess, currentPos, direction, facingPos, blockState2, randomSource);
+    }
+
+    @Override
+    protected List<ItemStack> getDrops(BlockState blockState, LootParams.Builder builder) {
+        return List.of(new ItemStack(originalBlock));
     }
 
     @Override
@@ -55,7 +63,7 @@ public class CeilingTorchBlock extends TorchBlock {
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
+    protected ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean bl) {
         return new ItemStack(originalBlock);
     }
 }

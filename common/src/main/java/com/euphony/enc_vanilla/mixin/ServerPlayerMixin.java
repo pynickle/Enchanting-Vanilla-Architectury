@@ -3,6 +3,7 @@ package com.euphony.enc_vanilla.mixin;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Unit;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -24,6 +26,8 @@ import java.util.Optional;
 
 @Mixin({ServerPlayer.class})
 public abstract class ServerPlayerMixin extends Entity {
+    @Shadow public abstract ServerLevel serverLevel();
+
     public ServerPlayerMixin(EntityType<?> type, Level level) {
         super(type, level);
     }
@@ -38,7 +42,7 @@ public abstract class ServerPlayerMixin extends Entity {
 
             int duration = (int) (QolConfig.HANDLER.instance().highlightDuration * 20);
 
-            for(Monster entity : this.level().getEntitiesOfClass(Monster.class, new AABB(vec3.x - (double)8.0F, vec3.y - (double)5.0F, vec3.z - (double)8.0F, vec3.x + (double)8.0F, vec3.y + (double)5.0F, vec3.z + (double)8.0F), (hostileEntity) -> hostileEntity.isPreventingPlayerRest((Player)(Object) this))) {
+            for(Monster entity : this.level().getEntitiesOfClass(Monster.class, new AABB(vec3.x - (double)8.0F, vec3.y - (double)5.0F, vec3.z - (double)8.0F, vec3.x + (double)8.0F, vec3.y + (double)5.0F, vec3.z + (double)8.0F), (hostileEntity) -> hostileEntity.isPreventingPlayerRest(this.serverLevel(), (Player)(Object) this))) {
                 entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, duration, 1, false, false));
             }
         }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CompressedSlimeBlockEvent implements AnvilFallOnLandCallback {
-    public EventResult anvilFallOnLand(Level level, BlockPos pos, FallingBlockEntity entity, float fallDistance) {
+    public EventResult anvilFallOnLand(Level level, BlockPos pos, FallingBlockEntity entity, double fallDistance) {
         if(level.isClientSide()) return EventResult.pass();
 
         final BlockPos hitBlockPos = pos.below();

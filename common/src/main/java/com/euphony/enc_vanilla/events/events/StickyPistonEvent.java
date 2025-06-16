@@ -5,6 +5,7 @@ import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -16,9 +17,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.PistonType;
 
 public class StickyPistonEvent {
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
-        if(level.isClientSide || !QolConfig.HANDLER.instance().enableStickyPiston) return EventResult.pass();
+        if(level.isClientSide || !QolConfig.HANDLER.instance().enableStickyPiston) return InteractionResult.PASS;
 
         BlockState blockState = level.getBlockState(blockPos);
         ItemStack itemStack = player.getItemInHand(interactionHand);
@@ -33,7 +34,7 @@ public class StickyPistonEvent {
                     level.setBlockAndUpdate(blockPos, newState);
                     itemStack.consume(1, player);
                     player.swing(interactionHand, true);
-                    return EventResult.interruptTrue();
+                    return InteractionResult.SUCCESS;
                 }
             }
             if(blockState.is(Blocks.PISTON_HEAD)) {
@@ -45,11 +46,11 @@ public class StickyPistonEvent {
                     level.setBlockAndUpdate(blockPos, newState);
                     itemStack.consume(1, player);
                     player.swing(interactionHand, true);
-                    return EventResult.interruptTrue();
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
 
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 }

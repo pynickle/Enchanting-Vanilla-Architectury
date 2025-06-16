@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "tag": "minecraft:logs"
-    },
-    "I": {
-      "item": "minecraft:echo_shard"
-    },
-    "S": {
-      "item": "minecraft:diamond"
-    }
+    "A": "#minecraft:logs",
+    "I": "minecraft:echo_shard",
+    "S": "minecraft:diamond"
   },
   "pattern": [
     "I I",

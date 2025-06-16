@@ -8,6 +8,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 
+import java.awt.*;
+
 @Environment(EnvType.CLIENT)
 public class RegisterColorEvent {
     public static void registerColor(Minecraft minecraft) {
@@ -21,7 +23,7 @@ public class RegisterColorEvent {
                 EVBlocks.WATERLOGGED_LILY_PAD.get());
         ColorHandlerRegistry.registerBlockColors(
                 (state, level, pos, tintIndex) ->
-                        level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor(),
+                        level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.FOLIAGE_DEFAULT,
                 EVBlocks.CUT_VINE.get()
         );
         ColorHandlerRegistry.registerBlockColors(
@@ -31,9 +33,15 @@ public class RegisterColorEvent {
     }
 
     public static void registerItemColor() {
+        /*
         ColorHandlerRegistry.registerItemColors(
-                (p_92687_, p_92688_) -> FoliageColor.getDefaultColor(),
+                EVBlocks.WATERLOGGED_LILY_PAD.get()
+        );
+        ColorHandlerRegistry.registerItemColors(
+                (p_92687_, p_92688_) -> FoliageColor.FOLIAGE_DEFAULT,
                 EVBlocks.CUT_VINE.get()
         );
+
+         */
     }
 }

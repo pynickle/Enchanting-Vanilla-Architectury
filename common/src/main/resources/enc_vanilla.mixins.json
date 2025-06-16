@@ -31,7 +31,7 @@
     "StonecutterBlockMixin",
     "SweetBerryBushBlockMixin",
     "ThrowablePotionItemMixin",
-    "ThrownPotionMixin",
+    "ThrownSplashPotionMixin",
     "VillagerMixin",
     "WaterlilyBlockMixin",
     "invoker.BellBlockInvoker"

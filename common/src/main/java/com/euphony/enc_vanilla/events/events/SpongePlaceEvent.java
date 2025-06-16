@@ -16,10 +16,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class SpongePlaceEvent {
-    public static CompoundEventResult<ItemStack> rightClickItem(Player player, InteractionHand interactionHand) {
+    public static InteractionResult rightClickItem(Player player, InteractionHand interactionHand) {
         boolean shouldPlace = !QolConfig.HANDLER.instance().enableSpongePlacingSneaking || player.isShiftKeyDown();
 
-        if(!QolConfig.HANDLER.instance().enableSpongePlacing || !shouldPlace) return CompoundEventResult.pass();
+        if(!QolConfig.HANDLER.instance().enableSpongePlacing || !shouldPlace) return InteractionResult.PASS;
 
         ItemStack stack = player.getItemInHand(interactionHand);
         if(stack.is(Items.SPONGE)) {
@@ -32,11 +32,11 @@ public class SpongePlaceEvent {
                 BlockHitResult blockHitResult1 = blockHitResult.withPosition(pos);
                 InteractionResult result = Items.SPONGE.useOn(new UseOnContext(player, interactionHand, blockHitResult1));
                 if(result != InteractionResult.PASS) {
-                    return CompoundEventResult.interruptTrue(stack);
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
 
-        return CompoundEventResult.pass();
+        return InteractionResult.PASS;
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "enc_vanilla:block/cut_sugar_cane"
+  }
+}

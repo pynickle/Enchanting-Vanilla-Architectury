@@ -14,10 +14,11 @@ public class CompressedSlimeBlock extends SlimeBlock {
         super(properties);
     }
 
+
     @Override
-    public void updateEntityAfterFallOn(BlockGetter level, Entity entity) {
+    public void updateEntityMovementAfterFallOn(BlockGetter blockGetter, Entity entity) {
         if (entity.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(level, entity);
+            entity.setDeltaMovement(entity.getDeltaMovement().multiply(1.0F, 0.0F, 1.0F));
         } else {
             this.bounceUp(entity);
         }

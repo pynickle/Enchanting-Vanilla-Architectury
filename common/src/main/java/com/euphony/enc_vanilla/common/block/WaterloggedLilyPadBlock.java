@@ -5,12 +5,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -23,6 +21,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -39,7 +38,7 @@ public class WaterloggedLilyPadBlock extends WaterlilyBlock implements SimpleWat
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public WaterloggedLilyPadBlock(Properties properties) {
-        super(properties);
+        super(properties.overrideDescription(Blocks.LILY_PAD.getDescriptionId()));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, true));
     }
 
@@ -80,27 +79,29 @@ public class WaterloggedLilyPadBlock extends WaterlilyBlock implements SimpleWat
     }
 
     @Override
-    public @NotNull BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-        worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
-        return stateIn;
+    protected BlockState updateShape(BlockState blockState, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction direction, BlockPos facingPos, BlockState blockState2, RandomSource randomSource) {
+        if (blockState.getValue(WATERLOGGED)) {
+            scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelReader));
+        }
+
+        return blockState;
     }
 
     @Override
     public void tick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        if (tryConvertToVanilla(state, serverLevel, pos)) {
+        if (tryConvertToVanilla(serverLevel, pos)) {
             super.tick(state, serverLevel, pos, random);
         }
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
-        super.neighborChanged(state, world, pos, neighborBlock, fromPos, moving);
-        if (pos.above().equals(fromPos)) {
-            tryConvertToVanilla(state, world, pos);
+    protected void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, @Nullable Orientation orientation, boolean bl) {
+        super.neighborChanged(blockState, level, blockPos, block, orientation, bl);
+        if (level.getBlockState(blockPos.above()).isAir()) {
+            tryConvertToVanilla(level, blockPos);
         }
     }
-
-    private boolean tryConvertToVanilla(BlockState state, LevelAccessor serverLevel, BlockPos pos) {
+    private boolean tryConvertToVanilla(LevelAccessor serverLevel, BlockPos pos) {
         if (serverLevel.getBlockState(pos.above()).isAir() && serverLevel.getBlockState(pos).getBlock() instanceof WaterloggedLilyPadBlock block) {
             serverLevel.setBlock(pos, Blocks.WATER.defaultBlockState(), 3);
             serverLevel.setBlock(pos.above(), Blocks.LILY_PAD.withPropertiesOf(block.defaultBlockState()), 3);
@@ -117,7 +118,7 @@ public class WaterloggedLilyPadBlock extends WaterlilyBlock implements SimpleWat
     }
 
     @Override
-    public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
+    public boolean canPlaceLiquid(@Nullable LivingEntity livingEntity, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
         return false;
     }
 
@@ -129,10 +130,5 @@ public class WaterloggedLilyPadBlock extends WaterlilyBlock implements SimpleWat
     @Override
     protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
         return false;
-    }
-
-    @Override
-    public @NotNull String getDescriptionId() {
-        return Blocks.LILY_PAD.getDescriptionId();
     }
 }

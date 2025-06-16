@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,9 +26,9 @@ public class CeilingTorchEvent {
             Items.SOUL_TORCH, EVBlocks.CEILING_SOUL_TORCH.get()
     );
 
-    public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
+    public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
-        if(level.isClientSide) return EventResult.pass();
+        if(level.isClientSide) return InteractionResult.PASS;
 
         if (!player.isSpectator()) {
             BlockPos placeAt = blockPos.relative(direction);
@@ -36,11 +37,11 @@ public class CeilingTorchEvent {
                 ItemStack stack = player.getItemInHand(interactionHand);
                 if(placeEntries.containsKey(stack.getItem())) {
                     placeTorch(player, interactionHand, stack, placeAt, level, placeEntries.get(stack.getItem()).defaultBlockState());
-                    return EventResult.interruptTrue();
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
-        return EventResult.pass();
+        return InteractionResult.PASS;
     }
 
     public static void placeTorch(Player player, InteractionHand hand, ItemStack stack, BlockPos pos, Level level, BlockState state) {

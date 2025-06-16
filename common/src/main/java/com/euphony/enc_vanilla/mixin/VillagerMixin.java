@@ -3,7 +3,12 @@ package com.euphony.enc_vanilla.mixin;
 import com.euphony.enc_vanilla.common.entity.DoubleHandedTemptGoal;
 import com.euphony.enc_vanilla.common.entity.VillagerAttractionGoal;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.VillagerType;
@@ -26,14 +31,19 @@ public abstract class VillagerMixin extends AbstractVillager {
         super(entityType, level);
     }
 
+    @ModifyReturnValue(method = "createAttributes", at = @At("RETURN"))
+    private static AttributeSupplier.Builder addAttributes(AttributeSupplier.Builder builder) {
+        return builder.add(Attributes.TEMPT_RANGE, 10.0F);
+    }
+
     @Inject(
-            method = "<init>(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/npc/VillagerType;)V",
+            method = "Lnet/minecraft/world/entity/npc/Villager;<init>(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/Holder;)V",
             at = @At(
                     value = "RETURN"
             )
     )
-    private void init(EntityType<? extends Villager> entityType, Level level, VillagerType villagerType, CallbackInfo ci) {
-        this.enc_vanilla$villagersAttractedGoal = new VillagerAttractionGoal(this, level);
+    private void init(EntityType<? extends Villager> entityType, Level level, Holder<VillagerType> holder, CallbackInfo ci) {
+        this.enc_vanilla$villagersAttractedGoal = new VillagerAttractionGoal(this);
     }
 
     @Inject(

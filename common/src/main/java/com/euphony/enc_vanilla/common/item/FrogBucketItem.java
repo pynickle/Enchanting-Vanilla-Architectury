@@ -1,37 +1,35 @@
 package com.euphony.enc_vanilla.common.item;
 
+import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MobBucketItem;
-import net.minecraft.world.item.component.CustomModelData;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class FrogBucketItem extends MobBucketItem {
     public FrogBucketItem(Properties properties) {
-        super(EntityType.FROG, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties.component(DataComponents.CUSTOM_MODEL_DATA, CustomModelData.DEFAULT));
+        super(EntityType.FROG, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties.component(EVDataComponentTypes.ACTIVE.get(), false));
     }
 
     @Override
-    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int itemSlot, boolean isSelected) {
-        if(world instanceof ServerLevel serverLevel) {
-            Vec3 pos = entity.position();
-            int x = Mth.floor(pos.x);
-            int z = Mth.floor(pos.z);
-            boolean isActive = stack.get(DataComponents.CUSTOM_MODEL_DATA).value() == 1;
-            if(isActive != isSlimeChunk(serverLevel, x, z))
-                stack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(isActive ? 0 : 1));
-        }
+    public void inventoryTick(@NotNull ItemStack stack, @NotNull ServerLevel level, Entity entity, @Nullable EquipmentSlot equipmentSlot) {
+        Vec3 pos = entity.position();
+        int x = Mth.floor(pos.x);
+        int z = Mth.floor(pos.z);
+        boolean isActive = stack.get(EVDataComponentTypes.ACTIVE.get()).booleanValue();
+        if(isActive != isSlimeChunk(level, x, z))
+            stack.set(EVDataComponentTypes.ACTIVE.get(), !isActive);
     }
 
     public static boolean isSlimeChunk(ServerLevel world, int x, int z) {

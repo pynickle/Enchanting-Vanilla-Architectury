@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "enc_vanilla:block/torch",
+      "x": 180
+    }
+  }
+}

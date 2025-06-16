@@ -4,6 +4,7 @@ import com.euphony.enc_vanilla.common.init.EVItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -23,7 +24,7 @@ public abstract class BaseFireBlockMixin extends Block {
     }
 
     @Inject(method = "entityInside", at = @At("HEAD"), cancellable = true)
-    protected void entityInsideInject(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci) {
+    protected void entityInsideInject(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier insideBlockEffectApplier, CallbackInfo ci) {
         if(state.is(Blocks.FIRE)) {
             if (entity instanceof ItemEntity item) {
                 if (item.getItem().is(EVItems.FROZEN_BIOME_CRYSTAL_ITEM.get())) {

@@ -125,9 +125,9 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
         super.loadAdditional(compoundTag, provider);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(compoundTag, this.items, provider);
-        this.progress = compoundTag.getInt("Progress");
-        this.isActive = compoundTag.getBoolean("IsActive");
-        this.isError = compoundTag.getBoolean("IsError");
+        this.progress = compoundTag.getInt("Progress").get();
+        this.isActive = compoundTag.getBoolean("IsActive").get();
+        this.isError = compoundTag.getBoolean("IsError").get();
     }
 
     public static void serverTick(Level level, BlockPos blockPos, BlockState blockState, AppraisalTableBlockEntity arg4) {
@@ -157,7 +157,7 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                             max = 2.0f;
                         }
 
-                        Registry<Biome> biomeRegistry = level.registryAccess().registryOrThrow(Registries.BIOME);
+                        Registry<Biome> biomeRegistry = level.registryAccess().lookupOrThrow(Registries.BIOME);
                         ResourceLocation levelDimension = level.dimension().location();
                         List<Holder<Biome>> biomes;
                         if (levelDimension.getNamespace().equals("minecraft")) {
@@ -172,11 +172,9 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
                                     .toList();
                         } else {
                             ResourceKey<Level> dimensionKey = level.dimension();
-                            Registry<LevelStem> dimensionRegistry = level.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
+                            Registry<LevelStem> dimensionRegistry = level.registryAccess().lookupOrThrow(Registries.LEVEL_STEM);
                             ResourceKey<LevelStem> stemKey = ResourceKey.create(Registries.LEVEL_STEM, dimensionKey.location());
-                            biomes = biomeRegistry.holders().filter(holder -> {
-                                return biomeTemperatureInRange(holder.value().getBaseTemperature(), min, max);
-                            }).map(holder -> (Holder<Biome>) holder).toList();
+                            biomes = biomeRegistry.stream().map(biomeRegistry::wrapAsHolder).filter(holder -> biomeTemperatureInRange(holder.value().getBaseTemperature(), min, max)).toList();
                         }
 
                         arg4.originalStack = input;

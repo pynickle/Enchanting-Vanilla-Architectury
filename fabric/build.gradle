@@ -7,6 +7,10 @@ architectury {
     fabric()
 }
 
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+}
+
 sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
@@ -74,6 +78,7 @@ processResources {
 }
 
 shadowJar {
+    exclude "architectury.common.json"
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = 'dev-shadow'
 }
