@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.utils.config.LoadConfigUtils;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TorchflowerCropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;

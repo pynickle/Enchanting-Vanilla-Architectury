@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.keymapping.EVKeyConfig;
-import dev.architectury.event.EventResult;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

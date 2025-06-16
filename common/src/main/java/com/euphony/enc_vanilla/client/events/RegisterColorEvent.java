@@ -8,8 +8,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 
-import java.awt.*;
-
 @Environment(EnvType.CLIENT)
 public class RegisterColorEvent {
     public static void registerColor(Minecraft minecraft) {

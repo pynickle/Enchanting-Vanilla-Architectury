@@ -1,13 +1,10 @@
 package com.euphony.enc_vanilla.client.property;
 
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
-import com.euphony.enc_vanilla.common.item.FrogBucketItem;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.properties.select.SelectItemModelProperty;
-import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;

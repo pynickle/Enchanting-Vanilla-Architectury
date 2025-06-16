@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.google.common.collect.ImmutableMap;
-import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;

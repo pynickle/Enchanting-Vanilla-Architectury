@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;

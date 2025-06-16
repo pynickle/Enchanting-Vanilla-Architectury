@@ -4,7 +4,6 @@ import com.euphony.enc_vanilla.api.IPhantom;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.mixin.invoker.BellBlockInvoker;
 import com.euphony.enc_vanilla.utils.HitUtils;
-import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
