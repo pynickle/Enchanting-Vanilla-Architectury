@@ -248,5 +248,8 @@
   "yacl3.config.enc_vanilla:config.enableSlowerSpeed": "启用减速",
   "yacl3.config.enc_vanilla:config.enableSlowerSpeed.desc": "你仅仅免疫伤害，但仍然会移动得更慢。",
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge": "启用可投掷火焰弹",
-  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "火焰弹现在可以直接右键投掷。"
+  "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "火焰弹现在可以直接右键投掷。",
+  "yacl3.config.enc_vanilla:config.category.qol.group.stonecutter_damage": "切石机伤害",
+  "yacl3.config.enc_vanilla:config.villagerImmunity": "村民免疫",
+  "yacl3.config.enc_vanilla:config.villagerImmunity.desc": "村民免疫切石机的伤害。"
 }

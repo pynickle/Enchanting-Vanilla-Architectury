@@ -9,6 +9,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StonecutterBlock;
@@ -26,6 +27,7 @@ public abstract class StonecutterBlockMixin extends Block {
         if(!QolConfig.HANDLER.instance().enableStonecutterDamage) return;
 
         if (entity instanceof LivingEntity) {
+            if(QolConfig.HANDLER.instance().villagerImmunity && entity instanceof Villager) return;
             Registry<DamageType> damageTypes = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);
             entity.hurt(new DamageSource(damageTypes.getHolderOrThrow(EVDamageTypes.STONECUTTER_DAMAGE)), 1.0F);
         }
