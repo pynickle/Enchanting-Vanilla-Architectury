@@ -327,6 +327,20 @@ public class QolScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Stonecutter Damage
+            Option<Boolean> enableStonecutterDamageOpt = ConfigUtils.<Boolean>getGenericOption("enableStonecutterDamage")
+                    .binding(defaults.enableStonecutterDamage,
+                            () -> config.enableStonecutterDamage,
+                            newVal -> config.enableStonecutterDamage = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> villagerImmunityOpt = ConfigUtils.<Boolean>getGenericOption("villagerImmunity")
+                    .binding(defaults.villagerImmunity,
+                            () -> config.villagerImmunity,
+                            newVal -> config.villagerImmunity = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -422,12 +436,6 @@ public class QolScreen {
                     .binding(defaults.enableBrokenLead,
                             () -> config.enableBrokenLead,
                             newVal -> config.enableBrokenLead = newVal)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-            Option<Boolean> enableStonecutterDamageOpt = ConfigUtils.<Boolean>getGenericOption("enableStonecutterDamage")
-                    .binding(defaults.enableStonecutterDamage,
-                            () -> config.enableStonecutterDamage,
-                            newVal -> config.enableStonecutterDamage = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
             Option<Boolean> enableStickyPistonOpt = ConfigUtils.<Boolean>getGenericOption("enableStickyPiston")
@@ -563,6 +571,13 @@ public class QolScreen {
                                             enableSlowerSpeedOpt
                                     ))
                                     .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, STONECUTTER_DAMAGE_GROUP))
+                                    .options(List.of(
+                                            enableStonecutterDamageOpt,
+                                            villagerImmunityOpt
+                                    ))
+                                    .build())
                             .build())
                     .category(ConfigCategory.createBuilder()
                             .name(ConfigUtils.getCategoryName(OTHER_CATEGORY))
@@ -584,7 +599,6 @@ public class QolScreen {
                                             enableSafeHarvestOpt,
                                             enableDoubleDoorOpt,
                                             enableBrokenLeadOpt,
-                                            enableStonecutterDamageOpt,
                                             enableStickyPistonOpt,
                                             enableThrowableFireChargeOpt
                                     ))

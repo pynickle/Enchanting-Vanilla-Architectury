@@ -47,6 +47,7 @@ public final class QolConfig {
     public static final String STACKABLE_POTION_GROUP = "stackable_potion";
     public static final String GLOWING_TORCHFLOWER_GROUP = "glowing_torchflower";
     public static final String BUSH_PROTECTION_GROUP = "bush_protection";
+    public static final String STONECUTTER_DAMAGE_GROUP = "stonecutter_damage";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -132,6 +133,9 @@ public final class QolConfig {
     @SerialEntry public boolean permanentVillagersProtection = true;
     @SerialEntry public boolean enableSlowerSpeed = true;
 
+    @SerialEntry public boolean enableStonecutterDamage = true;
+    @SerialEntry public boolean villagerImmunity = true;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
@@ -146,8 +150,6 @@ public final class QolConfig {
     @SerialEntry public boolean enableSafeHarvest = true;
     @SerialEntry public boolean enableDoubleDoor = true;
     @SerialEntry public boolean enableBrokenLead = true;
-    @SerialEntry public boolean enableStonecutterDamage = true;
     @SerialEntry public boolean enableStickyPiston = true;
     @SerialEntry public boolean enableThrowableFireCharge = true;
-
 }
