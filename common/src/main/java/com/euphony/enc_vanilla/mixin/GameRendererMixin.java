@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.world.effect.MobEffectInstance;

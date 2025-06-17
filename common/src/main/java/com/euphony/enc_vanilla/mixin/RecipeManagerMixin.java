@@ -1,7 +1,7 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.config.categories.RecipesConfig;
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.recipes.RecipesConfig;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import com.euphony.enc_vanilla.utils.Utils;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

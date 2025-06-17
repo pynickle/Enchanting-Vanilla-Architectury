@@ -2,7 +2,7 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.euphony.enc_vanilla.utils.Utils;
 import dev.architectury.registry.item.ItemPropertiesRegistry;

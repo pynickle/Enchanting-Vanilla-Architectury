@@ -6,10 +6,13 @@ import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.ListOption;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.StringControllerBuilder;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
 import static com.euphony.enc_vanilla.config.categories.qol.QolConfig.HANDLER;
 
+@Environment(EnvType.CLIENT)
 public class ExtraSoulTorchItemsScreen {
     private static final String QOL_CATEGORY = "qol";
 

@@ -1,7 +1,7 @@
 package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.common.init.EVItems;
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import dev.architectury.event.EventResult;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;

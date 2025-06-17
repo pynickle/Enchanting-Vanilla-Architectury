@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.client.events;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.euphony.enc_vanilla.utils.Utils;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.fabricmc.api.EnvType;

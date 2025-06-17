@@ -1,7 +1,7 @@
 package com.euphony.enc_vanilla.fabric.mixin;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.config.categories.RecipesConfig;
+import com.euphony.enc_vanilla.config.categories.recipes.RecipesConfig;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.gson.JsonElement;

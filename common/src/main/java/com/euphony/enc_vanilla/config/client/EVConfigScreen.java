@@ -1,9 +1,9 @@
 package com.euphony.enc_vanilla.config.client;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
-import com.euphony.enc_vanilla.config.categories.RecipesConfig;
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
-import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientScreen;
+import com.euphony.enc_vanilla.config.categories.qol.QolScreen;
+import com.euphony.enc_vanilla.config.categories.recipes.RecipesScreen;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsScreen;
 import com.euphony.enc_vanilla.config.client.widget.CategoryButton;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -59,7 +59,7 @@ public class EVConfigScreen extends Screen {
         var qolButton = new CategoryButton(30, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.qol"), Items.IRON_PICKAXE.getDefaultInstance(), (btn) -> {
             if(this.qolConfigScreen == null) {
-                this.qolConfigScreen = QolConfig.makeScreen().generateScreen(this);
+                this.qolConfigScreen = QolScreen.makeScreen().generateScreen(this);
             }
 
             this.minecraft.setScreen(this.qolConfigScreen);
@@ -67,7 +67,7 @@ public class EVConfigScreen extends Screen {
         var toolsButton = new CategoryButton(30 + categoryButtonWidth + 10, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.tools"), Items.AMETHYST_SHARD.getDefaultInstance(), (btn) -> {
             if(this.toolsConfigScreen == null) {
-                this.toolsConfigScreen = ToolsConfig.makeScreen().generateScreen(this);
+                this.toolsConfigScreen = ToolsScreen.makeScreen().generateScreen(this);
             }
 
             this.minecraft.setScreen(this.toolsConfigScreen);
@@ -75,7 +75,7 @@ public class EVConfigScreen extends Screen {
         var clientButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.client"), Items.VINE.getDefaultInstance(), (btn) -> {
             if(this.clientConfigScreen == null) {
-                this.clientConfigScreen = ClientConfig.makeScreen().generateScreen(this);
+                this.clientConfigScreen = ClientScreen.makeScreen().generateScreen(this);
             }
 
             this.minecraft.setScreen(this.clientConfigScreen);
@@ -83,7 +83,7 @@ public class EVConfigScreen extends Screen {
         var recipesButton = new CategoryButton(30, 70, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.recipes"), Items.ANVIL.getDefaultInstance(), (btn) -> {
             if(this.recipesConfigScreen == null) {
-                this.recipesConfigScreen = RecipesConfig.makeScreen().generateScreen(this);
+                this.recipesConfigScreen = RecipesScreen.makeScreen().generateScreen(this);
             }
 
             this.minecraft.setScreen(this.recipesConfigScreen);
