@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandCallback;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;

@@ -1,51 +1,21 @@
-package com.euphony.enc_vanilla.config.categories;
+package com.euphony.enc_vanilla.config.categories.tools;
 
-import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.utils.Utils;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
-import com.google.gson.GsonBuilder;
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.Option;
 import dev.isxander.yacl3.api.OptionGroup;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
-import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
-import dev.isxander.yacl3.config.v2.api.SerialEntry;
-import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
-import java.nio.file.Path;
 import java.util.List;
 
-public class ToolsConfig {
-    public static ConfigClassHandler<ToolsConfig> HANDLER = ConfigClassHandler.createBuilder(ToolsConfig.class)
-            .id(Utils.prefix("config"))
-            .serializer(config -> GsonConfigSerializerBuilder.create(config)
-                    .appendGsonBuilder(GsonBuilder::setPrettyPrinting)
-                    .setPath(Path.of("config", EncVanilla.MOD_ID + "/tools.json")).build()
-            )
-            .build();
+import static com.euphony.enc_vanilla.config.categories.tools.ToolsConfig.*;
 
-    public static void load() {
-        HANDLER.load();
-    }
-
-    public static void save() {
-        HANDLER.save();
-    }
-
-    private static final String TOOLS_CATEGORY = "tools";
-    private static final String COMPRESSED_SLIME_BLOCK_GROUP = "compressed_slime_block";
-    private static final String SCULK_COMPASS_GROUP = "sculk_compass";
-    private static final String OTHER_GROUP = "other";
-
-    @SerialEntry public boolean enableSlimeChunkDetecting = true;
-    @SerialEntry public boolean enableSculkCompass = true;
-    @SerialEntry public boolean enableCompressedSlimeBlock = true;
-
-    @Environment(EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
+public class ToolsScreen {
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
             // Compressed Slime Block

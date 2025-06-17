@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.client.events;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.core.component.DataComponentMap;

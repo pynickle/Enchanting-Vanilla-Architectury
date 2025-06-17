@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.client.property;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.PrimitiveCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

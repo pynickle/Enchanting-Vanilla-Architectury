@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;

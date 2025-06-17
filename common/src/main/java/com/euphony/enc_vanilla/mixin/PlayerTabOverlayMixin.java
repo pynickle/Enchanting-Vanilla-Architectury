@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.config.categories.ClientConfig;
+import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.euphony.enc_vanilla.mixin.invoker.PlayerTabOverlayInvoker;
 import com.euphony.enc_vanilla.utils.ColorUtils;
 import net.minecraft.client.Minecraft;

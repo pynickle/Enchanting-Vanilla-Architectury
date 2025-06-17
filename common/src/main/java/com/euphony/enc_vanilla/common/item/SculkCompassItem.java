@@ -3,7 +3,7 @@ package com.euphony.enc_vanilla.common.item;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.init.EVTags;
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.google.common.base.Stopwatch;
 import com.mojang.datafixers.util.Pair;

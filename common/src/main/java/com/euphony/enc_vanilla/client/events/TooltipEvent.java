@@ -2,7 +2,7 @@ package com.euphony.enc_vanilla.client.events;
 
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
-import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;

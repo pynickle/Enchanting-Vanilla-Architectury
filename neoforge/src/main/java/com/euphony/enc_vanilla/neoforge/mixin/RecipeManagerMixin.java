@@ -1,7 +1,7 @@
 package com.euphony.enc_vanilla.neoforge.mixin;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.config.categories.RecipesConfig;
+import com.euphony.enc_vanilla.config.categories.recipes.RecipesConfig;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.BuiltInRegistries;
