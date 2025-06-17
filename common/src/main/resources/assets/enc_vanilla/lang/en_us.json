@@ -27,7 +27,7 @@
   "message.enc_vanilla.safe_harvest.mod_name": "[Enchanting Vanilla]",
   "message.enc_vanilla.safe_harvest.not_mature": " The crop is not ready to be harvested!",
 
-  "message.enc_vanilla.broken_lead.message": "Your lead broke! (%s)",
+  "message.enc_vanilla.broken_lead.message": "Your lead broke! ",
 
   "key.enc_vanilla.safe_harvest": "Toggle Safe Harvest",
   "category.enc_vanilla.keymapping": "Enchanting Vanilla",

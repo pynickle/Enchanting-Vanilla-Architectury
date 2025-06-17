@@ -5,6 +5,8 @@ import com.euphony.enc_vanilla.config.categories.RecipesConfig;
 import com.euphony.enc_vanilla.config.categories.ToolsConfig;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.config.client.widget.CategoryButton;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -13,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.Nullable;
 
+@Environment(EnvType.CLIENT)
 public class EVConfigScreen extends Screen {
     private final Screen parent;
     @Nullable

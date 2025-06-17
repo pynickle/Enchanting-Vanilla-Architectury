@@ -48,8 +48,7 @@ public abstract class WaterlilyBlockMixin extends Block {
 
     @Unique
     private static boolean enc_vanilla$canPlaceBlock(Player player, BlockPos pos, ItemStack stack) {
-        GameType gameMode = ((ServerPlayer)player).gameMode.getGameModeForPlayer();
-
+        GameType gameMode = player.gameMode();
 
         boolean result = !player.blockActionRestricted(player.level(), pos, gameMode);
         if (!result) {

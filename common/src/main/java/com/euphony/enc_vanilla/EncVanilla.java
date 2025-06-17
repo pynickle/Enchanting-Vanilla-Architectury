@@ -18,7 +18,7 @@ public final class EncVanilla {
     }
 
     public static void init() {
-        EncVanilla.getConfig().load();
+        getConfig().load();
 
         BlockEntityMap.addBlockEntity(BlockEntityType.CAMPFIRE);
 

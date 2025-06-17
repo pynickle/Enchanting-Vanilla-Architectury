@@ -32,38 +32,6 @@ public abstract class RecipeManagerMixin extends SimplePreparableReloadListener<
     private void apply(ResourceManager arg, ProfilerFiller arg2, CallbackInfoReturnable<RecipeMap> cir) {
         id.clear();
     }
-    /*
-    @Inject(
-            method = "Lnet/minecraft/world/item/crafting/RecipeManager;prepare(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)Lnet/minecraft/world/item/crafting/RecipeMap;",
-            at = @At(
-                    value = "INVOKE",
-                    target = "java/util/SortedMap.forEach(Ljava/util/function/BiConsumer;)V",
-                    opcode = Opcodes.INVOKEINTERFACE,
-                    shift = At.Shift.BEFORE
-            )
-    )
-    private void interceptForEach(
-            ResourceManager manager,
-            ProfilerFiller profiler,
-            CallbackInfoReturnable<RecipeMap> cir,
-            @Local SortedMap<ResourceLocation, Recipe<?>> sortedmap,
-            @Local List<RecipeHolder<?>> list
-    ) {
-        BiConsumer<ResourceLocation, Recipe<?>> interceptor = (id, recipe) -> {
-            ResourceKey<Recipe<?>> key = ResourceKey.create(Registries.RECIPE, id);
-            RecipeHolder<?> holder = new RecipeHolder<>(key, recipe);
-            list.add(holder);
-
-            enc_vanilla$process(list, recipe);
-        };
-
-        sortedmap.forEach(interceptor);
-
-        cir.cancel();
-    }
-
-     */
-
 
     @Inject(method = "Lnet/minecraft/world/item/crafting/RecipeManager;prepare(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)Lnet/minecraft/world/item/crafting/RecipeMap;",
             at = @At(value = "INVOKE", target = "Ljava/util/SortedMap;forEach(Ljava/util/function/BiConsumer;)V"))
