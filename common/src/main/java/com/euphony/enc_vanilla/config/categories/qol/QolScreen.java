@@ -1,5 +1,6 @@
 package com.euphony.enc_vanilla.config.categories.qol;
 
+import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraForcedFuelsScreen;
 import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraSoulTorchItemsScreen;
 import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraTorchItemsScreen;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
@@ -341,6 +342,17 @@ public class QolScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Forced Fuels
+            Option<Boolean> enableForcedFuelsOpt = ConfigUtils.<Boolean>getGenericOption("enableForcedFuels")
+                    .binding(defaults.enableForcedFuels,
+                            () -> config.enableForcedFuels,
+                            newVal -> config.enableForcedFuels = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<BiConsumer<YACLScreen, ButtonOption>> extraForcedFuelsOpt = ConfigUtils.getButtonOption("extraForcedFuels")
+                    .action(((yaclScreen, buttonOption) -> Minecraft.getInstance().setScreen(ExtraForcedFuelsScreen.makeScreen().generateScreen(yaclScreen))))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -576,6 +588,13 @@ public class QolScreen {
                                     .options(List.of(
                                             enableStonecutterDamageOpt,
                                             villagerImmunityOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, FORCED_FUELS_GROUP))
+                                    .options(List.of(
+                                            enableForcedFuelsOpt,
+                                            extraForcedFuelsOpt
                                     ))
                                     .build())
                             .build())

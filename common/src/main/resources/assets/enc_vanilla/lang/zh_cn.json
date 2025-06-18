@@ -251,5 +251,11 @@
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "火焰弹现在可以直接右键投掷。",
   "yacl3.config.enc_vanilla:config.category.qol.group.stonecutter_damage": "切石机伤害",
   "yacl3.config.enc_vanilla:config.villagerImmunity": "村民免疫",
-  "yacl3.config.enc_vanilla:config.villagerImmunity.desc": "村民免疫切石机的伤害。"
+  "yacl3.config.enc_vanilla:config.villagerImmunity.desc": "村民免疫切石机的伤害。",
+  "yacl3.config.enc_vanilla:config.category.qol.group.forced_fuels": "强制燃料",
+  "yacl3.config.enc_vanilla:config.enableForcedFuels": "启用强制燃料",
+  "yacl3.config.enc_vanilla:config.enableForcedFuels.desc": "现在拥有标签 \"forced_fuels\" 的物品会强制进入熔炉的燃料槽哪怕其拥有被烧炼的配方。",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels": "额外强制燃料物品",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels.desc": "配置来自其他模组可以被视为强制燃料的物品",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "配置额外强制燃料物品"
 }

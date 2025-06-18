@@ -1,5 +1,6 @@
 package com.euphony.enc_vanilla.config.categories.qol.screen;
 
+
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
 import dev.isxander.yacl3.api.ConfigCategory;
@@ -11,10 +12,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
 import static com.euphony.enc_vanilla.config.categories.qol.QolConfig.HANDLER;
-import static com.euphony.enc_vanilla.config.categories.qol.QolConfig.QOL_CATEGORY;
 
 @Environment(EnvType.CLIENT)
-public class ExtraSoulTorchItemsScreen {
+public class ExtraForcedFuelsScreen {
+    private static final String QOL_CATEGORY = "qol";
+
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
             ListOption<String> extraSoulTorchItemsOpt = ConfigUtils.getListGroupOption("extraSoulTorchItems")
@@ -35,4 +37,3 @@ public class ExtraSoulTorchItemsScreen {
         });
     }
 }
-

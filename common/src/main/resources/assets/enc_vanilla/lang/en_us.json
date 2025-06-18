@@ -170,6 +170,13 @@
   "yacl3.config.enc_vanilla:config.villagerImmunity": "Villager Immunity",
   "yacl3.config.enc_vanilla:config.villagerImmunity.desc": "Villagers immune stone cutting damage.",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.forced_fuels": "Forced Fuels",
+  "yacl3.config.enc_vanilla:config.enableForcedFuels": "Enable Forced Fuels",
+  "yacl3.config.enc_vanilla:config.enableForcedFuels.desc": "Items now have a tag called \"forced_fuels\" that forces them into the furnace's fuel slot even if they have a recipe for smelting.",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels": "Extra Forced Fuels",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels.desc": "Configure items from other mods that can be considered forced fuels.",
+  "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "Configure Extra Forced Fuels",
+
   "yacl3.config.enc_vanilla:config.category.other.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",

@@ -2,7 +2,7 @@ package com.euphony.enc_vanilla.screen;
 
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVMenus;
-import com.euphony.enc_vanilla.common.init.EVTags;
+import com.euphony.enc_vanilla.common.tag.EVItemTags;
 import com.euphony.enc_vanilla.screen.slot.AppraisalCrystalSlot;
 import com.euphony.enc_vanilla.screen.slot.AppraisalRefreshSlot;
 import net.minecraft.util.Mth;
@@ -107,7 +107,7 @@ public class AppraisalTableMenu extends AbstractContainerMenu {
     }
 
     public boolean isBiomeCrystal(ItemStack itemStack) {
-        return itemStack.is(EVTags.BIOME_CRYSTAL);
+        return itemStack.is(EVItemTags.BIOME_CRYSTAL);
     }
 
     public boolean isRefreshMaterial(ItemStack itemStack) {
