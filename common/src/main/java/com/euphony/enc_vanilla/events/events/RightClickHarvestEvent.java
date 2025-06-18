@@ -41,6 +41,7 @@ public class RightClickHarvestEvent {
         if (block instanceof CocoaBlock || block instanceof CropBlock || block instanceof NetherWartBlock) {
             if (isMature(state)) {
                 if (!level.isClientSide) {
+                    player.swing(interactionHand);
                     dropStacks(state, (ServerLevel) level, blockPos, player, stack);
                     level.setBlockAndUpdate(blockPos, getReplantState(state));
 

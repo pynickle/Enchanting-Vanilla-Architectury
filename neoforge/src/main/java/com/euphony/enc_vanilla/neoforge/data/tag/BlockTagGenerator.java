@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.neoforge.data.tag;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.common.tag.EVBlockTags;
 import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -20,12 +21,10 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        final TagKey<Block> SWORD_INSTANTLY_MINES = createVanillaTag("sword_instantly_mines");
-
         tag(BlockTags.SWORD_EFFICIENT).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get());
         tag(BlockTags.MINEABLE_WITH_AXE).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get(),
                 EVBlocks.APPRAISAL_TABLE.get());
-        tag(SWORD_INSTANTLY_MINES).add(EVBlocks.CUT_BAMBOO_SAPLING.get());
+        tag(EVBlockTags.SWORD_INSTANTLY_MINES).add(EVBlocks.CUT_BAMBOO_SAPLING.get());
 
         tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(EVBlocks.CUT_VINE.get());
         tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH).add(EVBlocks.CUT_VINE.get());
@@ -40,22 +39,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
         tag(BlockTags.CLIMBABLE).add(EVBlocks.CUT_VINE.get());
 
         tag(BlockTags.BAMBOO_PLANTABLE_ON).add(EVBlocks.CUT_BAMBOO_SAPLING.get());
-    }
-
-    public static TagKey<Block> create(String tagName) {
-        return BlockTags.create(Utils.prefix(tagName));
-    }
-
-    public static TagKey<Block> create(String namespace, String tagName) {
-        return BlockTags.create(ResourceLocation.fromNamespaceAndPath(namespace, tagName));
-    }
-
-    public static TagKey<Block> createVanillaTag(String tagName) {
-        return BlockTags.create(ResourceLocation.withDefaultNamespace(tagName));
-    }
-
-    public static TagKey<Block> createCTag(String tagName) {
-        return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", tagName));
     }
 
     @SafeVarargs

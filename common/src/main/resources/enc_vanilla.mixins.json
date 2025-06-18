@@ -10,6 +10,7 @@
     "invoker.PlayerTabOverlayInvoker"
   ],
   "mixins": [
+    "AbstractFurnaceMenuMixin",
     "BaseFireBlockMixin",
     "BlockEntityMixin",
     "BlocksMixin",
