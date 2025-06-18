@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.neoforge.data.tag;
+package com.euphony.enc_vanilla.neoforge.datagen.tag;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

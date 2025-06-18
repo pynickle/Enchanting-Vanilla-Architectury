@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.neoforge.data;
+package com.euphony.enc_vanilla.neoforge.datagen;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVDamageTypes;

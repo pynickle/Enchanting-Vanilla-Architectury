@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.neoforge.data.tag;
+package com.euphony.enc_vanilla.neoforge.datagen.tag;
 
 import com.euphony.enc_vanilla.common.init.EVDamageTypes;
 import net.minecraft.core.HolderLookup;

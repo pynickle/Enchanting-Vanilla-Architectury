@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.neoforge.data.recipes;
+package com.euphony.enc_vanilla.neoforge.datagen.recipes;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;

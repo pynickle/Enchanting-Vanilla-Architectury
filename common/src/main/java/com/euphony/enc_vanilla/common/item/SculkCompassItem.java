@@ -2,7 +2,7 @@ package com.euphony.enc_vanilla.common.item;
 
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
-import com.euphony.enc_vanilla.common.init.EVTags;
+import com.euphony.enc_vanilla.common.tag.EVItemTags;
 import com.euphony.enc_vanilla.config.categories.tools.ToolsConfig;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.google.common.base.Stopwatch;
@@ -48,7 +48,7 @@ public class SculkCompassItem extends Item {
                 CompassState state = getState(player.getItemInHand(hand));
                 if (state == CompassState.INACTIVE) {
                     ItemStack offhandItem = player.getOffhandItem();
-                    if(offhandItem.is(EVTags.BIOME_CRYSTAL) && offhandItem.get(EVDataComponentTypes.BIOME.get()) != null) {
+                    if(offhandItem.is(EVItemTags.BIOME_CRYSTAL) && offhandItem.get(EVDataComponentTypes.BIOME.get()) != null) {
                         player.startUsingItem(hand);
                     }
                 }

@@ -1,6 +1,6 @@
-package com.euphony.enc_vanilla.neoforge.data;
+package com.euphony.enc_vanilla.neoforge.datagen;
 
-import com.euphony.enc_vanilla.neoforge.data.loots.BlockLootTables;
+import com.euphony.enc_vanilla.neoforge.datagen.loots.BlockLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.WritableRegistry;
 import net.minecraft.data.PackOutput;

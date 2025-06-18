@@ -1,13 +1,12 @@
-package com.euphony.enc_vanilla.neoforge.data;
+package com.euphony.enc_vanilla.neoforge.datagen;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.neoforge.data.loots.GlobalLootModifierGenerator;
-import com.euphony.enc_vanilla.neoforge.data.models.ModelGenerator;
-import com.euphony.enc_vanilla.neoforge.data.recipes.RecipeGenerator;
-import com.euphony.enc_vanilla.neoforge.data.tag.BlockTagGenerator;
-import com.euphony.enc_vanilla.neoforge.data.tag.DamageTypeGenerator;
-import com.euphony.enc_vanilla.neoforge.data.tag.ItemTagGenerator;
-import com.euphony.enc_vanilla.neoforge.data.tag.PaintingVariantTagGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.loots.GlobalLootModifierGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.recipes.RecipeGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.tag.BlockTagGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.tag.DamageTypeGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.tag.ItemTagGenerator;
+import com.euphony.enc_vanilla.neoforge.datagen.tag.PaintingVariantTagGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -39,8 +38,7 @@ public class DataGenerators {
 
         generator.addProvider(true, datapackProvider);
 
-        BlockTagGenerator blockTagGenerator = new BlockTagGenerator(output, lookupProvider);
-        generator.addProvider(true, blockTagGenerator);
+        generator.addProvider(true, new BlockTagGenerator(output, lookupProvider));
         generator.addProvider(true, new ItemTagGenerator(output, lookupProvider));
         generator.addProvider(true, new DamageTypeGenerator(output, lookupProvider));
 

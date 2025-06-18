@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.neoforge.data.loots;
+package com.euphony.enc_vanilla.neoforge.datagen.loots;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.utils.Utils;
