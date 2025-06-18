@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Player.BedSleepingProblem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,7 +27,7 @@ import java.util.Optional;
 
 @Mixin({ServerPlayer.class})
 public abstract class ServerPlayerMixin extends Entity {
-    @Shadow public abstract ServerLevel serverLevel();
+    @Shadow public abstract @NotNull ServerLevel level();
 
     public ServerPlayerMixin(EntityType<?> type, Level level) {
         super(type, level);
@@ -42,7 +43,7 @@ public abstract class ServerPlayerMixin extends Entity {
 
             int duration = (int) (QolConfig.HANDLER.instance().highlightDuration * 20);
 
-            for(Monster entity : this.level().getEntitiesOfClass(Monster.class, new AABB(vec3.x - (double)8.0F, vec3.y - (double)5.0F, vec3.z - (double)8.0F, vec3.x + (double)8.0F, vec3.y + (double)5.0F, vec3.z + (double)8.0F), (hostileEntity) -> hostileEntity.isPreventingPlayerRest(this.serverLevel(), (Player)(Object) this))) {
+            for(Monster entity : this.level().getEntitiesOfClass(Monster.class, new AABB(vec3.x - (double)8.0F, vec3.y - (double)5.0F, vec3.z - (double)8.0F, vec3.x + (double)8.0F, vec3.y + (double)5.0F, vec3.z + (double)8.0F), (hostileEntity) -> hostileEntity.isPreventingPlayerRest(this.level(), (Player)(Object) this))) {
                 entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, duration, 1, false, false));
             }
         }

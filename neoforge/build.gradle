@@ -57,8 +57,8 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
 
-    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
-    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    // compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    // runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
     implementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge"){
         exclude group: "net.neoforged.fancymodloader", module: "loader"
@@ -68,14 +68,12 @@ dependencies {
     // compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
     // compileOnly("curse.maven:carryon-274259:${carryon_id}")
 
-    compileOnly("it.crystalnest:cobweb-neoforge:${minecraft_version}-${cobweb_version}")
-    compileOnly("it.crystalnest:soul-fire-d-neoforge:${minecraft_version}-${soul_fire_d_version}")
     // modImplementation("curse.maven:selene-499980:${selene_id}")
     // modImplementation("curse.maven:fast-paintings-883287:${fast_paintings_id}")
     // modImplementation("curse.maven:carryon-274259:${carryon_id}")
 
-    modImplementation("it.crystalnest:cobweb-neoforge:${minecraft_version}-${cobweb_version}")
-    modImplementation("it.crystalnest:soul-fire-d-neoforge:${minecraft_version}-${soul_fire_d_version}")
+    // modImplementation("it.crystalnest:cobweb-neoforge:${minecraft_version}-${cobweb_version}")
+    // modImplementation("it.crystalnest:soul-fire-d-neoforge:${minecraft_version}-${soul_fire_d_version}")
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
