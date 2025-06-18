@@ -67,4 +67,5 @@ public class ClientConfig {
     @SerialEntry public boolean enableBeeInfo = true;
     @SerialEntry public boolean enableAxolotlBucketFix = true;
     @SerialEntry public boolean enableChatHistoryRetention = true;
+    @SerialEntry public boolean enableBookSaveConfirmation = true;
 }
