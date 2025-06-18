@@ -4,8 +4,8 @@ import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.utils.ItemUtils;
 import dev.architectury.event.EventResult;
 import dev.architectury.platform.Platform;
-import it.crystalnest.soul_fire_d.api.FireManager;
-import it.crystalnest.soul_fire_d.api.type.FireTyped;
+// import it.crystalnest.soul_fire_d.api.FireManager;
+// import it.crystalnest.soul_fire_d.api.type.FireTyped;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -40,11 +40,15 @@ public final class TorchHitEvent {
     private static void attack(Entity target, ItemStack item) {
         double seconds = getFireSeconds(item, target, QolConfig.HANDLER.instance().torchHitFireDuration);
         if (seconds > 0) {
+            target.igniteForSeconds((float) seconds);
+            /*
             if (Platform.isModLoaded("soul_fire_d")) {
                 setOnFire(item, target, seconds);
             } else {
                 target.igniteForSeconds((float) seconds);
             }
+
+             */
         }
     }
 
@@ -77,6 +81,7 @@ public final class TorchHitEvent {
         return (attacker instanceof Player || QolConfig.HANDLER.instance().enableMobTorchHit) && attacker.canAttack(target) && (!(attacker instanceof Player attackerPlayer && target instanceof Player targetPlayer) || attackerPlayer.canHarmPlayer(targetPlayer));
     }
 
+    /*
     public static void setOnFire(ItemStack item, Entity entity, double seconds) {
         if (item.getItem() instanceof StandingAndWallBlockItem torch && torch.getBlock() instanceof FireTyped fireTypedTorch) {
             FireManager.setOnFire(entity, (float) seconds, fireTypedTorch.getFireType());
@@ -86,4 +91,6 @@ public final class TorchHitEvent {
             FireManager.setOnFire(entity, (float) seconds, FireManager.DEFAULT_FIRE_TYPE);
         }
     }
+
+     */
 }

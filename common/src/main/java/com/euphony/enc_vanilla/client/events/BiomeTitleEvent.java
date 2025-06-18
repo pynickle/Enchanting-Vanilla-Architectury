@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.biome.Biome;
 import org.apache.commons.lang3.StringUtils;
+import org.joml.Matrix3x2fStack;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -105,15 +106,15 @@ public class BiomeTitleEvent {
                     Font font = mc.font;
                     float scale = (float) config.scale;
 
-                    PoseStack pose = guiGraphics.pose();
-                    pose.pushPose();
-                    pose.translate(guiGraphics.guiWidth() / 2D, guiGraphics.guiHeight() / 2D, 0);
-                    pose.scale(scale, scale, scale);
+                    Matrix3x2fStack pose = guiGraphics.pose();
+                    pose.pushMatrix();
+                    pose.translate(guiGraphics.guiWidth() / 2f, guiGraphics.guiHeight() / 2f);
+                    pose.scale(scale, scale);
                     Component biomeName = getBiomeName(displayBiome, config);
                     int textWidth = font.width(biomeName);
                     int y = - font.wordWrapHeight(biomeName.getString(), 999) / 2 + config.yOffset;
                     guiGraphics.drawString(font, biomeName, (-textWidth / 2), y, 0xffffff | (alpha << 24), true);
-                    pose.popPose();
+                    pose.popMatrix();
                 }
             }
         }

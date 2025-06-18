@@ -41,7 +41,7 @@ public class DataGenerators {
 
         BlockTagGenerator blockTagGenerator = new BlockTagGenerator(output, lookupProvider);
         generator.addProvider(true, blockTagGenerator);
-        generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter()));
+        generator.addProvider(true, new ItemTagGenerator(output, lookupProvider));
         generator.addProvider(true, new DamageTypeGenerator(output, lookupProvider));
 
         generator.addProvider(true, new GlobalLootModifierGenerator(output, lookupProvider));
@@ -50,7 +50,7 @@ public class DataGenerators {
 
         generator.addProvider(true, new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
                 Component.literal("Resources for Enchanting Vanilla"),
-                DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES),
+                DetectedVersion.BUILT_IN.packVersion(PackType.CLIENT_RESOURCES),
                 Optional.empty())));
     }
 }

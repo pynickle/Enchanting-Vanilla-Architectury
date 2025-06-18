@@ -7,6 +7,8 @@ import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -41,15 +43,13 @@ public abstract class ItemFrameMixin extends HangingEntity implements ICustomIte
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
-    private void addAdditionalSaveDataInject(CompoundTag nbt, CallbackInfo ci) {
-        nbt.putBoolean("isInvisible", this.enc_vanilla$isInvisible);
+    private void addAdditionalSaveDataInject(ValueOutput valueOutput, CallbackInfo ci) {
+        valueOutput.putBoolean("isInvisible", this.enc_vanilla$isInvisible);
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
-    private void readAdditionalSaveDataInject(CompoundTag nbt, CallbackInfo ci) {
-        if (nbt.contains("isInvisible")) {
-            this.enc_vanilla$isInvisible = nbt.getBooleanOr("isInvisible", false);
-        }
+    private void readAdditionalSaveDataInject(ValueInput valueInput, CallbackInfo ci) {
+        this.enc_vanilla$isInvisible = valueInput.getBooleanOr("isInvisible", false);
     }
 
     @Override

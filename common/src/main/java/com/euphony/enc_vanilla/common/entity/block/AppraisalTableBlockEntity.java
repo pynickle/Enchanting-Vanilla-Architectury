@@ -25,6 +25,8 @@ import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.LevelStem;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -112,22 +114,22 @@ public class AppraisalTableBlockEntity extends BaseContainerBlockEntity {
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.saveAdditional(compoundTag, provider);
+    protected void saveAdditional(ValueOutput compoundTag) {
+        super.saveAdditional(compoundTag);
         compoundTag.putInt("Progress", this.progress);
         compoundTag.putBoolean("IsActive", this.isActive);
         compoundTag.putBoolean("IsError", this.isError);
-        ContainerHelper.saveAllItems(compoundTag, this.items, provider);
+        ContainerHelper.saveAllItems(compoundTag, this.items);
     }
 
     @Override
-    protected void loadAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.loadAdditional(compoundTag, provider);
+    protected void loadAdditional(ValueInput compoundTag) {
+        super.loadAdditional(compoundTag);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(compoundTag, this.items, provider);
+        ContainerHelper.loadAllItems(compoundTag, this.items);
         this.progress = compoundTag.getInt("Progress").get();
-        this.isActive = compoundTag.getBoolean("IsActive").get();
-        this.isError = compoundTag.getBoolean("IsError").get();
+        this.isActive = compoundTag.getBooleanOr("IsActive", false);
+        this.isError = compoundTag.getBooleanOr("IsError", false);
     }
 
     public static void serverTick(Level level, BlockPos blockPos, BlockState blockState, AppraisalTableBlockEntity arg4) {

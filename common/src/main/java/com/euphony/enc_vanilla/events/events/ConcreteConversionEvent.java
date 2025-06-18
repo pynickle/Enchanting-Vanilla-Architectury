@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ConcreteConversionEvent {
     public static EventResult dropItem(Player player, ItemEntity itemEntity) {
-        if (!itemEntity.getCommandSenderWorld().isClientSide()) {
+        if (!itemEntity.level().isClientSide()) {
             addPlayerThrownItemEntity(itemEntity);
         }
         return EventResult.pass();

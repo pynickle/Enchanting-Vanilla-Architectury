@@ -49,7 +49,7 @@ public class EVConfigScreen extends Screen {
         context.pose().translate(this.width / 2, 10);
         context.pose().scale(scale, scale);
         context.pose().translate(-this.width / 2, 0);
-        context.drawCenteredString(this.minecraft.font, Component.translatable("yacl3.config.enc_vanilla:config"), this.width / 2, 0, 0xFFFFFF);
+        context.drawCenteredString(this.minecraft.font, Component.translatable("yacl3.config.enc_vanilla:config"), this.width / 2, 0, 0xFFFFFFFF);
         context.pose().popMatrix();
     }
 

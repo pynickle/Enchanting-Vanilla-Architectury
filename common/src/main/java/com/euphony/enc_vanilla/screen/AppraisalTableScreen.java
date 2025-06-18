@@ -10,6 +10,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -69,11 +70,11 @@ public class AppraisalTableScreen extends AbstractContainerScreen<AppraisalTable
     protected void renderBg(GuiGraphics guiGraphics, float f, int i, int j) {
         int k = this.leftPos;
         int l = this.topPos;
-        guiGraphics.blit(RenderType::guiTextured, TEXTURE, k, l, 0.0f, 0.0f, this.imageWidth, this.imageHeight, 256, 256);
+        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, TEXTURE, k, l, 0.0f, 0.0f, this.imageWidth, this.imageHeight, 256, 256);
         if ((this.menu).isInProgress()) {
             int m = 75;
             int n = Mth.ceil((this.menu).getProgress() * m) + 1;
-            guiGraphics.blitSprite(RenderType::guiTextured, PROGRESS_SPRITE, 74, 15, 0, 0, k + 51, l + 36, n, 15);
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, PROGRESS_SPRITE, 74, 15, 0, 0, k + 51, l + 36, n, 15);
         }
     }
 
