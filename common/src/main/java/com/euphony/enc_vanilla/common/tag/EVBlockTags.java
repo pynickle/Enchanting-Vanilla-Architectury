@@ -3,9 +3,7 @@ package com.euphony.enc_vanilla.common.tag;
 import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class EVBlockTags {
