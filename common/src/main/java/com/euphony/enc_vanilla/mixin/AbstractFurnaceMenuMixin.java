@@ -1,6 +1,8 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.common.tag.EVItemTags;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.utils.ItemUtils;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractFurnaceMenu;
@@ -32,7 +34,10 @@ public abstract class AbstractFurnaceMenuMixin extends RecipeBookMenu {
     private void onBeforeCanSmelt(
             Player player, int i, CallbackInfoReturnable<ItemStack> cir, @Local(ordinal = 0) ItemStack itemStack2
     ) {
-        if (isFuel(itemStack2) && itemStack2.is(EVItemTags.FORCED_FUELS)) {
+        if(!QolConfig.HANDLER.instance().enableForcedFuels) return;
+
+        if (isFuel(itemStack2) && (itemStack2.is(EVItemTags.FORCED_FUELS)
+        || QolConfig.HANDLER.instance().extraForcedFuels.contains(ItemUtils.getKey(itemStack2.getItem()).toString()))) return; {
             if (!this.moveItemStackTo(itemStack2, 1, 2, false)) {
                 cir.setReturnValue(ItemStack.EMPTY);
                 cir.cancel();
