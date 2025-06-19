@@ -35,6 +35,9 @@
   "message.enc_vanilla.key.safe_harvest.on": "Safe Harvest On",
   "message.enc_vanilla.key.safe_harvest.off": "Safe Harvest Off",
 
+  "message.enc_vanilla.book_save.title": "Save Book",
+  "message.enc_vanilla.book_save.question": "Are you sure you want to close the book without saving?",
+
   "death.attack.enc_vanilla.stonecutter": "%1$s cut itself to death with a stonecutter",
 
   "message.enc_vanilla.sculk_compass.error_messages.1": "[BIOME MISSING]",
@@ -288,6 +291,8 @@
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention": "Enable Chat History Retention",
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention.desc": "Leaving the world now will not clear your chat history.",
+  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation": "Enable Book Save Confirmation",
+  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation.desc": "When you make changes to the content of a book and close it without saving, a prompt will pop up reminding you to save.",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",

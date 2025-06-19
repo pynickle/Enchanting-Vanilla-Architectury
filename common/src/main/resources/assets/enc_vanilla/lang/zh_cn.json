@@ -257,5 +257,9 @@
   "yacl3.config.enc_vanilla:config.enableForcedFuels.desc": "现在拥有标签 \"forced_fuels\" 的物品会强制进入熔炉的燃料槽哪怕其拥有被烧炼的配方。",
   "yacl3.config.enc_vanilla:config.extraForcedFuels": "额外强制燃料物品",
   "yacl3.config.enc_vanilla:config.extraForcedFuels.desc": "配置来自其他模组可以被视为强制燃料的物品",
-  "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "配置额外强制燃料物品"
+  "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "配置额外强制燃料物品",
+  "message.enc_vanilla.book_save.title": "保存书籍",
+  "message.enc_vanilla.book_save.question": "你确定要关闭书籍而不保存吗？",
+  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation": "启用书籍保存确认",
+  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation.desc": "当你对书籍内容进行修改后未保存即关闭时，系统会弹出提示框提醒您保存。"
 }

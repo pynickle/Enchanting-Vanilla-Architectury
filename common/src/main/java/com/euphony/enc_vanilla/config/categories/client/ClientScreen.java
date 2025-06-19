@@ -222,6 +222,12 @@ public class ClientScreen {
                             newVal -> config.enableChatHistoryRetention = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
+            Option<Boolean> enableBookSaveConfirmationOpt = ConfigUtils.<Boolean>getGenericOption("enableBookSaveConfirmation")
+                    .binding(defaults.enableBookSaveConfirmation,
+                            () -> config.enableBookSaveConfirmation,
+                            newVal -> config.enableBookSaveConfirmation = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
@@ -281,7 +287,8 @@ public class ClientScreen {
                                     .options(List.of(
                                             enableBeeInfoOpt,
                                             enableAxolotlBucketFixOpt,
-                                            enableChatHistoryRetentionOpt
+                                            enableChatHistoryRetentionOpt,
+                                            enableBookSaveConfirmationOpt
                                     ))
                                     .build())
                             .build())
