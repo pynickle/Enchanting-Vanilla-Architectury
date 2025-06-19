@@ -73,7 +73,7 @@ public abstract class BookEditScreenMixin extends Screen {
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
-        if(!ClientConfig.HANDLER.instance().enableBookScroll) return true;
+        if(!ClientConfig.HANDLER.instance().enableBookScroll) return super.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
 
         double scrollDelta = verticalAmount + horizontalAmount;
 
