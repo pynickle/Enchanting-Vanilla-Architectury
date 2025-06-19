@@ -261,5 +261,12 @@
   "message.enc_vanilla.book_save.title": "保存书籍",
   "message.enc_vanilla.book_save.question": "你确定要关闭书籍而不保存吗？",
   "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation": "启用书籍保存确认",
-  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation.desc": "当你对书籍内容进行修改后未保存即关闭时，系统会弹出提示框提醒您保存。"
+  "yacl3.config.enc_vanilla:config.enableBookSaveConfirmation.desc": "当你对书籍内容进行修改后未保存即关闭时，系统会弹出提示框提醒您保存。",
+  "yacl3.config.enc_vanilla:config.category.client.group.book_scroll": "书籍滚动",
+  "yacl3.config.enc_vanilla:config.enableBookScroll": "启用书籍滚动",
+  "yacl3.config.enc_vanilla:config.enableBookScroll.desc": "现在你可以使用鼠标滚轮来翻页书籍。",
+  "yacl3.config.enc_vanilla:config.ctrlSpeedMultiplier": "Ctrl 加速倍率",
+  "yacl3.config.enc_vanilla:config.ctrlSpeedMultiplier.desc": "使用 Ctrl 键时的翻页加速倍率。",
+  "yacl3.config.enc_vanilla:config.enablePageTurnSound": "启用翻页音效",
+  "yacl3.config.enc_vanilla:config.enablePageTurnSound.desc": "使用滚轮翻页时是否播放翻页声音。"
 }

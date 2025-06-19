@@ -33,6 +33,7 @@ public class ClientConfig {
     public static final String BETTER_CHAT_GROUP = "better_chat";
     public static final String BIOME_TITLE_GROUP = "biome_title";
     public static final String FASTER_CLIMBING_GROUP = "faster_climbing";
+    public static final String BOOK_SCROLL_GROUP = "book_scroll";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
@@ -63,6 +64,10 @@ public class ClientConfig {
     @SerialEntry public double cooldownTime = 1.5D;
     @SerialEntry public boolean enableModName = false;
     @SerialEntry public boolean enableUndergroundUpdate = false;
+
+    @SerialEntry public boolean enableBookScroll = true;
+    @SerialEntry public int ctrlSpeedMultiplier = 5;
+    @SerialEntry public boolean enablePageTurnSound = true;
 
     @SerialEntry public boolean enableBeeInfo = true;
     @SerialEntry public boolean enableAxolotlBucketFix = true;

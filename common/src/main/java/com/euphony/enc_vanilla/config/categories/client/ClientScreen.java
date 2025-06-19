@@ -202,6 +202,28 @@ public class ClientScreen {
                             .range(1.0, 10.0).step(0.5))
                     .build();
 
+            // Book Scroll
+            Option<Boolean> enableBookScrollOpt = ConfigUtils.<Boolean>getGenericOption("enableBookScroll")
+                    .binding(defaults.enableBookScroll,
+                            () -> config.enableBookScroll,
+                            newVal -> config.enableBookScroll = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> ctrlSpeedMultiplierOpt = ConfigUtils.<Integer>getGenericOption("ctrlSpeedMultiplier")
+                    .binding(defaults.ctrlSpeedMultiplier,
+                            () -> config.ctrlSpeedMultiplier,
+                            newVal -> config.ctrlSpeedMultiplier = newVal)
+                    .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                            .range(1, 10).step(1))
+                    .build();
+            Option<Boolean> enablePageTurnSoundOpt = ConfigUtils.<Boolean>getGenericOption("enablePageTurnSound")
+                    .binding(defaults.enablePageTurnSound,
+                            () -> config.enablePageTurnSound,
+                            newVal -> config.enablePageTurnSound = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
                     .binding(defaults.enableBeeInfo,
@@ -280,6 +302,14 @@ public class ClientScreen {
                                             enableFasterUpwardOpt,
                                             enableFasterDownwardOpt,
                                             speedMultiplierOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, BOOK_SCROLL_GROUP))
+                                    .options(java.util.List.of(
+                                            enableBookScrollOpt,
+                                            ctrlSpeedMultiplierOpt,
+                                            enablePageTurnSoundOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

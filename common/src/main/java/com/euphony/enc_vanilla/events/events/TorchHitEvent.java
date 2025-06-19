@@ -3,9 +3,6 @@ package com.euphony.enc_vanilla.events.events;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.utils.ItemUtils;
 import dev.architectury.event.EventResult;
-import dev.architectury.platform.Platform;
-// import it.crystalnest.soul_fire_d.api.FireManager;
-// import it.crystalnest.soul_fire_d.api.type.FireTyped;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -13,7 +10,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.StandingAndWallBlockItem;
 import org.jetbrains.annotations.Nullable;
 
 public final class TorchHitEvent {
