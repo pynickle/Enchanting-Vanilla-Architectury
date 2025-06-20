@@ -34,6 +34,7 @@ public class ClientConfig {
     public static final String BIOME_TITLE_GROUP = "biome_title";
     public static final String FASTER_CLIMBING_GROUP = "faster_climbing";
     public static final String BOOK_SCROLL_GROUP = "book_scroll";
+    public static final String MUSIC_PAUSE_GROUP = "music_pause";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
@@ -68,6 +69,9 @@ public class ClientConfig {
     @SerialEntry public boolean enableBookScroll = true;
     @SerialEntry public int ctrlSpeedMultiplier = 5;
     @SerialEntry public boolean enablePageTurnSound = true;
+
+    @SerialEntry public boolean enableMusicPause = true;
+    @SerialEntry public boolean pauseUiSound = false;
 
     @SerialEntry public boolean enableBeeInfo = true;
     @SerialEntry public boolean enableAxolotlBucketFix = true;

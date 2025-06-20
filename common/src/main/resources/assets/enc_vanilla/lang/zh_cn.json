@@ -268,5 +268,10 @@
   "yacl3.config.enc_vanilla:config.ctrlSpeedMultiplier": "Ctrl 加速倍率",
   "yacl3.config.enc_vanilla:config.ctrlSpeedMultiplier.desc": "使用 Ctrl 键时的翻页加速倍率。",
   "yacl3.config.enc_vanilla:config.enablePageTurnSound": "启用翻页音效",
-  "yacl3.config.enc_vanilla:config.enablePageTurnSound.desc": "使用滚轮翻页时是否播放翻页声音。"
+  "yacl3.config.enc_vanilla:config.enablePageTurnSound.desc": "使用滚轮翻页时是否播放翻页声音。",
+  "yacl3.config.enc_vanilla:config.category.client.group.music_pause": "音乐暂停",
+  "yacl3.config.enc_vanilla:config.enableMusicPause": "启用音乐暂停",
+  "yacl3.config.enc_vanilla:config.enableMusicPause.desc": "现在，当游戏暂停时，音乐也会暂停，就像在1.21.5及以下版本中一样。",
+  "yacl3.config.enc_vanilla:config.pauseUiSound": "暂停 UI 声音",
+  "yacl3.config.enc_vanilla:config.pauseUiSound.desc": "是否暂停声音源为 UI 的声音。"
 }

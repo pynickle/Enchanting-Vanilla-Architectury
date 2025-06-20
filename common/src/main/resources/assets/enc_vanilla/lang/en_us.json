@@ -292,6 +292,12 @@
   "yacl3.config.enc_vanilla:config.enablePageTurnSound": "Enable Page Turn Sound",
   "yacl3.config.enc_vanilla:config.enablePageTurnSound.desc": "Whether to play a page-turning sound when using the scroll wheel to turn pages.",
 
+  "yacl3.config.enc_vanilla:config.category.client.group.music_pause": "Music Pause",
+  "yacl3.config.enc_vanilla:config.enableMusicPause": "Enable Music Pause",
+  "yacl3.config.enc_vanilla:config.enableMusicPause.desc": "Now, when the game is paused, the music will also pause, just like in versions 1.21.5 and below.",
+  "yacl3.config.enc_vanilla:config.pauseUiSound": "Pause UI Sound",
+  "yacl3.config.enc_vanilla:config.pauseUiSound.desc": "Whether to pause sounds for source UI.",
+
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
   "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",

@@ -8,8 +8,11 @@
     "BookViewScreenMixin",
     "ChatComponentMixin",
     "GameRendererMixin",
+    "MinecraftMixin",
     "MultiLineEditBoxMixin",
+    "OptionsMixin",
     "PlayerTabOverlayMixin",
+    "SoundsOptionScreenMixin",
     "invoker.PlayerTabOverlayInvoker"
   ],
   "mixins": [

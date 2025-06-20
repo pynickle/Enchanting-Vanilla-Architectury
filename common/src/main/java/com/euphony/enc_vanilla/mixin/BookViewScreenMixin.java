@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
-import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;

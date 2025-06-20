@@ -224,6 +224,21 @@ public class ClientScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Music Pause
+            Option<Boolean> enableMusicPauseOpt = ConfigUtils.<Boolean>getGenericOption("enableMusicPause")
+                    .binding(defaults.enableMusicPause,
+                            () -> config.enableMusicPause,
+                            newVal -> config.enableMusicPause = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> pauseUiSoundOpt = ConfigUtils.<Boolean>getGenericOption("pauseUiSound")
+                    .binding(defaults.pauseUiSound,
+                            () -> config.pauseUiSound,
+                            newVal -> config.pauseUiSound = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
                     .binding(defaults.enableBeeInfo,
@@ -310,6 +325,13 @@ public class ClientScreen {
                                             enableBookScrollOpt,
                                             ctrlSpeedMultiplierOpt,
                                             enablePageTurnSoundOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, MUSIC_PAUSE_GROUP))
+                                    .options(java.util.List.of(
+                                            enableMusicPauseOpt,
+                                            pauseUiSoundOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
