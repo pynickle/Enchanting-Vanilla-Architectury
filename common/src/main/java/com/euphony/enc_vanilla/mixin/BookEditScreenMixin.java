@@ -20,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BookEditScreen.class)
 public abstract class BookEditScreenMixin extends Screen {
     @Shadow private MultiLineEditBox page;
-    @Shadow private PageButton forwardButton;
-    @Shadow private PageButton backButton;
 
     @Shadow protected abstract void pageForward();
 

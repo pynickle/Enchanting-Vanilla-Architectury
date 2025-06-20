@@ -5,17 +5,14 @@ import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 
 @Environment(EnvType.CLIENT)
 public class RenderTypeEvent {
     public static void registerRenderType(Minecraft minecraft) {
-        /*
-        RenderTypeRegistry.register(RenderType.cutout(), EVBlocks.CEILING_TORCH.get(),
+        RenderTypeRegistry.register(ChunkSectionLayer.CUTOUT, EVBlocks.CEILING_TORCH.get(),
                 EVBlocks.CEILING_SOUL_TORCH.get(), EVBlocks.CEILING_REDSTONE_TORCH.get(),
                 EVBlocks.CUT_VINE.get(), EVBlocks.CUT_SUGAR_CANE.get(), EVBlocks.CUT_BAMBOO_SAPLING.get(),
                 EVBlocks.WATERLOGGED_LILY_PAD.get());
-
-         */
     }
 }
