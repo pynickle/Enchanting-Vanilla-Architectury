@@ -107,7 +107,7 @@ public class BiomeTitleEvent {
 
                     Matrix3x2fStack pose = guiGraphics.pose();
                     pose.pushMatrix();
-                    pose.translate(guiGraphics.guiWidth() / 2f, guiGraphics.guiHeight() / 2f);
+                    pose.translate(guiGraphics.guiWidth() / 2.0f, guiGraphics.guiHeight() / 2.0f);
                     pose.scale(scale, scale);
                     Component biomeName = getBiomeName(displayBiome, config);
                     int textWidth = font.width(biomeName);

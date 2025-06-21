@@ -273,5 +273,7 @@
   "yacl3.config.enc_vanilla:config.enableMusicPause": "启用音乐暂停",
   "yacl3.config.enc_vanilla:config.enableMusicPause.desc": "现在，当游戏暂停时，音乐也会暂停，就像在1.21.5及以下版本中一样。",
   "yacl3.config.enc_vanilla:config.pauseUiSound": "暂停 UI 声音",
-  "yacl3.config.enc_vanilla:config.pauseUiSound.desc": "是否暂停声音源为 UI 的声音。"
+  "yacl3.config.enc_vanilla:config.pauseUiSound.desc": "是否暂停声音源为 UI 的声音。",
+  "yacl3.config.enc_vanilla:config.enableDisplayRemainingSales": "启用显示剩余销售额",
+  "yacl3.config.enc_vanilla:config.enableDisplayRemainingSales.desc": "在交易界面上，每个箭头下方显示剩余的可用销售数量。"
 }

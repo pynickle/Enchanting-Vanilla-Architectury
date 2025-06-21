@@ -8,6 +8,7 @@
     "BookViewScreenMixin",
     "ChatComponentMixin",
     "GameRendererMixin",
+    "MerchantScreenMixin",
     "MinecraftMixin",
     "MultiLineEditBoxMixin",
     "OptionsMixin",

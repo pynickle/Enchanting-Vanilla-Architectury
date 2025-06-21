@@ -265,6 +265,12 @@ public class ClientScreen {
                             newVal -> config.enableBookSaveConfirmation = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
+            Option<Boolean> enableDisplayRemainingSalesOpt = ConfigUtils.<Boolean>getGenericOption("enableDisplayRemainingSales")
+                    .binding(defaults.enableDisplayRemainingSales,
+                            () -> config.enableDisplayRemainingSales,
+                            newVal -> config.enableDisplayRemainingSales = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
@@ -340,7 +346,8 @@ public class ClientScreen {
                                             enableBeeInfoOpt,
                                             enableAxolotlBucketFixOpt,
                                             enableChatHistoryRetentionOpt,
-                                            enableBookSaveConfirmationOpt
+                                            enableBookSaveConfirmationOpt,
+                                            enableDisplayRemainingSalesOpt
                                     ))
                                     .build())
                             .build())
