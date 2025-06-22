@@ -26,7 +26,7 @@ public class BellPhantomEvent {
         BlockState state = level.getBlockState(blockPos);
         if(state.is(Blocks.BELL)) {
             BellBlock bell = (BellBlock) state.getBlock();
-            if(!((BellBlockInvoker) bell).invokeIsProperHit(state, direction,
+            if(!bell.isProperHit(state, direction,
                     HitUtils.getPlayerBlockHitResult(level, player).getLocation().y - blockPos.getY()))
                 return InteractionResult.PASS;
 

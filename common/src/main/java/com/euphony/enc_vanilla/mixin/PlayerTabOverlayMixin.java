@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
-import com.euphony.enc_vanilla.mixin.invoker.PlayerTabOverlayInvoker;
 import com.euphony.enc_vanilla.utils.ColorUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -39,7 +38,7 @@ public abstract class PlayerTabOverlayMixin {
         if (ClientConfig.HANDLER.instance().enableBetterPingDisplay) {
             enc_vanilla$render(minecraft, overlay, graphics, width, x, y, player);
         } else {
-            ((PlayerTabOverlayInvoker) overlay).invokeRenderPingIcon(graphics, width, x, y, player);
+            overlay.renderPingIcon(graphics, width, x, y, player);
         }
     }
 
@@ -69,7 +68,7 @@ public abstract class PlayerTabOverlayMixin {
         graphics.drawString(mc.font, pingString, textX, y, pingTextColor);
 
         if (ClientConfig.HANDLER.instance().enableDefaultPingBars) {
-            ((PlayerTabOverlayInvoker) overlay).invokeRenderPingIcon(graphics, width, x, y, player);
+            overlay.renderPingIcon(graphics, width, x, y, player);
         }
     }
 }

@@ -13,8 +13,7 @@
     "MultiLineEditBoxMixin",
     "OptionsMixin",
     "PlayerTabOverlayMixin",
-    "SoundsOptionScreenMixin",
-    "invoker.PlayerTabOverlayInvoker"
+    "SoundsOptionScreenMixin"
   ],
   "mixins": [
     "AbstractFurnaceMenuMixin",
@@ -43,8 +42,7 @@
     "ThrowablePotionItemMixin",
     "ThrownSplashPotionMixin",
     "VillagerMixin",
-    "WaterlilyBlockMixin",
-    "invoker.BellBlockInvoker"
+    "WaterlilyBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
