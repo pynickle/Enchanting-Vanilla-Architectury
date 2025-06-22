@@ -35,6 +35,7 @@ public class ClientConfig {
     public static final String FASTER_CLIMBING_GROUP = "faster_climbing";
     public static final String BOOK_SCROLL_GROUP = "book_scroll";
     public static final String MUSIC_PAUSE_GROUP = "music_pause";
+    public static final String FAST_TRADING_GROUP = "fast_trading";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
@@ -72,6 +73,9 @@ public class ClientConfig {
 
     @SerialEntry public boolean enableMusicPause = true;
     @SerialEntry public boolean pauseUiSound = false;
+
+    @SerialEntry public boolean enableFastTrading = true;
+    @SerialEntry public boolean enableAltKey = true;
 
     @SerialEntry public boolean enableBeeInfo = true;
     @SerialEntry public boolean enableAxolotlBucketFix = true;

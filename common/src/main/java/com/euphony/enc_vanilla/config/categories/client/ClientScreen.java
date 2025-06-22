@@ -239,6 +239,20 @@ public class ClientScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Fast Trading
+            Option<Boolean> enableFastTradingOpt = ConfigUtils.<Boolean>getGenericOption("enableFastTrading")
+                    .binding(defaults.enableFastTrading,
+                            () -> config.enableFastTrading,
+                            newVal -> config.enableFastTrading = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> enableAltKeyOpt = ConfigUtils.<Boolean>getGenericOption("enableAltKey")
+                    .binding(defaults.enableAltKey,
+                            () -> config.enableAltKey,
+                            newVal -> config.enableAltKey = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
                     .binding(defaults.enableBeeInfo,
@@ -338,6 +352,13 @@ public class ClientScreen {
                                     .options(java.util.List.of(
                                             enableMusicPauseOpt,
                                             pauseUiSoundOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, FAST_TRADING_GROUP))
+                                    .options(java.util.List.of(
+                                            enableFastTradingOpt,
+                                            enableAltKeyOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

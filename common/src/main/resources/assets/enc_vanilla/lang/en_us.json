@@ -44,6 +44,8 @@
   "message.enc_vanilla.sculk_compass.error_messages.2": "ERROR 0xBI0M404",
   "message.enc_vanilla.sculk_compass.error_messages.3": "# DATA CORRUPT #",
 
+  "message.enc_vanilla.fast_trading.alt": "The items being sold may be damaged or non-stackable. Hold down the Alt key to execute the trade.\n",
+
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
   "yacl3.config.enc_vanilla:config.category.other": "Other",
@@ -297,6 +299,12 @@
   "yacl3.config.enc_vanilla:config.enableMusicPause.desc": "Now, when the game is paused, the music will also pause, just like in versions 1.21.5 and below.",
   "yacl3.config.enc_vanilla:config.pauseUiSound": "Pause UI Sound",
   "yacl3.config.enc_vanilla:config.pauseUiSound.desc": "Whether to pause sounds for source UI.",
+
+  "yacl3.config.enc_vanilla:config.category.client.group.fast_trading": "Fast Trading",
+  "yacl3.config.enc_vanilla:config.enableFastTrading": "Enable Fast Trading",
+  "yacl3.config.enc_vanilla:config.enableFastTrading.desc": "Now you can trade all the items in your backpack with villagers with a single click.",
+  "yacl3.config.enc_vanilla:config.enableAltKey": "Enable Alt Key",
+  "yacl3.config.enc_vanilla:config.enableAltKey.desc": "When items are damageable or non-stackable, hold down the Alt key to trade.",
 
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",

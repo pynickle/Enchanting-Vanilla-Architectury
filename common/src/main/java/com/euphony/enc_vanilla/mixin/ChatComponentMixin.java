@@ -2,6 +2,8 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.client.ClientConfig;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.client.player.LocalPlayer;
@@ -12,6 +14,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@Environment(EnvType.CLIENT)
 @Mixin(ChatComponent.class)
 public class ChatComponentMixin {
     @ModifyExpressionValue(

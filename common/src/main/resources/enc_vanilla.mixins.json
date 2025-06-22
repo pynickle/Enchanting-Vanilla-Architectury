@@ -29,6 +29,7 @@
     "JukeboxSongPlayerMixin",
     "LeashableMixin",
     "LiquidBlockMixin",
+    "MerchantMenuMixin",
     "MonsterMixin",
     "PhantomMixin",
     "PotionItemMixin",
