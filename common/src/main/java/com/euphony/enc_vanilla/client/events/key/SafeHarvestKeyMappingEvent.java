@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.client.events;
+package com.euphony.enc_vanilla.client.events.key;
 
 import com.euphony.enc_vanilla.keymapping.EVKeyConfig;
 import com.euphony.enc_vanilla.keymapping.EVKeyMappings;
@@ -9,10 +9,10 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 
 @Environment(EnvType.CLIENT)
-public class KeyMappingEvent {
+public class SafeHarvestKeyMappingEvent {
     private static boolean wasToggleKeyDown = false;
 
-    public static void clientPost(Minecraft minecraft) {
+    public static void safeHarvest(Minecraft minecraft) {
         boolean isToggleKeyDown = EVKeyMappings.SAFE_HARVEST.isDown();
         if(isToggleKeyDown && !wasToggleKeyDown) {
             LocalPlayer player = minecraft.player;

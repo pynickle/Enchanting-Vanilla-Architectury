@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.neoforge.client;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.client.events.BiomeTitleEvent;
+import com.euphony.enc_vanilla.client.events.key.BundleUpKeyMappingEvent;
 import com.euphony.enc_vanilla.client.property.AxolotlBucketVariant;
 import com.euphony.enc_vanilla.client.property.FrogBucketActive;
 import com.euphony.enc_vanilla.client.property.SculkCompassAngle;
@@ -45,7 +46,12 @@ public class EVClientNeoforge {
     }
 
     @SubscribeEvent
-    public static void register(RegisterRangeSelectItemModelPropertyEvent event) {
+    public static void registerRangeSelectItemModelProperty(RegisterRangeSelectItemModelPropertyEvent event) {
         event.register(Utils.prefix("angle"), SculkCompassAngle.MAP_CODEC);
+    }
+
+    @SubscribeEvent
+    public static void keyPressed(ScreenEvent.KeyReleased.Post event) {
+        BundleUpKeyMappingEvent.bundleUp(event.getScreen(), event.getKeyCode(), event.getScanCode(), event.getModifiers());
     }
 }

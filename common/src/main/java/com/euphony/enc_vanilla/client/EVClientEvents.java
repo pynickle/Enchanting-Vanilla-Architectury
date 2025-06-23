@@ -1,11 +1,14 @@
 package com.euphony.enc_vanilla.client;
 
 import com.euphony.enc_vanilla.client.events.*;
+import com.euphony.enc_vanilla.client.events.key.BundleUpKeyMappingEvent;
+import com.euphony.enc_vanilla.client.events.key.SafeHarvestKeyMappingEvent;
 import dev.architectury.event.events.client.ClientChatEvent;
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.client.ClientTooltipEvent;
 import dev.architectury.event.events.common.TickEvent;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
 
 public class EVClientEvents {
     public static void init() {
@@ -13,7 +16,7 @@ public class EVClientEvents {
         ClientTooltipEvent.ITEM.register(BeeInfoEvent::item);
 
         ClientTickEvent.CLIENT_PRE.register(BiomeTitleEvent::clientPre);
-        ClientTickEvent.CLIENT_POST.register(KeyMappingEvent::clientPost);
+        ClientTickEvent.CLIENT_POST.register(SafeHarvestKeyMappingEvent::safeHarvest);
 
         ClientChatEvent.RECEIVED.register(BeautifiedChatEvent::chatReceived);
 

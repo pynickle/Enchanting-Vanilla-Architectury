@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.api.IPhantom;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
-import com.euphony.enc_vanilla.mixin.invoker.BellBlockInvoker;
 import com.euphony.enc_vanilla.utils.HitUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

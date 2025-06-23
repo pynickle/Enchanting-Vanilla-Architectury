@@ -30,6 +30,8 @@
   "message.enc_vanilla.broken_lead.message": "你的拴绳断了！",
 
   "key.enc_vanilla.safe_harvest": "切换安全收获",
+  "key.enc_vanilla.bundle_up": "一键收纳",
+
   "category.enc_vanilla.keymapping": "原韵新生",
 
   "message.enc_vanilla.key.safe_harvest.on": "安全收获开启",

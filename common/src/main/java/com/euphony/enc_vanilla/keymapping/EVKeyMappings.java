@@ -10,4 +10,11 @@ public class EVKeyMappings {
             InputConstants.KEY_H,
             "category.enc_vanilla.keymapping"
     );
+
+    public static final KeyMapping BUNDLE_UP = new KeyMapping(
+            "key.enc_vanilla.bundle_up",
+            InputConstants.Type.KEYSYM,
+            InputConstants.KEY_R,
+            "category.enc_vanilla.keymapping"
+    );
 }
