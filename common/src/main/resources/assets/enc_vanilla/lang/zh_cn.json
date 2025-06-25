@@ -18,7 +18,6 @@
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",
   "block.enc_vanilla.cut_bamboo_sapling": "竹笋",
-  "block.enc_vanilla.compressed_slime_block": "压缩黏液块",
   "block.enc_vanilla.appraisal_table": "鉴定桌",
 
   "container.beehive.bees": "蜜蜂：%s/%s",
@@ -215,10 +214,6 @@
   "yacl3.config.enc_vanilla:config.enableStickyPiston.desc": "直接用黏液球右键活塞得到黏性活塞。",
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge": "启用可投掷火焰弹",
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "火焰弹现在可以直接右键投掷。",
-
-  "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩黏液块",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩黏液块",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "现在，你可以在上下两个连续的黏液块上放置一个铁砧，铁砧落下使其压缩成一个压缩黏液块。",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "幽匿指南针",
   "yacl3.config.enc_vanilla:config.enableSculkCompass": "启用幽匿指南针",

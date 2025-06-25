@@ -18,7 +18,6 @@
   "block.enc_vanilla.cut_vine": "Cut Vine",
   "block.enc_vanilla.cut_sugar_cane": "Sugar Cane",
   "block.enc_vanilla.cut_bamboo_sapling": "Bamboo Sapling",
-  "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block",
   "block.enc_vanilla.appraisal_table": "Appraisal Table",
 
   "container.beehive.bees": "Bees: %s / %s",
@@ -215,10 +214,6 @@
   "yacl3.config.enc_vanilla:config.enableStickyPiston.desc": "Right-click the piston with the slime ball to obtain sticky piston.",
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge": "Enable Throwable Fire Charge",
   "yacl3.config.enc_vanilla:config.enableThrowableFireCharge.desc": "Fire charge can now be thrown directly with a right-click.",
-
-  "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "Sculk Compass",
   "yacl3.config.enc_vanilla:config.enableSculkCompass": "Enable Sculk Compass",

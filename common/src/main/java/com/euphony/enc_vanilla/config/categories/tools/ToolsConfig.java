@@ -27,11 +27,9 @@ public class ToolsConfig {
     }
 
     public static final String TOOLS_CATEGORY = "tools";
-    public static final String COMPRESSED_SLIME_BLOCK_GROUP = "compressed_slime_block";
     public static final String SCULK_COMPASS_GROUP = "sculk_compass";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableSlimeChunkDetecting = true;
     @SerialEntry public boolean enableSculkCompass = true;
-    @SerialEntry public boolean enableCompressedSlimeBlock = true;
 }

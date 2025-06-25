@@ -22,7 +22,6 @@
     "BlockEntityMixin",
     "BlocksMixin",
     "ConcretePowderBlockMixin",
-    "FallingBlockEntityMixin",
     "FarmBlockMixin",
     "ItemFrameMixin",
     "JukeboxSongPlayerMixin",

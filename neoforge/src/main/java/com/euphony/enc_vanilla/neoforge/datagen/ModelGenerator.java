@@ -54,8 +54,6 @@ public class ModelGenerator extends ModelProvider {
         createVine(blockModels);
         createSugarCane(blockModels, EVBlocks.CUT_SUGAR_CANE.get());
 
-        createCompressedSlimeBlock(blockModels, EVBlocks.COMPRESSED_SLIME_BLOCK.get());
-
         createNormalTorch(blockModels, EVBlocks.CEILING_TORCH.get(), Blocks.TORCH);
         createNormalTorch(blockModels, EVBlocks.CEILING_SOUL_TORCH.get(), Blocks.SOUL_TORCH);
         createRedstoneTorch(blockModels, EVBlocks.CEILING_REDSTONE_TORCH.get());
@@ -96,12 +94,6 @@ public class ModelGenerator extends ModelProvider {
     public void createBambooSapling(BlockModelGenerators blockModels, Block block) {
         blockModels.createCrossBlock(block, BlockModelGenerators.PlantType.TINTED, TextureMapping.cross(TextureMapping.getBlockTexture(Blocks.BAMBOO, "_stage0")));
         blockModels.registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(Items.BAMBOO));
-    }
-
-    public void createCompressedSlimeBlock(BlockModelGenerators blockModels, Block block) {
-        ResourceLocation resourcelocation = ModelLocationUtils.getModelLocation(Blocks.SLIME_BLOCK);
-        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(resourcelocation)));
-        blockModels.registerSimpleItemModel(block, resourcelocation);
     }
 
     public void createAppraisalTable(BlockModelGenerators blockModels, Block block) {
