@@ -47,8 +47,6 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicBlockItem(EVBlocks.CUT_VINE.get().asItem());
         basicBlockItem(EVBlocks.CUT_SUGAR_CANE.get().asItem());
 
-        simpleVanillaBlockItem(EVBlocks.COMPRESSED_SLIME_BLOCK.get(), "slime_block");
-
         simpleBlockItem(EVBlocks.CEILING_TORCH.get());
         simpleBlockItem(EVBlocks.CEILING_REDSTONE_TORCH.get());
         simpleBlockItem(EVBlocks.CEILING_SOUL_TORCH.get());

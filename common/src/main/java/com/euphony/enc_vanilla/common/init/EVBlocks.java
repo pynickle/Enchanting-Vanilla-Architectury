@@ -27,9 +27,6 @@ public class EVBlocks {
     public static final RegistrySupplier<CutBambooSaplingBlock> CUT_BAMBOO_SAPLING = registerWithItem("cut_bamboo_sapling",
             () -> new CutBambooSaplingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_SAPLING)));
 
-    public static final RegistrySupplier<CompressedSlimeBlock> COMPRESSED_SLIME_BLOCK = registerWithItem("compressed_slime_block",
-            () -> new CompressedSlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-
     public static final RegistrySupplier<CeilingTorchBlock> CEILING_TORCH = registerWithItem("torch",
             () -> new CeilingTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), ParticleTypes.FLAME, Blocks.TORCH));
     public static final RegistrySupplier<RedstoneCeilingTorchBlock> CEILING_REDSTONE_TORCH = registerWithItem("redstone_torch",

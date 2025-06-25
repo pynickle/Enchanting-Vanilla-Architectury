@@ -16,7 +16,7 @@ import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = EncVanilla.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = EncVanilla.MOD_ID, value = Dist.CLIENT)
 public class EVClientNeoforge {
     @SubscribeEvent
     public static void onResourceManagerReload(RegisterClientReloadListenersEvent event) {

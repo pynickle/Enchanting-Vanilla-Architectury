@@ -1,6 +1,5 @@
 {
   "block.enc_vanilla.appraisal_table": "鉴定桌",
-  "block.enc_vanilla.compressed_slime_block": "压缩黏液块",
   "block.enc_vanilla.cut_bamboo_sapling": "竹笋",
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
@@ -61,7 +60,6 @@
   "yacl3.config.enc_vanilla:config.category.recipes": "配方",
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "其他",
   "yacl3.config.enc_vanilla:config.category.tools": "工具",
-  "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩黏液块",
   "yacl3.config.enc_vanilla:config.category.tools.group.other": "其他",
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "幽匿指南针",
   "yacl3.config.enc_vanilla:config.chatMaxMessages": "最多保留历史消息",
@@ -104,8 +102,6 @@
   "yacl3.config.enc_vanilla:config.enableCeilingTorch.desc": "现在你可以在天花板上放置火把。",
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention": "启用聊天记录保留",
   "yacl3.config.enc_vanilla:config.enableChatHistoryRetention.desc": "现在离开世界并不会清除聊天记录。",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩黏液块",
-  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "现在，你可以在上下两个连续的黏液块上放置一个铁砧，铁砧落下使其压缩成一个压缩黏液块。",
   "yacl3.config.enc_vanilla:config.enableCutVine": "启用剪切藤蔓",
   "yacl3.config.enc_vanilla:config.enableCutVine.desc": "现在你可以使用剪刀右键藤蔓，将它和它下面的藤蔓转换为不会生长的切下的藤蔓。",
   "yacl3.config.enc_vanilla:config.enableDefaultPingBars": "启用默认延迟图标",
