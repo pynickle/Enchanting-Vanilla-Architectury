@@ -30,9 +30,6 @@ public class EVBlocks {
     public static final RegistrySupplier<CutBambooSaplingBlock> CUT_BAMBOO_SAPLING = registerWithItem("cut_bamboo_sapling",
             CutBambooSaplingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_SAPLING).instabreak());
 
-    public static final RegistrySupplier<CompressedSlimeBlock> COMPRESSED_SLIME_BLOCK = registerWithItem("compressed_slime_block",
-            CompressedSlimeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK));
-
     public static final RegistrySupplier<CeilingTorchBlock> CEILING_TORCH = registerWithItem("torch",
             (p) -> new CeilingTorchBlock(p, ParticleTypes.FLAME, Blocks.TORCH),
             BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH));

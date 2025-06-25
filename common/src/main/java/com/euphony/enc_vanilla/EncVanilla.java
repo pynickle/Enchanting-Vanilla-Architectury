@@ -3,8 +3,6 @@ package com.euphony.enc_vanilla;
 import com.euphony.enc_vanilla.common.init.*;
 import com.euphony.enc_vanilla.config.EVConfig;
 import com.euphony.enc_vanilla.events.EVEvents;
-import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandCallback;
-import com.euphony.enc_vanilla.events.events.CompressedSlimeBlockEvent;
 import com.euphony.enc_vanilla.utils.BlockEntityMap;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
@@ -33,7 +31,5 @@ public final class EncVanilla {
         EVMenus.MENUS.register();
 
         EVEvents.init();
-
-        AnvilFallOnLandCallback.EVENT.register(new CompressedSlimeBlockEvent());
     }
 }
