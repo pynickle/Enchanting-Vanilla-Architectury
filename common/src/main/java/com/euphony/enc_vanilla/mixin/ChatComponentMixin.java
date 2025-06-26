@@ -58,7 +58,10 @@ public class ChatComponentMixin {
         return y - better_client$getOffset();
     }
 
-    @ModifyConstant(method = "screenToChatY", constant = @Constant(doubleValue = 40.0))
+    @ModifyExpressionValue(
+            method = "screenToChatY",
+            at = @At(value = "CONSTANT", args = "doubleValue=40.0")
+    )
     private double textBottomOffset(double original) {
         return original + better_client$getOffset();
     }
