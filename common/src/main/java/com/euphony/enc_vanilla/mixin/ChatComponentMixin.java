@@ -11,7 +11,9 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Environment(EnvType.CLIENT)
@@ -61,7 +63,10 @@ public class ChatComponentMixin {
         return y - better_client$getOffset();
     }
 
-    @ModifyConstant(method = "screenToChatY", constant = @Constant(doubleValue = 40.0))
+    @ModifyExpressionValue(
+            method = "screenToChatY",
+            at = @At(value = "CONSTANT", args = "doubleValue=40.0")
+    )
     private double textBottomOffset(double original) {
         return original + better_client$getOffset();
     }

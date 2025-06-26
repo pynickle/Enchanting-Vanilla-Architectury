@@ -1,10 +1,10 @@
-package com.euphony.enc_vanilla.config.client;
+package com.euphony.enc_vanilla.config.screen;
 
 import com.euphony.enc_vanilla.config.categories.client.ClientScreen;
 import com.euphony.enc_vanilla.config.categories.qol.QolScreen;
 import com.euphony.enc_vanilla.config.categories.recipes.RecipesScreen;
 import com.euphony.enc_vanilla.config.categories.tools.ToolsScreen;
-import com.euphony.enc_vanilla.config.client.widget.CategoryButton;
+import com.euphony.enc_vanilla.config.screen.widget.CategoryButton;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;

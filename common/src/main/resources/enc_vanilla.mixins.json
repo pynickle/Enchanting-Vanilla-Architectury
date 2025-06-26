@@ -7,13 +7,16 @@
     "BookEditScreenMixin",
     "BookViewScreenMixin",
     "ChatComponentMixin",
+    "CreateWorldScreenMixin",
     "GameRendererMixin",
     "MerchantScreenMixin",
     "MinecraftMixin",
     "MultiLineEditBoxMixin",
     "OptionsMixin",
     "PlayerTabOverlayMixin",
-    "SoundsOptionScreenMixin"
+    "SoundsOptionScreenMixin",
+    "WorldListEntryMixin",
+    "WorldOpenFlowsMixin"
   ],
   "mixins": [
     "AbstractFurnaceMenuMixin",

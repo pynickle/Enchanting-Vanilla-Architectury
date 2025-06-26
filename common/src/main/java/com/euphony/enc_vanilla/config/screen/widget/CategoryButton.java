@@ -1,4 +1,4 @@
-package com.euphony.enc_vanilla.config.client.widget;
+package com.euphony.enc_vanilla.config.screen.widget;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

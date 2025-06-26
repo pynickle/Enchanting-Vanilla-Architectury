@@ -253,6 +253,20 @@ public class ClientScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // No Experimental Warning
+            Option<Boolean> enableNoExperimentalWarningOpt = ConfigUtils.<Boolean>getGenericOption("enableNoExperimentalWarning")
+                    .binding(defaults.enableNoExperimentalWarning,
+                            () -> config.enableNoExperimentalWarning,
+                            newVal -> config.enableNoExperimentalWarning = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+            Option<Boolean> enableExperimentalDisplayOpt = ConfigUtils.<Boolean>getGenericOption("enableExperimentalDisplay")
+                    .binding(defaults.enableExperimentalDisplay,
+                            () -> config.enableExperimentalDisplay,
+                            newVal -> config.enableExperimentalDisplay = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
                     .binding(defaults.enableBeeInfo,
@@ -359,6 +373,13 @@ public class ClientScreen {
                                     .options(java.util.List.of(
                                             enableFastTradingOpt,
                                             enableAltKeyOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, NO_EXPERIMENTAL_WARNING_GROUP))
+                                    .options(java.util.List.of(
+                                            enableNoExperimentalWarningOpt,
+                                            enableExperimentalDisplayOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
