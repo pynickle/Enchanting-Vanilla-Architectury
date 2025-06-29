@@ -3,7 +3,6 @@ accessible method net/minecraft/world/entity/decoration/Painting setVariant (Lne
 accessible method net/minecraft/world/level/block/entity/BlockEntityType <init> (Lnet/minecraft/world/level/block/entity/BlockEntityType$BlockEntitySupplier;Ljava/util/Set;)V
 accessible method net/minecraft/client/renderer/item/properties/numeric/NeedleDirectionHelper wobble ()Z
 accessible class net/minecraft/client/Options$FieldAccess
-accessible field net/minecraft/world/entity/player/Inventory items Lnet/minecraft/core/NonNullList;
 accessible method net/minecraft/world/level/block/BellBlock isProperHit (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;D)Z
 accessible method net/minecraft/client/gui/components/PlayerTabOverlay renderPingIcon (Lnet/minecraft/client/gui/GuiGraphics;IIILnet/minecraft/client/multiplayer/PlayerInfo;)V
 accessible field net/minecraft/world/level/storage/LevelSummary info Lnet/minecraft/network/chat/Component;

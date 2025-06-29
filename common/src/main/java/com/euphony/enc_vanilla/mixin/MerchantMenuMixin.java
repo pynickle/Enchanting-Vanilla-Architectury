@@ -40,12 +40,8 @@ public abstract class MerchantMenuMixin extends AbstractContainerMenu implements
             tryMoveItems(i);
             ItemStack stack = slots.get(2).safeTake(getOffers().get(i).getResult().getCount(), getOffers().get(i).getResult().getCount(), player);
             if(stack.isEmpty()) {
-                if (!this.trader.isClientSide()) {
-                    if (player instanceof ServerPlayer) {
-                        player.getInventory().placeItemBackInInventory(this.tradeContainer.removeItemNoUpdate(0));
-                        player.getInventory().placeItemBackInInventory(this.tradeContainer.removeItemNoUpdate(1));
-                    }
-                }
+                player.getInventory().placeItemBackInInventory(this.tradeContainer.removeItem(0, 64));
+                player.getInventory().placeItemBackInInventory(this.tradeContainer.removeItem(1, 64));
                 break;
             }
             while (!stack.isEmpty()) {
