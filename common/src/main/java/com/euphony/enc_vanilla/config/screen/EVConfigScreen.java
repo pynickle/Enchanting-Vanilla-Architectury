@@ -1,6 +1,5 @@
 package com.euphony.enc_vanilla.config.screen;
 
-import com.euphony.enc_vanilla.config.categories.client.ClientScreen;
 import com.euphony.enc_vanilla.config.categories.qol.QolScreen;
 import com.euphony.enc_vanilla.config.categories.recipes.RecipesScreen;
 import com.euphony.enc_vanilla.config.categories.tools.ToolsScreen;
@@ -22,8 +21,6 @@ public class EVConfigScreen extends Screen {
     private Screen qolConfigScreen = null;
     @Nullable
     private Screen toolsConfigScreen = null;
-    @Nullable
-    private Screen clientConfigScreen = null;
     @Nullable
     private Screen recipesConfigScreen = null;
 
@@ -74,15 +71,7 @@ public class EVConfigScreen extends Screen {
 
             this.minecraft.setScreen(this.toolsConfigScreen);
         });
-        var clientButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 40, categoryButtonWidth, 20,
-                Component.translatable("yacl3.config.enc_vanilla:config.category.client"), Items.VINE.getDefaultInstance(), (btn) -> {
-            if(this.clientConfigScreen == null) {
-                this.clientConfigScreen = ClientScreen.makeScreen().generateScreen(this);
-            }
-
-            this.minecraft.setScreen(this.clientConfigScreen);
-        });
-        var recipesButton = new CategoryButton(30, 70, categoryButtonWidth, 20,
+        var recipesButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.recipes"), Items.ANVIL.getDefaultInstance(), (btn) -> {
             if(this.recipesConfigScreen == null) {
                 this.recipesConfigScreen = RecipesScreen.makeScreen().generateScreen(this);
@@ -96,7 +85,6 @@ public class EVConfigScreen extends Screen {
 
         this.addRenderableWidget(qolButton);
         this.addRenderableWidget(toolsButton);
-        this.addRenderableWidget(clientButton);
         this.addRenderableWidget(recipesButton);
         this.addRenderableWidget(buttonWidget);
     }

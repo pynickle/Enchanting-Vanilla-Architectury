@@ -4,19 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
-    "BookEditScreenMixin",
-    "BookViewScreenMixin",
-    "ChatComponentMixin",
-    "CreateWorldScreenMixin",
-    "GameRendererMixin",
-    "MerchantScreenMixin",
-    "MinecraftMixin",
-    "MultiLineEditBoxMixin",
-    "OptionsMixin",
-    "PlayerTabOverlayMixin",
-    "SoundsOptionScreenMixin",
-    "WorldListEntryMixin",
-    "WorldOpenFlowsMixin"
   ],
   "mixins": [
     "AbstractFurnaceMenuMixin",
@@ -30,7 +17,6 @@
     "JukeboxSongPlayerMixin",
     "LeashableMixin",
     "LiquidBlockMixin",
-    "MerchantMenuMixin",
     "MonsterMixin",
     "PhantomMixin",
     "PotionItemMixin",

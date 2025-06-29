@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.utils;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import dev.architectury.platform.Platform;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -11,10 +10,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import java.util.Locale;
 
 public class Utils {
-    public static String getModDisplayName(String modId) {
-        return Platform.getMod(modId).getName();
-    }
-
     public static ResourceLocation prefix(String name) {
         return ResourceLocation.fromNamespaceAndPath(EncVanilla.MOD_ID, name.toLowerCase(Locale.ROOT));
     }

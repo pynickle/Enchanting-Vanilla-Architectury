@@ -1,12 +1,10 @@
 package com.euphony.enc_vanilla.neoforge.datagen;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.client.property.AxolotlBucketVariant;
 import com.euphony.enc_vanilla.client.property.FrogBucketActive;
 import com.euphony.enc_vanilla.client.property.SculkCompassAngle;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;
-import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
@@ -49,8 +47,6 @@ public class ModelGenerator extends ModelProvider {
 
         createBambooSapling(blockModels, EVBlocks.CUT_BAMBOO_SAPLING.get());
 
-        generateAxolotlBucket(itemModels, Items.AXOLOTL_BUCKET);
-
         createVine(blockModels);
         createSugarCane(blockModels, EVBlocks.CUT_SUGAR_CANE.get());
 
@@ -66,24 +62,6 @@ public class ModelGenerator extends ModelProvider {
         ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
         ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(itemModels.createFlatItemModel(item, "_active", ModelTemplates.FLAT_ITEM));
         itemModels.itemModelOutput.accept(item, ItemModelUtils.select(new FrogBucketActive(false), itemmodel$unbaked, new SelectItemModel.SwitchCase<>(List.of(true), itemmodel$unbaked1)));
-    }
-
-    public void generateAxolotlBucket(ItemModelGenerators itemModels, Item item) {
-        ItemModel.Unbaked itemmodel$unbaked = createAxolotlBucketModel("_wild", itemModels);
-        ItemModel.Unbaked itemmodel$unbaked1 = createAxolotlBucketModel("_gold", itemModels);
-        ItemModel.Unbaked itemmodel$unbaked2 = createAxolotlBucketModel("_cyan", itemModels);
-        ItemModel.Unbaked itemmodel$unbaked3 = createAxolotlBucketModel("_blue", itemModels);
-        itemModels.itemModelOutput.accept(item, ItemModelUtils.select(new AxolotlBucketVariant(0), itemmodel$unbaked,
-                new SelectItemModel.SwitchCase<>(List.of(0.0f), ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(Items.AXOLOTL_BUCKET))),
-                new SelectItemModel.SwitchCase<>(List.of(0.01f), itemmodel$unbaked),
-                new SelectItemModel.SwitchCase<>(List.of(0.02f), itemmodel$unbaked1),
-                new SelectItemModel.SwitchCase<>(List.of(0.03f), itemmodel$unbaked2),
-                new SelectItemModel.SwitchCase<>(List.of(0.04f), itemmodel$unbaked3)));
-    }
-
-    public ItemModel.Unbaked createAxolotlBucketModel(String suffix, ItemModelGenerators itemModels) {
-        ResourceLocation resourceLocation = Utils.prefix("item/axolotl_bucket" + suffix);
-        return ItemModelUtils.plainModel(ModelTemplates.FLAT_ITEM.create(resourceLocation, TextureMapping.layer0(resourceLocation), itemModels.modelOutput));
     }
 
     public void generateSculkCompass(ItemModelGenerators itemModels, Item item) {
