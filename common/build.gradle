@@ -14,7 +14,7 @@ dependencies {
     // modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     // modRuntimeOnly("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
 
-    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-fabric")
+    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+1.21.6-fabric")
 
     // modImplementation("curse.maven:selene-499980:${rootProject.selene_id}")
     // modImplementation("curse.maven:fast-paintings-883287:${rootProject.fast_paintings_id}")

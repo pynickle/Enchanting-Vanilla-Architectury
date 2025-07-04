@@ -54,7 +54,7 @@ dependencies {
     // modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
     // modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 
-    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-fabric")
+    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+1.21.6-fabric")
 
     modImplementation("com.terraformersmc:modmenu:${rootProject.modmenu_version}")
 
