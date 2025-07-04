@@ -70,14 +70,12 @@ subprojects {
 
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
-        mappings loom.officialMojangMappings()
+        // mappings loom.officialMojangMappings()
 
-        /*
         mappings loom.layered() {
             officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-1.21.6:2025.06.26-nightly-SNAPSHOT@zip")
+            parchment("org.parchmentmc.data:parchment-1.21.6:2025.06.29@zip")
         }
-        */
         // mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}"
     }
 
@@ -100,12 +98,7 @@ subprojects {
             }
         }
 
-        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
         repositories {
-            // Add repositories to publish to here.
-            // Notice: This block does NOT have the same function as the block in the top level.
-            // The repositories here will be used for publishing your artifact, not for
-            // retrieving dependencies.
         }
     }
 }

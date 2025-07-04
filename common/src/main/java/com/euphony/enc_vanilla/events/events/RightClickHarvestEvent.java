@@ -23,7 +23,7 @@ public class RightClickHarvestEvent {
     public static InteractionResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
 
-        if(level.isClientSide()) return InteractionResult.PASS;
+        if(level.isClientSide() || !QolConfig.HANDLER.instance().enableRightClickHarvest) return InteractionResult.PASS;
 
         if (player.isSpectator() || player.isCrouching() || interactionHand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
 
@@ -76,7 +76,7 @@ public class RightClickHarvestEvent {
         if (state.getBlock() instanceof CocoaBlock) {
             return state.setValue(CocoaBlock.AGE, 0);
         } else if (state.getBlock() instanceof CropBlock cropBlock) {
-            return state.setValue(CropBlock.AGE, 0);
+            return state.setValue(cropBlock.getAgeProperty(), 0);
         } else if (state.getBlock() instanceof NetherWartBlock) {
             return state.setValue(NetherWartBlock.AGE, 0);
         }
