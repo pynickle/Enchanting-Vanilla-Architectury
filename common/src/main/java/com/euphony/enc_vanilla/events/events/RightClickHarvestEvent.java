@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.events.events;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.mixin.invoker.CropBlockInvoker;
 import dev.architectury.event.EventResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -23,7 +24,7 @@ public class RightClickHarvestEvent {
     public static EventResult rightClickBlock(Player player, InteractionHand interactionHand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
 
-        if(level.isClientSide()) return EventResult.pass();
+        if(level.isClientSide() || !QolConfig.HANDLER.instance().enableRightClickHarvest) return EventResult.pass();
 
         if (player.isSpectator() || player.isCrouching() || interactionHand != InteractionHand.MAIN_HAND) return EventResult.pass();
 
@@ -76,7 +77,7 @@ public class RightClickHarvestEvent {
         if (state.getBlock() instanceof CocoaBlock) {
             return state.setValue(CocoaBlock.AGE, 0);
         } else if (state.getBlock() instanceof CropBlock cropBlock) {
-            return state.setValue(CropBlock.AGE, 0);
+            return state.setValue(((CropBlockInvoker) cropBlock).invokeGetAgeProperty(), 0);
         } else if (state.getBlock() instanceof NetherWartBlock) {
             return state.setValue(NetherWartBlock.AGE, 0);
         }
