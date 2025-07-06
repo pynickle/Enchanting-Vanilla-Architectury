@@ -27,20 +27,21 @@ public abstract class AbstractFurnaceMenuMixin extends RecipeBookMenu {
             method = "quickMoveStack",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/inventory/AbstractFurnaceMenu;canSmelt(Lnet/minecraft/world/item/ItemStack;)Z", // 目标方法签名
-                    shift = At.Shift.BEFORE
+                    target = "Lnet/minecraft/world/item/ItemStack;copy()Lnet/minecraft/world/item/ItemStack;"
             ),
             cancellable = true)
     private void onBeforeCanSmelt(
-            Player player, int i, CallbackInfoReturnable<ItemStack> cir, @Local(ordinal = 0) ItemStack itemStack2
+            Player player, int i, CallbackInfoReturnable<ItemStack> cir, @Local(ordinal = 0) ItemStack itemStack2,
+            @Local(ordinal = 0, argsOnly = true) int index
     ) {
         if(!QolConfig.HANDLER.instance().enableForcedFuels) return;
 
-        if (isFuel(itemStack2) && (itemStack2.is(EVItemTags.FORCED_FUELS)
-                || QolConfig.HANDLER.instance().extraForcedFuels.contains(ItemUtils.getKey(itemStack2.getItem()).toString()))) {
-            if (!this.moveItemStackTo(itemStack2, 1, 2, false)) {
-                cir.setReturnValue(ItemStack.EMPTY);
-                cir.cancel();
+        if(index != 1 && index != 0 && index != 2) {
+            if (isFuel(itemStack2) && (itemStack2.is(EVItemTags.FORCED_FUELS)
+                    || QolConfig.HANDLER.instance().extraForcedFuels.contains(ItemUtils.getKey(itemStack2.getItem()).toString()))) {
+                if (!this.moveItemStackTo(itemStack2, 1, 2, false)) {
+                    cir.setReturnValue(ItemStack.EMPTY);
+                }
             }
         }
     }
