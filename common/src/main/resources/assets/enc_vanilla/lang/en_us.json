@@ -58,6 +58,8 @@
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "Villagers can be attracted by the player holding an emerald (by default) in the main hand and an ominous banner in the offhand.",
   "yacl3.config.enc_vanilla:config.mainHandItem": "Main Hand Item",
   "yacl3.config.enc_vanilla:config.mainHandItem.desc": "Change the main hand items needed to attract villagers",
+  "yacl3.config.enc_vanilla:config.enableOffHandItem": "Enable Off Hand Item",
+  "yacl3.config.enc_vanilla:config.enableOffHandItem.desc": "Offhand items need to be held.",
 
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "Invisible Item Frame",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "Enable Invisible Item Frame",

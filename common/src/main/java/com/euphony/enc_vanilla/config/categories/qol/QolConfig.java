@@ -53,6 +53,7 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableVillagerAttraction = true;
     @SerialEntry public Item mainHandItem = Items.EMERALD;
+    @SerialEntry public boolean enableOffHandItem = true;
 
     @SerialEntry public boolean enableInvisibleItemFrame = true;
 

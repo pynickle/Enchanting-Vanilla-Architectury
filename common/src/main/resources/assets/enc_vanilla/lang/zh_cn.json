@@ -58,6 +58,8 @@
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "玩家可以通过主手持绿宝石（默认）、副手持不祥旗帜来吸引村民。",
   "yacl3.config.enc_vanilla:config.mainHandItem": "主手物品",
   "yacl3.config.enc_vanilla:config.mainHandItem.desc": "改变吸引村民所需的主手物品",
+  "yacl3.config.enc_vanilla:config.enableOffHandItem": "启用副手物品",
+  "yacl3.config.enc_vanilla:config.enableOffHandItem.desc": "副手需要持有物品。",
 
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "隐形物品展示框",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "启用隐形展示框",

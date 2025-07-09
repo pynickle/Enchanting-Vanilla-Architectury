@@ -1,5 +1,6 @@
 package com.euphony.enc_vanilla.common.entity;
 
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -40,6 +41,7 @@ public class DoubleHandedTemptGoal extends Goal {
         this.targetingConditions = TEMP_TARGETING.copy().selector((livingEntity, serverLevel) -> this.shouldFollow(livingEntity));
     }
 
+    @Override
     public boolean canUse() {
         if (this.calmDown > 0) {
             --this.calmDown;
@@ -51,9 +53,10 @@ public class DoubleHandedTemptGoal extends Goal {
     }
 
     private boolean shouldFollow(LivingEntity entity) {
-        return this.items.test(entity.getMainHandItem()) && this.offHandItems.test(entity.getOffhandItem());
+        return this.items.test(entity.getMainHandItem()) && (this.offHandItems.test(entity.getOffhandItem()) || !QolConfig.HANDLER.instance().enableOffHandItem);
     }
 
+    @Override
     public boolean canContinueToUse() {
         if (this.canScare()) {
             if (this.mob.distanceToSqr(this.player) < (double)36.0F) {
@@ -81,6 +84,7 @@ public class DoubleHandedTemptGoal extends Goal {
         return this.canScare;
     }
 
+    @Override
     public void start() {
         this.px = this.player.getX();
         this.py = this.player.getY();
@@ -88,6 +92,7 @@ public class DoubleHandedTemptGoal extends Goal {
         this.isRunning = true;
     }
 
+    @Override
     public void stop() {
         this.player = null;
         this.mob.getNavigation().stop();
@@ -95,6 +100,7 @@ public class DoubleHandedTemptGoal extends Goal {
         this.isRunning = false;
     }
 
+    @Override
     public void tick() {
         this.mob.getLookControl().setLookAt(this.player, (float)(this.mob.getMaxHeadYRot() + 20), (float)this.mob.getMaxHeadXRot());
         if (this.mob.distanceToSqr(this.player) < (double)6.25F) {

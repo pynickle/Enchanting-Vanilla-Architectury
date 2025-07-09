@@ -37,6 +37,12 @@ public class QolScreen {
                             newVal -> config.mainHandItem = newVal)
                     .controller(ItemControllerBuilder::create)
                     .build();
+            Option<Boolean> enableOffHandItemOpt = ConfigUtils.<Boolean>getGenericOption("enableOffHandItem")
+                    .binding(defaults.enableOffHandItem,
+                            () -> config.enableOffHandItem,
+                            newVal -> config.enableOffHandItem = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
 
             // Item Frame
             Option<Boolean> enableInvisibleItemFrameOpt = ConfigUtils.<Boolean>getGenericOption("enableInvisibleItemFrame")
@@ -471,7 +477,8 @@ public class QolScreen {
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, VILLAGER_ATTRACTION_GROUP))
                                     .options(List.of(
                                             enableVillagerAttractionOpt,
-                                            mainHandItemOpt
+                                            mainHandItemOpt,
+                                            enableOffHandItemOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
