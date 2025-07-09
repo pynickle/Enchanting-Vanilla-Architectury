@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
+    "MerchantScreenMixin"
   ],
   "mixins": [
     "AbstractFurnaceMenuMixin",
@@ -11,12 +12,15 @@
     "BaseFireBlockMixin",
     "BlockEntityMixin",
     "BlocksMixin",
+    "ClientSideMerchantMixin",
     "ConcretePowderBlockMixin",
     "FarmBlockMixin",
     "ItemFrameMixin",
     "JukeboxSongPlayerMixin",
     "LeashableMixin",
     "LiquidBlockMixin",
+    "MerchantMenuMixin",
+    "MerchantMixin",
     "MonsterMixin",
     "PhantomMixin",
     "PotionItemMixin",

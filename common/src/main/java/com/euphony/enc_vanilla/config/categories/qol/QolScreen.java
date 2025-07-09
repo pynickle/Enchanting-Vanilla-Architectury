@@ -359,6 +359,14 @@ public class QolScreen {
                     .action(((yaclScreen, buttonOption) -> Minecraft.getInstance().setScreen(ExtraForcedFuelsScreen.makeScreen().generateScreen(yaclScreen))))
                     .build();
 
+            // Visible Trade
+            Option<Boolean> enableVisibleTradeOpt = ConfigUtils.<Boolean>getGenericOption("enableVisibleTrade")
+                    .binding(defaults.enableVisibleTrade,
+                            () -> config.enableVisibleTrade,
+                            newVal -> config.enableVisibleTrade = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -602,6 +610,12 @@ public class QolScreen {
                                     .options(List.of(
                                             enableForcedFuelsOpt,
                                             extraForcedFuelsOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, VISIBLE_TRADE_GROUP))
+                                    .options(List.of(
+                                            enableVisibleTradeOpt
                                     ))
                                     .build())
                             .build())

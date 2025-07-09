@@ -182,6 +182,10 @@
   "yacl3.config.enc_vanilla:config.extraForcedFuels.desc": "配置来自其他模组可以被视为强制燃料的物品",
   "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "配置额外强制燃料物品",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.visible_trade": "可见交易",
+  "yacl3.config.enc_vanilla:config.enableVisibleTrade": "启用可见交易",
+  "yacl3.config.enc_vanilla:config.enableVisibleTrade.desc": "现在所有交易在开始时都会显示，而不必等到升级后才显示。",
+
   "yacl3.config.enc_vanilla:config.category.other.group.other": "其他",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "启用睡莲上方块",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "现在你可以在睡莲上方放置方块，其原理为将下方的方块变成含水的睡莲方块。",

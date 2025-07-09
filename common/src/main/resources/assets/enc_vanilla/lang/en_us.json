@@ -182,6 +182,10 @@
   "yacl3.config.enc_vanilla:config.extraForcedFuels.desc": "Configure items from other mods that can be considered forced fuels.",
   "yacl3.config.enc_vanilla:config.extraForcedFuels.button": "Configure Extra Forced Fuels",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.visible_trade": "Visible Trade",
+  "yacl3.config.enc_vanilla:config.enableVisibleTrade": "Enable Visible Trade",
+  "yacl3.config.enc_vanilla:config.enableVisibleTrade.desc": "Now all trades are displayed at the beginning, without having to wait until after the upgrade.",
+
   "yacl3.config.enc_vanilla:config.category.other.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",

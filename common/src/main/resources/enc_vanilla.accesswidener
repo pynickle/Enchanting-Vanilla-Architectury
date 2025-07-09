@@ -7,4 +7,5 @@ accessible method net/minecraft/world/level/block/BellBlock isProperHit (Lnet/mi
 accessible method net/minecraft/client/gui/components/PlayerTabOverlay renderPingIcon (Lnet/minecraft/client/gui/GuiGraphics;IIILnet/minecraft/client/multiplayer/PlayerInfo;)V
 accessible field net/minecraft/world/level/storage/LevelSummary info Lnet/minecraft/network/chat/Component;
 accessible method net/minecraft/world/level/block/CropBlock getAgeProperty ()Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
-
+accessible method net/minecraft/world/entity/npc/Villager updateTrades ()V
+accessible class net/minecraft/client/gui/screens/inventory/MerchantScreen$TradeOfferButton

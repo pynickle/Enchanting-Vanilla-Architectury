@@ -49,6 +49,7 @@ public final class QolConfig {
     public static final String BUSH_PROTECTION_GROUP = "bush_protection";
     public static final String STONECUTTER_DAMAGE_GROUP = "stonecutter_damage";
     public static final String FORCED_FUELS_GROUP = "forced_fuels";
+    public static final String VISIBLE_TRADE_GROUP = "visible_trade";
     public static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -140,6 +141,8 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableForcedFuels = true;
     @SerialEntry public List<String> extraForcedFuels = List.of();
+
+    @SerialEntry public boolean enableVisibleTrade = true;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
