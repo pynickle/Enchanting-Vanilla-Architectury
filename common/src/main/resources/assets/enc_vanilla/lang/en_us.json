@@ -234,7 +234,5 @@
   "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "Enable Slabs To Blocks",
   "yacl3.config.enc_vanilla:config.enableSlabsToBlocks.desc": "Add recipes for all slabs to blocks.",
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "Enable Sponge Campfire",
-  "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "Now you can use campfire drying sponges.",
-  "yacl3.config.enc_vanilla:config.enableBetterLodestone": "Enable Better Lodestone",
-  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "You can now use the 1.21.5 lodestone recipe and find it in ruined portal treasure chests."
+  "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "Now you can use campfire drying sponges."
 }

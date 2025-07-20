@@ -19,7 +19,6 @@ subprojects {
     apply plugin: 'maven-publish'
 
     base {
-        // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
         archivesName = "$rootProject.archives_name-$project.name"
     }
 
@@ -74,9 +73,8 @@ subprojects {
 
         mappings loom.layered() {
             officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-1.21.6:2025.06.29@zip")
+            parchment("org.parchmentmc.data:parchment-1.21.8:2025.07.18@zip")
         }
-        // mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}"
     }
 
     java {

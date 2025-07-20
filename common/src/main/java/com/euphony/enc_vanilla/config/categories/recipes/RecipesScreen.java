@@ -43,14 +43,6 @@ public class RecipesScreen {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableBetterLodestoneOpt = ConfigUtils.<Boolean>getGenericOption("enableBetterLodestone", "better_lodestone")
-                    .binding(defaults.enableBetterLodestone,
-                            () -> config.enableBetterLodestone,
-                            newVal -> config.enableBetterLodestone = newVal)
-                    .flag(ConfigUtils.RESOURCE_RELOAD)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -60,8 +52,7 @@ public class RecipesScreen {
                                     .options(List.of(
                                             enableMoreCompostableOpt,
                                             enableSlabsToBlocksOpt,
-                                            enableSpongeCampfireOpt,
-                                            enableBetterLodestoneOpt
+                                            enableSpongeCampfireOpt
                                     ))
                                     .build())
                             .build())

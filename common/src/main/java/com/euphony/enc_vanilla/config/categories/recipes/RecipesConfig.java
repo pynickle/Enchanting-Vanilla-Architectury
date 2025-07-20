@@ -32,5 +32,4 @@ public class RecipesConfig {
     @SerialEntry public boolean enableMoreCompostable = true;
     @SerialEntry public boolean enableSlabsToBlocks = true;
     @SerialEntry public boolean enableSpongeCampfire = true;
-    @SerialEntry public boolean enableBetterLodestone = true;
 }

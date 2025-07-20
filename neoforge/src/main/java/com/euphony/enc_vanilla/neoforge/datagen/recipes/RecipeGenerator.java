@@ -49,24 +49,12 @@ public class RecipeGenerator extends RecipeProvider {
     protected void buildRecipes() {
         addSpongeCampfireRecipes();
         addSculkCompassRecipes();
-        addBetterLodestoneRecipes();
     }
 
     protected void addSpongeCampfireRecipes() {
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(Items.WET_SPONGE), RecipeCategory.MISC, Items.SPONGE, 0.15F, 600)
                 .unlockedBy("has_item", has(Items.WET_SPONGE))
                 .save(output, createKey("wet_sponge_to_sponge"));
-    }
-
-    protected void addBetterLodestoneRecipes() {
-        ShapedRecipeBuilder.shaped(registry, RecipeCategory.DECORATIONS, Blocks.LODESTONE)
-                .pattern("SSS")
-                .pattern("S#S")
-                .pattern("SSS")
-                .define('S', Items.CHISELED_STONE_BRICKS)
-                .define('#', Items.IRON_INGOT)
-                .unlockedBy("has_item", has(Items.IRON_INGOT))
-                .save(output, createKey("lodestone"));
     }
 
     protected void addSculkCompassRecipes() {
@@ -89,45 +77,6 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("AAA")
                 .unlockedBy("has_item", has(Items.DIAMOND))
                 .save(output, createKey("appraisal_table"));
-    }
-
-    protected void shapeless(RecipeCategory recipeCategory, ItemStack resultItem, RecipeOutput recipeOutput, List<Item> items, String key, Item... additionalItems) {
-        ShapelessRecipeBuilder shapeless = ShapelessRecipeBuilder.shapeless(registry, recipeCategory, resultItem);
-        for(Item item : additionalItems) {
-            shapeless
-                    .requires(item)
-                    .unlockedBy("has_item", has(item));
-        }
-        for(Item item : items) {
-            shapeless
-                    .requires(item)
-                    .unlockedBy("has_item", has(item));
-        }
-        shapeless.save(recipeOutput, createKey(key));
-    }
-
-    protected void shapeless(RecipeCategory recipeCategory, ItemStack resultItem, RecipeOutput recipeOutput, List<Item> items, String key) {
-        ShapelessRecipeBuilder shapeless = ShapelessRecipeBuilder.shapeless(registry, recipeCategory, resultItem);
-        for(Item item : items) {
-            shapeless
-                    .requires(item)
-                    .unlockedBy("has_item", has(item));
-        }
-        shapeless.save(recipeOutput, createKey(key));
-    }
-
-    protected void shapeless(RecipeCategory recipeCategory, ItemLike resultItem, RecipeOutput recipeOutput, List<Item> items, String key) {
-        shapeless(recipeCategory, resultItem, 1, recipeOutput, items, key);
-    }
-
-    protected void shapeless(RecipeCategory recipeCategory, ItemLike resultItem, int count, RecipeOutput recipeOutput, List<Item> items, String key) {
-        ShapelessRecipeBuilder shapeless = ShapelessRecipeBuilder.shapeless(registry, recipeCategory, resultItem, count);
-        for(Item item : items) {
-            shapeless
-                    .requires(item)
-                    .unlockedBy("has_item", has(item));
-        }
-        shapeless.save(recipeOutput, createKey(key));
     }
 
     protected ResourceLocation createLocation(String name) {

@@ -32,9 +32,6 @@ public abstract class RecipeManagerMixin extends SimplePreparableReloadListener<
         if (!RecipesConfig.HANDLER.instance().enableSpongeCampfire) {
             sortedMap.remove(Utils.prefix("wet_sponge_to_sponge"));
         }
-        if(RecipesConfig.HANDLER.instance().enableBetterLodestone) {
-            sortedMap.remove(Utils.prefix("lodestone"));
-        }
         if(!ToolsConfig.HANDLER.instance().enableSculkCompass) {
             sortedMap.remove(Utils.prefix("sculk_compass"));
             sortedMap.remove(Utils.prefix("appraisal_table"));
