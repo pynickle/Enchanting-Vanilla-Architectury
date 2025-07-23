@@ -85,4 +85,5 @@ shadowJar {
 
 remapJar {
     input.set shadowJar.archiveFile
+    atAccessWideners.add("enc_vanilla.accesswidener")
 }
