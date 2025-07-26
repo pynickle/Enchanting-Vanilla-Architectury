@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.utils.custom;
 
 import com.euphony.enc_vanilla.api.ICustomItemFrame;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.decoration.ItemFrame;
@@ -11,6 +12,8 @@ import java.util.List;
 
 public class ItemFramesUtils {
     public static void handleInvisibility(AbstractThrownPotion thrownPotion, Iterable<MobEffectInstance> effects) {
+        if(!QolConfig.HANDLER.instance().enableInvisibleItemFrame) return;
+
         effects.forEach(
                 effect -> {
                     if (effect.is(MobEffects.INVISIBILITY)) {
