@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.api.ICustomItemFrame;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.HangingEntity;
@@ -29,6 +30,8 @@ public abstract class ItemFrameMixin extends HangingEntity implements ICustomIte
 
     @Inject(method = "setItem(Lnet/minecraft/world/item/ItemStack;Z)V", at = @At("TAIL"))
     private void setHeldItem(ItemStack value, boolean update, CallbackInfo ci) {
+        if(!QolConfig.HANDLER.instance().enableInvisibleItemFrame) return;
+
         if (this.enc_vanilla$isInvisible)
             ((ItemFrame) (Object) this).setInvisible(true);
         else
@@ -37,6 +40,8 @@ public abstract class ItemFrameMixin extends HangingEntity implements ICustomIte
 
     @Inject(method = "removeFramedMap", at = @At("TAIL"))
     private void removeFromFrameMixin(ItemStack stack, CallbackInfo ci) {
+        if(!QolConfig.HANDLER.instance().enableInvisibleItemFrame) return;
+
         ((ItemFrame) (Object) this).setInvisible(false);
     }
 
