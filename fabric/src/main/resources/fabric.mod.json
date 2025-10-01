@@ -35,5 +35,6 @@
     "architectury": ">=17.0.6",
     "fabric-api": "*",
     "yet_another_config_lib_v3": ">=3.7.1"
-  }
+  },
+  "accesswidener": "enc_vanilla.accesswidener"
 }
