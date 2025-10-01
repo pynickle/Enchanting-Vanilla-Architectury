@@ -55,12 +55,14 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
 
-    compileOnly("mezz.jei:jei-1.21.7-neoforge-api:${jei_version}")
-    runtimeOnly("mezz.jei:jei-1.21.7-neoforge:${jei_version}")
+    compileOnly("mezz.jei:jei-1.21.8-neoforge-api:${jei_version}")
+    runtimeOnly("mezz.jei:jei-1.21.8-neoforge:${jei_version}")
 
-    implementation("dev.isxander:yet-another-config-lib:${yacl_version}+1.21.6-neoforge"){
+    /*implementation("dev.isxander:yet-another-config-lib:${yacl_version}+1.21.6-neoforge"){
         exclude group: "net.neoforged.fancymodloader", module: "loader"
     }
+
+     */
 
     // compileOnly("curse.maven:selene-499980:${selene_id}")
     // compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")

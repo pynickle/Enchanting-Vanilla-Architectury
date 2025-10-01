@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.item.properties.select.SelectItemModelPrope
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public record FrogBucketActive(boolean active) implements SelectItemModelProperty<Boolean> {
@@ -17,17 +18,17 @@ public record FrogBucketActive(boolean active) implements SelectItemModelPropert
     );
 
     @Override
-    public @Nullable Boolean get(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i, ItemDisplayContext itemDisplayContext) {
+    public @NotNull Boolean get(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i, ItemDisplayContext itemDisplayContext) {
         return itemStack.getOrDefault(EVDataComponentTypes.ACTIVE.get(), false);
     }
 
     @Override
-    public Codec<Boolean> valueCodec() {
+    public @NotNull Codec<Boolean> valueCodec() {
         return VALUE_CODEC;
     }
 
     @Override
-    public Type type() {
+    public @NotNull Type<FrogBucketActive, Boolean> type() {
         return TYPE;
     }
 }
