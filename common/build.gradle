@@ -11,10 +11,10 @@ dependencies {
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 
-    modCompileOnlyApi("mezz.jei:jei-1.21.8-common-api:${jei_version}")
-    modRuntimeOnly("mezz.jei:jei-1.21.8-common:${jei_version}")
+    modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
 
-    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+1.21.6-fabric")
+    modImplementation("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-fabric")
 
     // modImplementation("curse.maven:selene-499980:${rootProject.selene_id}")
     // modImplementation("curse.maven:fast-paintings-883287:${rootProject.fast_paintings_id}")
